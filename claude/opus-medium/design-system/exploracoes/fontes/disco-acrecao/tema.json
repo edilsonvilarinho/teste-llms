@@ -1,0 +1,399 @@
+{
+  "tema": "disco-acrecao",
+  "titulo": "Disco de acreção",
+  "pergunta": "Como o disco deve girar, aquecer e responder ao que cai nele?",
+  "nota": "Núcleo fixo: 13 · Halo de poeira sem o disco (sombra, arcos e anel ficam). Varia espessura, turbulência, rotação, Doppler e reação ao consumo.",
+  "incluir": [
+    "_base/nucleo-13.glsl"
+  ],
+  "quantidade": 20,
+  "eixos": [
+    "espessura",
+    "turbulência",
+    "rotação",
+    "Doppler",
+    "reação ao consumo"
+  ],
+  "variacoes": [
+    {
+      "id": "01",
+      "nome": "Filamentos keplerianos",
+      "descricao": "Disco fino de filamentos girando devagar; onda de brilho circula a partir da queda.",
+      "eixos": {
+        "espessura": "fino",
+        "turbulência": "filamentos",
+        "rotação": "lenta",
+        "Doppler": "leve",
+        "reação ao consumo": "onda que circula"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'fino', textura 'filamentos' em coordenadas polares sem costura, rotação 'lenta', beaming 'leve'; reação 'onda que circula' por AbsorptionEvent."
+    },
+    {
+      "id": "02",
+      "nome": "Células quentes",
+      "descricao": "Disco médio de células turbulentas, rotação rápida e beaming forte; mancha quente orbita.",
+      "eixos": {
+        "espessura": "médio",
+        "turbulência": "células",
+        "rotação": "rápida",
+        "Doppler": "forte",
+        "reação ao consumo": "mancha quente orbitando"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'médio', textura 'células' em coordenadas polares sem costura, rotação 'rápida', beaming 'forte'; reação 'mancha quente orbitando' por AbsorptionEvent."
+    },
+    {
+      "id": "03",
+      "nome": "Galáxia em miniatura",
+      "descricao": "Disco espesso com braços em espiral e desvio de calor; incha ao consumir.",
+      "eixos": {
+        "espessura": "espesso",
+        "turbulência": "braços em espiral",
+        "rotação": "diferencial forte",
+        "Doppler": "com desvio de calor",
+        "reação ao consumo": "disco incha"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'espesso', textura 'braços em espiral' em coordenadas polares sem costura, rotação 'diferencial forte', beaming 'com desvio de calor'; reação 'disco incha' por AbsorptionEvent."
+    },
+    {
+      "id": "04",
+      "nome": "Bandas serenas",
+      "descricao": "Bandas suaves num disco fino lento, sem reação.",
+      "eixos": {
+        "espessura": "fino",
+        "turbulência": "bandas suaves",
+        "rotação": "lenta",
+        "Doppler": "leve",
+        "reação ao consumo": "nenhuma"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'fino', textura 'bandas suaves' em coordenadas polares sem costura, rotação 'lenta', beaming 'leve'; reação 'nenhuma' por AbsorptionEvent."
+    },
+    {
+      "id": "05",
+      "nome": "Filamentos rápidos",
+      "descricao": "Disco médio de filamentos girando rápido com desvio de calor; onda circula.",
+      "eixos": {
+        "espessura": "médio",
+        "turbulência": "filamentos",
+        "rotação": "rápida",
+        "Doppler": "com desvio de calor",
+        "reação ao consumo": "onda que circula"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'médio', textura 'filamentos' em coordenadas polares sem costura, rotação 'rápida', beaming 'com desvio de calor'; reação 'onda que circula' por AbsorptionEvent."
+    },
+    {
+      "id": "06",
+      "nome": "Células espessas",
+      "descricao": "Disco espesso e celular com cisalhamento forte; mancha quente orbita.",
+      "eixos": {
+        "espessura": "espesso",
+        "turbulência": "células",
+        "rotação": "diferencial forte",
+        "Doppler": "leve",
+        "reação ao consumo": "mancha quente orbitando"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'espesso', textura 'células' em coordenadas polares sem costura, rotação 'diferencial forte', beaming 'leve'; reação 'mancha quente orbitando' por AbsorptionEvent."
+    },
+    {
+      "id": "07",
+      "nome": "Espiral fina",
+      "descricao": "Braços em espiral num disco fino e rápido, beaming forte; incha ao consumir.",
+      "eixos": {
+        "espessura": "fino",
+        "turbulência": "braços em espiral",
+        "rotação": "rápida",
+        "Doppler": "forte",
+        "reação ao consumo": "disco incha"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'fino', textura 'braços em espiral' em coordenadas polares sem costura, rotação 'rápida', beaming 'forte'; reação 'disco incha' por AbsorptionEvent."
+    },
+    {
+      "id": "08",
+      "nome": "Bandas inchadas",
+      "descricao": "Bandas suaves num disco médio que incha a cada absorção; Doppler leve.",
+      "eixos": {
+        "espessura": "médio",
+        "turbulência": "bandas suaves",
+        "rotação": "diferencial forte",
+        "Doppler": "leve",
+        "reação ao consumo": "disco incha"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'médio', textura 'bandas suaves' em coordenadas polares sem costura, rotação 'diferencial forte', beaming 'leve'; reação 'disco incha' por AbsorptionEvent."
+    },
+    {
+      "id": "09",
+      "nome": "Filamentos espessos",
+      "descricao": "Filamentos num disco espesso e lento com beaming forte; sem reação.",
+      "eixos": {
+        "espessura": "espesso",
+        "turbulência": "filamentos",
+        "rotação": "lenta",
+        "Doppler": "forte",
+        "reação ao consumo": "nenhuma"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'espesso', textura 'filamentos' em coordenadas polares sem costura, rotação 'lenta', beaming 'forte'; reação 'nenhuma' por AbsorptionEvent."
+    },
+    {
+      "id": "10",
+      "nome": "Células finas",
+      "descricao": "Células num disco fino com desvio de calor; onda circula.",
+      "eixos": {
+        "espessura": "fino",
+        "turbulência": "células",
+        "rotação": "lenta",
+        "Doppler": "com desvio de calor",
+        "reação ao consumo": "onda que circula"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'fino', textura 'células' em coordenadas polares sem costura, rotação 'lenta', beaming 'com desvio de calor'; reação 'onda que circula' por AbsorptionEvent."
+    },
+    {
+      "id": "11",
+      "nome": "Espiral média",
+      "descricao": "Braços em espiral num disco médio e lento; mancha quente orbita.",
+      "eixos": {
+        "espessura": "médio",
+        "turbulência": "braços em espiral",
+        "rotação": "lenta",
+        "Doppler": "leve",
+        "reação ao consumo": "mancha quente orbitando"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'médio', textura 'braços em espiral' em coordenadas polares sem costura, rotação 'lenta', beaming 'leve'; reação 'mancha quente orbitando' por AbsorptionEvent."
+    },
+    {
+      "id": "12",
+      "nome": "Bandas de fogo",
+      "descricao": "Bandas suaves num disco espesso, rápido e com desvio de calor; onda circula.",
+      "eixos": {
+        "espessura": "espesso",
+        "turbulência": "bandas suaves",
+        "rotação": "rápida",
+        "Doppler": "com desvio de calor",
+        "reação ao consumo": "onda que circula"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'espesso', textura 'bandas suaves' em coordenadas polares sem costura, rotação 'rápida', beaming 'com desvio de calor'; reação 'onda que circula' por AbsorptionEvent."
+    },
+    {
+      "id": "13",
+      "nome": "Cisalhamento fino",
+      "descricao": "Filamentos num disco fino com rotação diferencial forte e beaming forte; mancha quente.",
+      "eixos": {
+        "espessura": "fino",
+        "turbulência": "filamentos",
+        "rotação": "diferencial forte",
+        "Doppler": "forte",
+        "reação ao consumo": "mancha quente orbitando"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'fino', textura 'filamentos' em coordenadas polares sem costura, rotação 'diferencial forte', beaming 'forte'; reação 'mancha quente orbitando' por AbsorptionEvent."
+    },
+    {
+      "id": "14",
+      "nome": "Células que incham",
+      "descricao": "Células num disco médio e rápido, Doppler leve; incha ao consumir.",
+      "eixos": {
+        "espessura": "médio",
+        "turbulência": "células",
+        "rotação": "rápida",
+        "Doppler": "leve",
+        "reação ao consumo": "disco incha"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'médio', textura 'células' em coordenadas polares sem costura, rotação 'rápida', beaming 'leve'; reação 'disco incha' por AbsorptionEvent."
+    },
+    {
+      "id": "15",
+      "nome": "Espiral espessa cisalhada",
+      "descricao": "Braços em espiral num disco espesso com cisalhamento forte e beaming forte; sem reação.",
+      "eixos": {
+        "espessura": "espesso",
+        "turbulência": "braços em espiral",
+        "rotação": "diferencial forte",
+        "Doppler": "forte",
+        "reação ao consumo": "nenhuma"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'espesso', textura 'braços em espiral' em coordenadas polares sem costura, rotação 'diferencial forte', beaming 'forte'; reação 'nenhuma' por AbsorptionEvent."
+    },
+    {
+      "id": "16",
+      "nome": "Bandas rápidas",
+      "descricao": "Bandas suaves num disco fino e rápido com desvio de calor; mancha quente.",
+      "eixos": {
+        "espessura": "fino",
+        "turbulência": "bandas suaves",
+        "rotação": "rápida",
+        "Doppler": "com desvio de calor",
+        "reação ao consumo": "mancha quente orbitando"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'fino', textura 'bandas suaves' em coordenadas polares sem costura, rotação 'rápida', beaming 'com desvio de calor'; reação 'mancha quente orbitando' por AbsorptionEvent."
+    },
+    {
+      "id": "17",
+      "nome": "Filamentos que incham",
+      "descricao": "Filamentos num disco médio, lento, com desvio de calor; incha.",
+      "eixos": {
+        "espessura": "médio",
+        "turbulência": "filamentos",
+        "rotação": "lenta",
+        "Doppler": "com desvio de calor",
+        "reação ao consumo": "disco incha"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'médio', textura 'filamentos' em coordenadas polares sem costura, rotação 'lenta', beaming 'com desvio de calor'; reação 'disco incha' por AbsorptionEvent."
+    },
+    {
+      "id": "18",
+      "nome": "Células calmas",
+      "descricao": "Células num disco espesso e rápido, Doppler leve; sem reação.",
+      "eixos": {
+        "espessura": "espesso",
+        "turbulência": "células",
+        "rotação": "rápida",
+        "Doppler": "leve",
+        "reação ao consumo": "nenhuma"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'espesso', textura 'células' em coordenadas polares sem costura, rotação 'rápida', beaming 'leve'; reação 'nenhuma' por AbsorptionEvent."
+    },
+    {
+      "id": "19",
+      "nome": "Espiral com onda",
+      "descricao": "Braços em espiral num disco fino com cisalhamento forte; onda circula.",
+      "eixos": {
+        "espessura": "fino",
+        "turbulência": "braços em espiral",
+        "rotação": "diferencial forte",
+        "Doppler": "com desvio de calor",
+        "reação ao consumo": "onda que circula"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'fino', textura 'braços em espiral' em coordenadas polares sem costura, rotação 'diferencial forte', beaming 'com desvio de calor'; reação 'onda que circula' por AbsorptionEvent."
+    },
+    {
+      "id": "20",
+      "nome": "Bandas com mancha",
+      "descricao": "Bandas suaves num disco médio e lento com beaming forte; mancha quente orbita.",
+      "eixos": {
+        "espessura": "médio",
+        "turbulência": "bandas suaves",
+        "rotação": "lenta",
+        "Doppler": "forte",
+        "reação ao consumo": "mancha quente orbitando"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Disco congela (sem rotação nem onda); brilho da reação permanece sem deslocamento.",
+      "porte": "ScenePass: disco com achatamento 'médio', textura 'bandas suaves' em coordenadas polares sem costura, rotação 'lenta', beaming 'forte'; reação 'mancha quente orbitando' por AbsorptionEvent."
+    }
+  ]
+}

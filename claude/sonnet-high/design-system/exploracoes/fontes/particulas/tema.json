@@ -1,0 +1,399 @@
+{
+  "tema": "particulas",
+  "titulo": "Partículas",
+  "pergunta": "Que vida de partículas o espaço ao redor do núcleo deve ter?",
+  "nota": "Núcleo fixo: 13 · Halo de poeira (a poeira do halo aparece em todas). Varia a poeira de fundo, o comportamento, a camada, o tamanho e a reação. O seletor de Qualidade mostra o orçamento por perfil (8000/4000/1600).",
+  "incluir": [
+    "_base/nucleo-13.glsl"
+  ],
+  "quantidade": 20,
+  "eixos": [
+    "poeira ambiente",
+    "comportamento",
+    "camada",
+    "tamanho",
+    "reação à absorção"
+  ],
+  "variacoes": [
+    {
+      "id": "01",
+      "nome": "Poeira kepleriana",
+      "descricao": "Grãos finos orbitando no plano do disco, mais rápidos perto do núcleo; faíscas a cada absorção.",
+      "eixos": {
+        "poeira ambiente": "esparsa",
+        "comportamento": "órbita",
+        "camada": "plano do disco",
+        "tamanho": "finas",
+        "reação à absorção": "faíscas"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 6000,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas e espirais congelam; a reação à absorção perde movimento radial.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'plano do disco', comportamento 'órbita'; orçamento 6000 em Alta, 3000 em Equilíbrio e 1200 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "02",
+      "nome": "Enxame esférico",
+      "descricao": "Uma casca de grãos variados em órbitas inclinadas ao redor do núcleo; acendem na absorção.",
+      "eixos": {
+        "poeira ambiente": "nenhuma",
+        "comportamento": "órbita",
+        "camada": "halo esférico",
+        "tamanho": "variadas",
+        "reação à absorção": "acendem"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 8000,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Órbitas e espirais congelam; a reação à absorção perde movimento radial.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'halo esférico', comportamento 'órbita'; orçamento 8000 em Alta, 4000 em Equilíbrio e 1600 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "03",
+      "nome": "Bokeh profundo",
+      "descricao": "Partículas grandes e suaves em camadas de fundo com paralaxe lenta.",
+      "eixos": {
+        "poeira ambiente": "densa",
+        "comportamento": "deriva",
+        "camada": "fundo com paralaxe",
+        "tamanho": "grandes e suaves",
+        "reação à absorção": "nenhuma"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 3000,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Paralaxe e deriva param; partículas ficam visíveis paradas.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'fundo com paralaxe', comportamento 'deriva'; orçamento 3000 em Alta, 1500 em Equilíbrio e 600 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "04",
+      "nome": "Rios para o centro",
+      "descricao": "Grãos finos escorrem em espiral pelo disco até o horizonte; a onda os empurra.",
+      "eixos": {
+        "poeira ambiente": "esparsa",
+        "comportamento": "atração em espiral",
+        "camada": "plano do disco",
+        "tamanho": "finas",
+        "reação à absorção": "onda que empurra"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 6000,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas e espirais congelam; a reação à absorção perde movimento radial.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'plano do disco', comportamento 'atração em espiral'; orçamento 6000 em Alta, 3000 em Equilíbrio e 1200 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "05",
+      "nome": "Nuvem flutuante",
+      "descricao": "Halo esférico de grãos que flutuam devagar, com poeira densa ao fundo.",
+      "eixos": {
+        "poeira ambiente": "densa",
+        "comportamento": "deriva",
+        "camada": "halo esférico",
+        "tamanho": "variadas",
+        "reação à absorção": "acendem"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 8000,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Órbitas e espirais congelam; a reação à absorção perde movimento radial.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'halo esférico', comportamento 'deriva'; orçamento 8000 em Alta, 4000 em Equilíbrio e 1600 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "06",
+      "nome": "Céu que desce",
+      "descricao": "Poeira de fundo que é lentamente puxada para o núcleo; faíscas nas absorções.",
+      "eixos": {
+        "poeira ambiente": "nenhuma",
+        "comportamento": "atração em espiral",
+        "camada": "fundo com paralaxe",
+        "tamanho": "finas",
+        "reação à absorção": "faíscas"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 6000,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Paralaxe e deriva param; partículas ficam visíveis paradas.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'fundo com paralaxe', comportamento 'atração em espiral'; orçamento 6000 em Alta, 3000 em Equilíbrio e 1200 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "07",
+      "nome": "Disco de vagalumes",
+      "descricao": "Pontos grandes e suaves orbitando no plano do disco, que acendem ao absorver.",
+      "eixos": {
+        "poeira ambiente": "nenhuma",
+        "comportamento": "órbita",
+        "camada": "plano do disco",
+        "tamanho": "grandes e suaves",
+        "reação à absorção": "acendem"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 2500,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Órbitas e espirais congelam; a reação à absorção perde movimento radial.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'plano do disco', comportamento 'órbita'; orçamento 2500 em Alta, 1250 em Equilíbrio e 500 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "08",
+      "nome": "Tempestade esférica",
+      "descricao": "Grãos finos caindo em espiral de todas as direções; onda que empurra.",
+      "eixos": {
+        "poeira ambiente": "densa",
+        "comportamento": "atração em espiral",
+        "camada": "halo esférico",
+        "tamanho": "finas",
+        "reação à absorção": "onda que empurra"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 8000,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Órbitas e espirais congelam; a reação à absorção perde movimento radial.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'halo esférico', comportamento 'atração em espiral'; orçamento 8000 em Alta, 4000 em Equilíbrio e 1600 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "09",
+      "nome": "Deriva no disco",
+      "descricao": "Grãos variados derivando no plano do disco sem órbita marcada; faíscas.",
+      "eixos": {
+        "poeira ambiente": "esparsa",
+        "comportamento": "deriva",
+        "camada": "plano do disco",
+        "tamanho": "variadas",
+        "reação à absorção": "faíscas"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 6000,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas e espirais congelam; a reação à absorção perde movimento radial.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'plano do disco', comportamento 'deriva'; orçamento 6000 em Alta, 3000 em Equilíbrio e 1200 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "10",
+      "nome": "Camadas orbitais",
+      "descricao": "Fundo com paralaxe em órbita lenta, grãos variados que acendem.",
+      "eixos": {
+        "poeira ambiente": "esparsa",
+        "comportamento": "órbita",
+        "camada": "fundo com paralaxe",
+        "tamanho": "variadas",
+        "reação à absorção": "acendem"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 6000,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Paralaxe e deriva param; partículas ficam visíveis paradas.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'fundo com paralaxe', comportamento 'órbita'; orçamento 6000 em Alta, 3000 em Equilíbrio e 1200 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "11",
+      "nome": "Halo silencioso",
+      "descricao": "Halo esférico fino em órbita, sem reação, só a poeira do núcleo.",
+      "eixos": {
+        "poeira ambiente": "nenhuma",
+        "comportamento": "órbita",
+        "camada": "halo esférico",
+        "tamanho": "finas",
+        "reação à absorção": "nenhuma"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 5000,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas e espirais congelam; a reação à absorção perde movimento radial.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'halo esférico', comportamento 'órbita'; orçamento 5000 em Alta, 2500 em Equilíbrio e 1000 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "12",
+      "nome": "Espiral de bokeh",
+      "descricao": "Partículas grandes e suaves espiralando no plano do disco; onda que empurra.",
+      "eixos": {
+        "poeira ambiente": "densa",
+        "comportamento": "atração em espiral",
+        "camada": "plano do disco",
+        "tamanho": "grandes e suaves",
+        "reação à absorção": "onda que empurra"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 3000,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas e espirais congelam; a reação à absorção perde movimento radial.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'plano do disco', comportamento 'atração em espiral'; orçamento 3000 em Alta, 1500 em Equilíbrio e 600 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "13",
+      "nome": "Céu à deriva",
+      "descricao": "Fundo esparso derivando com grãos finos e faíscas.",
+      "eixos": {
+        "poeira ambiente": "esparsa",
+        "comportamento": "deriva",
+        "camada": "fundo com paralaxe",
+        "tamanho": "finas",
+        "reação à absorção": "faíscas"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 5000,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Paralaxe e deriva param; partículas ficam visíveis paradas.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'fundo com paralaxe', comportamento 'deriva'; orçamento 5000 em Alta, 2500 em Equilíbrio e 1000 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "14",
+      "nome": "Esfera de bokeh",
+      "descricao": "Halo esférico de bolhas grandes e suaves que acendem.",
+      "eixos": {
+        "poeira ambiente": "esparsa",
+        "comportamento": "órbita",
+        "camada": "halo esférico",
+        "tamanho": "grandes e suaves",
+        "reação à absorção": "acendem"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 3000,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas e espirais congelam; a reação à absorção perde movimento radial.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'halo esférico', comportamento 'órbita'; orçamento 3000 em Alta, 1500 em Equilíbrio e 600 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "15",
+      "nome": "Disco denso",
+      "descricao": "Poeira densa de fundo e grãos variados orbitando no disco; onda que empurra.",
+      "eixos": {
+        "poeira ambiente": "densa",
+        "comportamento": "órbita",
+        "camada": "plano do disco",
+        "tamanho": "variadas",
+        "reação à absorção": "onda que empurra"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 8000,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Órbitas e espirais congelam; a reação à absorção perde movimento radial.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'plano do disco', comportamento 'órbita'; orçamento 8000 em Alta, 4000 em Equilíbrio e 1600 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "16",
+      "nome": "Esfera à deriva",
+      "descricao": "Halo esférico derivando devagar, grãos finos, faíscas.",
+      "eixos": {
+        "poeira ambiente": "nenhuma",
+        "comportamento": "deriva",
+        "camada": "halo esférico",
+        "tamanho": "finas",
+        "reação à absorção": "faíscas"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 6000,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas e espirais congelam; a reação à absorção perde movimento radial.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'halo esférico', comportamento 'deriva'; orçamento 6000 em Alta, 3000 em Equilíbrio e 1200 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "17",
+      "nome": "Fundo atraído",
+      "descricao": "Fundo de grãos variados puxado em espiral; acendem na absorção.",
+      "eixos": {
+        "poeira ambiente": "densa",
+        "comportamento": "atração em espiral",
+        "camada": "fundo com paralaxe",
+        "tamanho": "variadas",
+        "reação à absorção": "acendem"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 6000,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Paralaxe e deriva param; partículas ficam visíveis paradas.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'fundo com paralaxe', comportamento 'atração em espiral'; orçamento 6000 em Alta, 3000 em Equilíbrio e 1200 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "18",
+      "nome": "Disco calmo",
+      "descricao": "Grãos finos derivando no disco sem reação.",
+      "eixos": {
+        "poeira ambiente": "nenhuma",
+        "comportamento": "deriva",
+        "camada": "plano do disco",
+        "tamanho": "finas",
+        "reação à absorção": "nenhuma"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 4000,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Órbitas e espirais congelam; a reação à absorção perde movimento radial.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'plano do disco', comportamento 'deriva'; orçamento 4000 em Alta, 2000 em Equilíbrio e 800 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "19",
+      "nome": "Bokeh com faíscas",
+      "descricao": "Fundo de bolhas suaves em órbita lenta e faíscas na absorção.",
+      "eixos": {
+        "poeira ambiente": "esparsa",
+        "comportamento": "órbita",
+        "camada": "fundo com paralaxe",
+        "tamanho": "grandes e suaves",
+        "reação à absorção": "faíscas"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 3000,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Paralaxe e deriva param; partículas ficam visíveis paradas.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'fundo com paralaxe', comportamento 'órbita'; orçamento 3000 em Alta, 1500 em Equilíbrio e 600 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    },
+    {
+      "id": "20",
+      "nome": "Esfera em queda",
+      "descricao": "Halo esférico de grãos variados caindo em espiral, sem reação.",
+      "eixos": {
+        "poeira ambiente": "esparsa",
+        "comportamento": "atração em espiral",
+        "camada": "halo esférico",
+        "tamanho": "variadas",
+        "reação à absorção": "nenhuma"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 8000,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Órbitas e espirais congelam; a reação à absorção perde movimento radial.",
+      "porte": "Partículas instanciadas sem estado no vertex (gl_VertexID), camada 'halo esférico', comportamento 'atração em espiral'; orçamento 8000 em Alta, 4000 em Equilíbrio e 1600 em Economia (render.qualityBudgetsInitial). Reação via uPulso."
+    }
+  ]
+}

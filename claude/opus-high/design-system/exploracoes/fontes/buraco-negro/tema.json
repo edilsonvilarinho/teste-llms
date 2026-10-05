@@ -1,0 +1,397 @@
+{
+  "tema": "buraco-negro",
+  "titulo": "Buraco negro",
+  "pergunta": "Que núcleo você quer ver crescer: como a sombra, o anel de fótons e a lente devem se comportar e reagir ao consumo?",
+  "nota": "O disco é igual em todas as variações (rotação kepleriana e Doppler leve) para comparar só núcleo, anel, lente, reação e brilho. Disco, consumo, jatos e espaço-tempo têm galerias próprias.",
+  "quantidade": 20,
+  "jatosAutomaticos": false,
+  "eixos": [
+    "sombra",
+    "anel de fótons",
+    "lente",
+    "reação à absorção",
+    "brilho"
+  ],
+  "variacoes": [
+    {
+      "id": "01",
+      "nome": "Gargantua sereno",
+      "descricao": "Referência enriquecida: anel de Einstein nítido, disco girando e anel de fótons que acende no ângulo onde a matéria caiu.",
+      "eixos": {
+        "sombra": "nítida",
+        "anel de fótons": "fino estável",
+        "lente": "anel de Einstein",
+        "reação à absorção": "anel acende",
+        "brilho": "contido"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Disco e textura param; o anel ainda acende levemente na absorção.",
+      "porte": "ScenePass: trocar a lente aditiva por lentePontual (β = θ − θE²/θ) e somar uPulso ao anel; 1 passe."
+    },
+    {
+      "id": "02",
+      "nome": "Respiração do horizonte",
+      "descricao": "O núcleo respira devagar (±1,8%) e cresce um pouco a cada absorção, com halo morno acompanhando.",
+      "eixos": {
+        "sombra": "respirante",
+        "anel de fótons": "fino estável",
+        "lente": "mínima",
+        "reação à absorção": "horizonte pulsa",
+        "brilho": "médio"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Sem respiração nem crescimento do raio; halo só muda de brilho.",
+      "porte": "uR modulado por seno lento e envelope de pulso no shader; nenhuma mudança na simulação."
+    },
+    {
+      "id": "03",
+      "nome": "Subanéis",
+      "descricao": "Três imagens do anel de fótons (n = 1, 2, 3), cada uma com cintilação girando em ritmo próprio; arcos acendem na absorção.",
+      "eixos": {
+        "sombra": "nítida",
+        "anel de fótons": "subanéis",
+        "lente": "anel de Einstein",
+        "reação à absorção": "arcos brilham",
+        "brilho": "médio"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Subanéis estáticos; arcos ainda clareiam na absorção.",
+      "porte": "Três gaussianas finas no fragment; custo desprezível."
+    },
+    {
+      "id": "04",
+      "nome": "Arrasto de referenciais",
+      "descricao": "Sombra em D deslocada pelo spin, fundo arrastado em redemoinho, anel duplo mais forte de um lado; a lente vibra ao absorver.",
+      "eixos": {
+        "sombra": "assimétrica",
+        "anel de fótons": "duplo",
+        "lente": "redemoinho",
+        "reação à absorção": "lente vibra",
+        "brilho": "médio"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Redemoinho fixo e sem vibração da lente.",
+      "porte": "Rotação do vetor de amostragem do fundo por giro/(r²+0,35); vibração radial com uPulso.x."
+    },
+    {
+      "id": "05",
+      "nome": "Onda gravitacional",
+      "descricao": "Cada absorção solta uma frente que deforma o fundo ao se afastar; entre absorções, ondulação lenta do espaço.",
+      "eixos": {
+        "sombra": "nítida",
+        "anel de fótons": "fino estável",
+        "lente": "ondulação viva",
+        "reação à absorção": "onda gravitacional",
+        "brilho": "contido"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Sem ondulação nem frente; lente estática.",
+      "porte": "Deslocamento radial do fundo com frente em r = uR + s·v; cabe no passe de fundo ou no AuxiliaryTarget."
+    },
+    {
+      "id": "06",
+      "nome": "Cintilação lenta",
+      "descricao": "Borda de sombra difusa, anel que cintila devagar por ruído (sem estrobo) e brilho generoso no plano do disco.",
+      "eixos": {
+        "sombra": "halo suave",
+        "anel de fótons": "cintilante",
+        "lente": "anel de Einstein",
+        "reação à absorção": "anel acende",
+        "brilho": "generoso"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Cintilação congela; brilho e reação ficam.",
+      "porte": "fbm angular em baixa frequência temporal (< 0,5 Hz); bloom do perfil reduz o halo."
+    },
+    {
+      "id": "07",
+      "nome": "Coroa quente",
+      "descricao": "Anel largo e âmbar envolvendo um fio marfim; arcos acendem a cada absorção; lente discreta.",
+      "eixos": {
+        "sombra": "nítida",
+        "anel de fótons": "grosso quente",
+        "lente": "mínima",
+        "reação à absorção": "arcos brilham",
+        "brilho": "generoso"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Coroa sem variação de ruído; arcos ainda acendem.",
+      "porte": "Duas gaussianas no anel; a coroa pode virar parte do bloom em Economia."
+    },
+    {
+      "id": "08",
+      "nome": "Cáustica",
+      "descricao": "Estrelas ampliadas pela lente se esticam em arcos junto ao anel de Einstein; absorção solta onda.",
+      "eixos": {
+        "sombra": "nítida",
+        "anel de fótons": "fino estável",
+        "lente": "cáustica",
+        "reação à absorção": "onda gravitacional",
+        "brilho": "médio"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Sem onda; cáustica permanece (é geometria da lente, não animação).",
+      "porte": "Multiplicar o fundo pela ampliação 1/|1 − (θE/r)⁴| limitada; sem textura extra."
+    },
+    {
+      "id": "09",
+      "nome": "Eclipse marfim",
+      "descricao": "Mínimo e elegante: sombra de borda macia, dois fios de luz marfim e pulso lento do horizonte.",
+      "eixos": {
+        "sombra": "halo suave",
+        "anel de fótons": "duplo",
+        "lente": "mínima",
+        "reação à absorção": "horizonte pulsa",
+        "brilho": "contido"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Pulso só no brilho dos fios, sem mudar o raio.",
+      "porte": "Paleta mais fria (marfim) no anel; custo mínimo."
+    },
+    {
+      "id": "10",
+      "nome": "Espiral de fótons",
+      "descricao": "Traços luminosos orbitam o anel de fótons e o fundo é arrastado no mesmo sentido; anel acende na absorção.",
+      "eixos": {
+        "sombra": "nítida",
+        "anel de fótons": "cintilante",
+        "lente": "redemoinho",
+        "reação à absorção": "anel acende",
+        "brilho": "médio"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Traços e redemoinho parados.",
+      "porte": "Máscara angular sin(6a − ωt + r·k) no anel; mesmo giro do fundo."
+    },
+    {
+      "id": "11",
+      "nome": "Vórtice profundo",
+      "descricao": "Redemoinho forte, subanéis com respiração e onda gravitacional após absorção; brilho generoso.",
+      "eixos": {
+        "sombra": "respirante",
+        "anel de fótons": "subanéis",
+        "lente": "redemoinho",
+        "reação à absorção": "onda gravitacional",
+        "brilho": "generoso"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Sem respiração, giro animado nem onda.",
+      "porte": "Combina 03, 04 e 05; medir custo em Mali antes de aceitar em Equilíbrio."
+    },
+    {
+      "id": "12",
+      "nome": "Lente viva",
+      "descricao": "Fundo tremula como ar quente perto do horizonte; absorções fazem a lente vibrar.",
+      "eixos": {
+        "sombra": "nítida",
+        "anel de fótons": "fino estável",
+        "lente": "ondulação viva",
+        "reação à absorção": "lente vibra",
+        "brilho": "médio"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Tremulação e vibração desligadas.",
+      "porte": "Dois fbm deslocando o fundo perto do horizonte; ideal no AuxiliaryTarget em meia resolução."
+    },
+    {
+      "id": "13",
+      "nome": "Halo de poeira",
+      "descricao": "Anel largo e quente e poeira fina orbitando no plano do disco, mais clara a cada absorção.",
+      "eixos": {
+        "sombra": "halo suave",
+        "anel de fótons": "grosso quente",
+        "lente": "anel de Einstein",
+        "reação à absorção": "arcos brilham",
+        "brilho": "médio"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1500,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Poeira para de orbitar e fica visível estática.",
+      "porte": "Pontos instanciados com órbita kepleriana calculada no vertex (gl_VertexID); 1500 em Alta, 750 em Equilíbrio."
+    },
+    {
+      "id": "14",
+      "nome": "Pulso de massa",
+      "descricao": "Sombra Kerr assimétrica que incha suavemente a cada absorção, com halo generoso.",
+      "eixos": {
+        "sombra": "assimétrica",
+        "anel de fótons": "fino estável",
+        "lente": "anel de Einstein",
+        "reação à absorção": "horizonte pulsa",
+        "brilho": "generoso"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Sem inchar; só o brilho responde.",
+      "porte": "Mesmo esquema da 02 com sombra deslocada; uR × (1 + 0,06·pulso)."
+    },
+    {
+      "id": "15",
+      "nome": "Arcos duplos",
+      "descricao": "Segunda imagem dos arcos, mais distante e tênue; cáustica leve nas estrelas; tudo contido.",
+      "eixos": {
+        "sombra": "nítida",
+        "anel de fótons": "duplo",
+        "lente": "cáustica",
+        "reação à absorção": "arcos brilham",
+        "brilho": "contido"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Sem diferença além da textura parada.",
+      "porte": "Segunda chamada de arcos com raio × 1,22; custo desprezível."
+    },
+    {
+      "id": "16",
+      "nome": "Nós orbitais",
+      "descricao": "Três pontos quentes orbitam o anel de fótons; cada absorção acende um novo nó no ângulo da queda, que segue em órbita.",
+      "eixos": {
+        "sombra": "nítida",
+        "anel de fótons": "nós orbitais",
+        "lente": "anel de Einstein",
+        "reação à absorção": "anel acende",
+        "brilho": "médio"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Nós param; a absorção acende o nó no lugar, sem orbitar.",
+      "porte": "Três avaliações angulares com cauda; uPulso.z dá o ângulo de nascimento."
+    },
+    {
+      "id": "17",
+      "nome": "Silêncio absoluto",
+      "descricao": "Quase só sombra: fio de luz marfim, disco apagado e vibração sutil da lente ao absorver.",
+      "eixos": {
+        "sombra": "halo suave",
+        "anel de fótons": "fino estável",
+        "lente": "mínima",
+        "reação à absorção": "lente vibra",
+        "brilho": "contido"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Nenhuma vibração; cena praticamente estática.",
+      "porte": "Versão de baixa energia; útil como perfil Economia de outra direção."
+    },
+    {
+      "id": "18",
+      "nome": "Turbilhão de plasma",
+      "descricao": "Plasma âmbar escorre em espiral junto ao horizonte, fundo ondula, anel cintila; generoso.",
+      "eixos": {
+        "sombra": "respirante",
+        "anel de fótons": "cintilante",
+        "lente": "ondulação viva",
+        "reação à absorção": "arcos brilham",
+        "brilho": "generoso"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Plasma, ondulação e cintilação congelados.",
+      "porte": "fbm em coordenadas polares com ω ∝ 1/r; o mais caro da galeria, medir em Adreno/Mali."
+    },
+    {
+      "id": "19",
+      "nome": "Assimetria Kerr",
+      "descricao": "Sombra achatada do lado que gira em direção ao observador, anel duplo desigual e redemoinho fixo.",
+      "eixos": {
+        "sombra": "assimétrica",
+        "anel de fótons": "duplo",
+        "lente": "redemoinho",
+        "reação à absorção": "horizonte pulsa",
+        "brilho": "contido"
+      },
+      "custo": {
+        "passes": 1,
+        "particulas": 0,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Sem inchar o horizonte.",
+      "porte": "Sombra em D por escala anisotrópica de x; anel com peso por lado."
+    },
+    {
+      "id": "20",
+      "nome": "Constelação lenteada",
+      "descricao": "Estrelas atravessam por trás do núcleo e se dividem em duas imagens (lente resolvida por estrela); onda na absorção.",
+      "eixos": {
+        "sombra": "nítida",
+        "anel de fótons": "subanéis",
+        "lente": "cáustica",
+        "reação à absorção": "onda gravitacional",
+        "brilho": "generoso"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 3000,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Estrelas param de atravessar; imagens duplas ficam.",
+      "porte": "Pontos com equação da lente θ± = (u ± √(u²+4θE²))/2 no vertex; 3000 em Alta."
+    }
+  ]
+}

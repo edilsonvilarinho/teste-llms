@@ -1,0 +1,399 @@
+{
+  "tema": "espaco-tempo",
+  "titulo": "Espaço-tempo",
+  "pergunta": "Como mostrar o buraco negro deformando o espaço-tempo, sem HUD e sem poluir a cena?",
+  "nota": "Núcleo fixo: 13 · Halo de poeira. Varia a forma de mostrar a curvatura, as ondas gravitacionais, o arrasto de referenciais, o alcance e a intensidade.",
+  "incluir": [
+    "_base/nucleo-13.glsl"
+  ],
+  "quantidade": 20,
+  "eixos": [
+    "representação",
+    "ondas gravitacionais",
+    "arrasto de referenciais",
+    "alcance",
+    "intensidade"
+  ],
+  "variacoes": [
+    {
+      "id": "01",
+      "nome": "Grade de Einstein",
+      "descricao": "Grade marfim afundando no poço, com anéis de onda saindo a cada absorção; arrasto leve.",
+      "eixos": {
+        "representação": "grade deformada",
+        "ondas gravitacionais": "anéis na absorção",
+        "arrasto de referenciais": "leve",
+        "alcance": "médio",
+        "intensidade": "média"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Curvatura estática permanece visível (grade/arrasto fixos); ondas, fluxo e disco param.",
+      "porte": "Grade com fwidth no passe de fundo (AuxiliaryTarget em meia resolução); deformação analítica, sem textura. Ondas 'anéis na absorção' a partir de uPulso/TD."
+    },
+    {
+      "id": "02",
+      "nome": "Céu em fluxo",
+      "descricao": "As estrelas se esticam em riscos que escorrem para o núcleo e giram com o arrasto forte.",
+      "eixos": {
+        "representação": "estrelas arrastadas",
+        "ondas gravitacionais": "nenhuma",
+        "arrasto de referenciais": "forte",
+        "alcance": "longo",
+        "intensidade": "marcada"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Curvatura estática permanece; fluxo e disco param.",
+      "porte": "Seis amostras do fundo ao longo do fluxo no AuxiliaryTarget; custo ~6× o fundo atual, medir em Mali. Ondas 'nenhuma' a partir de uPulso/TD."
+    },
+    {
+      "id": "03",
+      "nome": "Correntes de poeira",
+      "descricao": "Grãos descem por espirais até o horizonte; um quadrupolo contínuo ondula o espaço.",
+      "eixos": {
+        "representação": "linhas de poeira",
+        "ondas gravitacionais": "quadrupolo contínuo",
+        "arrasto de referenciais": "leve",
+        "alcance": "médio",
+        "intensidade": "média"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 3600,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Curvatura estática permanece visível (grade/arrasto fixos); ondas, fluxo e disco param.",
+      "porte": "Pontos com espiral logarítmica no vertex (gl_VertexID) somados ao halo; 2400 grãos em Alta. Ondas 'quadrupolo contínuo' a partir de uPulso/TD."
+    },
+    {
+      "id": "04",
+      "nome": "Lente pura",
+      "descricao": "Nada explícito: só a lente e um pulso forte e lento que atravessa o céu a cada absorção.",
+      "eixos": {
+        "representação": "só lente",
+        "ondas gravitacionais": "pulso único forte",
+        "arrasto de referenciais": "nenhum",
+        "alcance": "longo",
+        "intensidade": "marcada"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Curvatura estática permanece visível (grade/arrasto fixos); ondas, fluxo e disco param.",
+      "porte": "Só desloca a amostragem do fundo no ScenePass; custo desprezível. Ondas 'pulso único forte' a partir de uPulso/TD."
+    },
+    {
+      "id": "05",
+      "nome": "Grade sutil",
+      "descricao": "Grade quase invisível, de curto alcance, que só denuncia a curvatura perto do núcleo.",
+      "eixos": {
+        "representação": "grade deformada",
+        "ondas gravitacionais": "nenhuma",
+        "arrasto de referenciais": "nenhum",
+        "alcance": "curto",
+        "intensidade": "sutil"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Curvatura estática permanece; fluxo e disco param.",
+      "porte": "Grade com fwidth no passe de fundo (AuxiliaryTarget em meia resolução); deformação analítica, sem textura. Ondas 'nenhuma' a partir de uPulso/TD."
+    },
+    {
+      "id": "06",
+      "nome": "Redemoinho estelar",
+      "descricao": "Estrelas arrastadas em redemoinho e anéis de onda a cada absorção.",
+      "eixos": {
+        "representação": "estrelas arrastadas",
+        "ondas gravitacionais": "anéis na absorção",
+        "arrasto de referenciais": "forte",
+        "alcance": "médio",
+        "intensidade": "média"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Curvatura estática permanece visível (grade/arrasto fixos); ondas, fluxo e disco param.",
+      "porte": "Seis amostras do fundo ao longo do fluxo no AuxiliaryTarget; custo ~6× o fundo atual, medir em Mali. Ondas 'anéis na absorção' a partir de uPulso/TD."
+    },
+    {
+      "id": "07",
+      "nome": "Rios de poeira",
+      "descricao": "Linhas de poeira longas e retas caindo sem arrasto; um pulso forte as sacode.",
+      "eixos": {
+        "representação": "linhas de poeira",
+        "ondas gravitacionais": "pulso único forte",
+        "arrasto de referenciais": "nenhum",
+        "alcance": "longo",
+        "intensidade": "sutil"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 3600,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Curvatura estática permanece visível (grade/arrasto fixos); ondas, fluxo e disco param.",
+      "porte": "Pontos com espiral logarítmica no vertex (gl_VertexID) somados ao halo; 2400 grãos em Alta. Ondas 'pulso único forte' a partir de uPulso/TD."
+    },
+    {
+      "id": "08",
+      "nome": "Binária fantasma",
+      "descricao": "Lente com quadrupolo contínuo, como se uma binária invisível girasse por perto.",
+      "eixos": {
+        "representação": "só lente",
+        "ondas gravitacionais": "quadrupolo contínuo",
+        "arrasto de referenciais": "leve",
+        "alcance": "médio",
+        "intensidade": "marcada"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Curvatura estática permanece visível (grade/arrasto fixos); ondas, fluxo e disco param.",
+      "porte": "Só desloca a amostragem do fundo no ScenePass; custo desprezível. Ondas 'quadrupolo contínuo' a partir de uPulso/TD."
+    },
+    {
+      "id": "09",
+      "nome": "Grade torcida",
+      "descricao": "Grade marcada e torcida pelo arrasto forte, com quadrupolo girando.",
+      "eixos": {
+        "representação": "grade deformada",
+        "ondas gravitacionais": "quadrupolo contínuo",
+        "arrasto de referenciais": "forte",
+        "alcance": "longo",
+        "intensidade": "marcada"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Curvatura estática permanece visível (grade/arrasto fixos); ondas, fluxo e disco param.",
+      "porte": "Grade com fwidth no passe de fundo (AuxiliaryTarget em meia resolução); deformação analítica, sem textura. Ondas 'quadrupolo contínuo' a partir de uPulso/TD."
+    },
+    {
+      "id": "10",
+      "nome": "Riscos curtos",
+      "descricao": "Estrelas se esticam só perto do núcleo; pulso forte nas absorções.",
+      "eixos": {
+        "representação": "estrelas arrastadas",
+        "ondas gravitacionais": "pulso único forte",
+        "arrasto de referenciais": "leve",
+        "alcance": "curto",
+        "intensidade": "sutil"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Curvatura estática permanece visível (grade/arrasto fixos); ondas, fluxo e disco param.",
+      "porte": "Seis amostras do fundo ao longo do fluxo no AuxiliaryTarget; custo ~6× o fundo atual, medir em Mali. Ondas 'pulso único forte' a partir de uPulso/TD."
+    },
+    {
+      "id": "11",
+      "nome": "Espiral de grãos",
+      "descricao": "Poeira em espirais fortemente torcidas, sem ondas.",
+      "eixos": {
+        "representação": "linhas de poeira",
+        "ondas gravitacionais": "nenhuma",
+        "arrasto de referenciais": "forte",
+        "alcance": "curto",
+        "intensidade": "marcada"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 3600,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Curvatura estática permanece; fluxo e disco param.",
+      "porte": "Pontos com espiral logarítmica no vertex (gl_VertexID) somados ao halo; 2400 grãos em Alta. Ondas 'nenhuma' a partir de uPulso/TD."
+    },
+    {
+      "id": "12",
+      "nome": "Lente com ecos",
+      "descricao": "Só lente, com três anéis de onda em eco após cada absorção.",
+      "eixos": {
+        "representação": "só lente",
+        "ondas gravitacionais": "anéis na absorção",
+        "arrasto de referenciais": "nenhum",
+        "alcance": "curto",
+        "intensidade": "média"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Curvatura estática permanece visível (grade/arrasto fixos); ondas, fluxo e disco param.",
+      "porte": "Só desloca a amostragem do fundo no ScenePass; custo desprezível. Ondas 'anéis na absorção' a partir de uPulso/TD."
+    },
+    {
+      "id": "13",
+      "nome": "Malha profunda",
+      "descricao": "Grade de longo alcance afundando suavemente; pulso forte a cada absorção.",
+      "eixos": {
+        "representação": "grade deformada",
+        "ondas gravitacionais": "pulso único forte",
+        "arrasto de referenciais": "leve",
+        "alcance": "longo",
+        "intensidade": "sutil"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Curvatura estática permanece visível (grade/arrasto fixos); ondas, fluxo e disco param.",
+      "porte": "Grade com fwidth no passe de fundo (AuxiliaryTarget em meia resolução); deformação analítica, sem textura. Ondas 'pulso único forte' a partir de uPulso/TD."
+    },
+    {
+      "id": "14",
+      "nome": "Céu ondulante",
+      "descricao": "Estrelas arrastadas sem torção, ondulando com o quadrupolo contínuo.",
+      "eixos": {
+        "representação": "estrelas arrastadas",
+        "ondas gravitacionais": "quadrupolo contínuo",
+        "arrasto de referenciais": "nenhum",
+        "alcance": "médio",
+        "intensidade": "sutil"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Curvatura estática permanece visível (grade/arrasto fixos); ondas, fluxo e disco param.",
+      "porte": "Seis amostras do fundo ao longo do fluxo no AuxiliaryTarget; custo ~6× o fundo atual, medir em Mali. Ondas 'quadrupolo contínuo' a partir de uPulso/TD."
+    },
+    {
+      "id": "15",
+      "nome": "Poeira em eco",
+      "descricao": "Linhas de poeira de alcance médio com anéis de onda a cada absorção.",
+      "eixos": {
+        "representação": "linhas de poeira",
+        "ondas gravitacionais": "anéis na absorção",
+        "arrasto de referenciais": "nenhum",
+        "alcance": "médio",
+        "intensidade": "marcada"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 3600,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Curvatura estática permanece visível (grade/arrasto fixos); ondas, fluxo e disco param.",
+      "porte": "Pontos com espiral logarítmica no vertex (gl_VertexID) somados ao halo; 2400 grãos em Alta. Ondas 'anéis na absorção' a partir de uPulso/TD."
+    },
+    {
+      "id": "16",
+      "nome": "Lente torcida",
+      "descricao": "Só lente, com arrasto forte e longo alcance, sem ondas.",
+      "eixos": {
+        "representação": "só lente",
+        "ondas gravitacionais": "nenhuma",
+        "arrasto de referenciais": "forte",
+        "alcance": "longo",
+        "intensidade": "média"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Curvatura estática permanece; fluxo e disco param.",
+      "porte": "Só desloca a amostragem do fundo no ScenePass; custo desprezível. Ondas 'nenhuma' a partir de uPulso/TD."
+    },
+    {
+      "id": "17",
+      "nome": "Grade de ecos",
+      "descricao": "Grade curta e marcada, anéis em eco a cada absorção, sem arrasto.",
+      "eixos": {
+        "representação": "grade deformada",
+        "ondas gravitacionais": "anéis na absorção",
+        "arrasto de referenciais": "nenhum",
+        "alcance": "curto",
+        "intensidade": "marcada"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Curvatura estática permanece visível (grade/arrasto fixos); ondas, fluxo e disco param.",
+      "porte": "Grade com fwidth no passe de fundo (AuxiliaryTarget em meia resolução); deformação analítica, sem textura. Ondas 'anéis na absorção' a partir de uPulso/TD."
+    },
+    {
+      "id": "18",
+      "nome": "Céu em espiral longa",
+      "descricao": "Riscos estelares longos girando levemente, com pulso forte.",
+      "eixos": {
+        "representação": "estrelas arrastadas",
+        "ondas gravitacionais": "pulso único forte",
+        "arrasto de referenciais": "leve",
+        "alcance": "longo",
+        "intensidade": "média"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Curvatura estática permanece visível (grade/arrasto fixos); ondas, fluxo e disco param.",
+      "porte": "Seis amostras do fundo ao longo do fluxo no AuxiliaryTarget; custo ~6× o fundo atual, medir em Mali. Ondas 'pulso único forte' a partir de uPulso/TD."
+    },
+    {
+      "id": "19",
+      "nome": "Poeira sutil",
+      "descricao": "Poucos grãos descendo devagar, com quadrupolo discreto.",
+      "eixos": {
+        "representação": "linhas de poeira",
+        "ondas gravitacionais": "quadrupolo contínuo",
+        "arrasto de referenciais": "nenhum",
+        "alcance": "curto",
+        "intensidade": "sutil"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 3600,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Curvatura estática permanece visível (grade/arrasto fixos); ondas, fluxo e disco param.",
+      "porte": "Pontos com espiral logarítmica no vertex (gl_VertexID) somados ao halo; 2400 grãos em Alta. Ondas 'quadrupolo contínuo' a partir de uPulso/TD."
+    },
+    {
+      "id": "20",
+      "nome": "Lente viva",
+      "descricao": "Lente com arrasto leve e pulso forte de alcance médio.",
+      "eixos": {
+        "representação": "só lente",
+        "ondas gravitacionais": "pulso único forte",
+        "arrasto de referenciais": "leve",
+        "alcance": "médio",
+        "intensidade": "média"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Curvatura estática permanece visível (grade/arrasto fixos); ondas, fluxo e disco param.",
+      "porte": "Só desloca a amostragem do fundo no ScenePass; custo desprezível. Ondas 'pulso único forte' a partir de uPulso/TD."
+    }
+  ]
+}

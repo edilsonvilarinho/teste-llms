@@ -1,0 +1,56 @@
+:root{
+  --obs-background:#030508;
+  --obs-surface:#090D13;
+  --obs-surface-raised:#111823;
+  --obs-surface-pressed:#202631;
+  --obs-text-primary:#FAF8F2;
+  --obs-text-secondary:#BBC2CC;
+  --obs-text-muted:#949CA9;
+  --obs-accent:#E9E4D9;
+  --obs-border-decorative:#353B44;
+  --obs-border-control:#8A929F;
+  --obs-success:#A9C7B5;
+  --obs-error:#E8B0A9;
+  --obs-disabled-text:#626B79;
+  --obs-disk-warm:#EEB676;
+  --obs-disk-mid:#DDD8CC;
+  --obs-disk-hot:#FAF8F2;
+  --obs-core:#000000;
+  --obs-space-xs:4px;
+  --obs-space-sm:8px;
+  --obs-space-md:12px;
+  --obs-space-lg:16px;
+  --obs-space-xl:24px;
+  --obs-space-xxl:32px;
+  --obs-space-xxxl:48px;
+  --obs-space-hero:64px;
+  --obs-motion-press:120ms;
+  --obs-motion-focus:120ms;
+  --obs-motion-panel-enter:220ms;
+  --obs-motion-panel-exit:180ms;
+  --obs-motion-screen-crossfade:350ms;
+  --obs-motion-audio-pause-fade:250ms;
+  --obs-motion-audio-resume-fade:600ms;
+  --obs-motion-absorption-ripple:800ms;
+  --obs-motion-camera-scale-transition:6000ms;
+  --obs-motion-audio-scale-crossfade:4000ms;
+  --obs-motion-release-brake:600ms;
+  --obs-action-radius:0px;
+  --obs-panel-radius:0px;
+  --obs-selector-radius:0px;
+  --obs-icon-visual-radius:22px;
+  --obs-focus-width:2px;
+  --obs-focus-offset:4px;
+  --obs-border-width:1px;
+  --obs-control-min-target:48px;
+  --obs-icon-visual-size:44px;
+  --obs-font:Arial, Helvetica, sans-serif;
+  --obs-ease:cubic-bezier(0.2,0.0,0.0,1.0);
+}
+.type-display{font-family:var(--obs-font);font-size:48px;line-height:56px;font-weight:400;letter-spacing:4px}
+.type-title{font-family:var(--obs-font);font-size:28px;line-height:36px;font-weight:400;letter-spacing:0.4px}
+.type-section{font-family:var(--obs-font);font-size:20px;line-height:28px;font-weight:500;letter-spacing:0px}
+.type-body{font-family:var(--obs-font);font-size:16px;line-height:24px;font-weight:400;letter-spacing:0px}
+.type-label{font-family:var(--obs-font);font-size:14px;line-height:20px;font-weight:500;letter-spacing:0.2px}
+.type-caption{font-family:var(--obs-font);font-size:12px;line-height:18px;font-weight:400;letter-spacing:0.2px}
+.type-overline{font-family:var(--obs-font);font-size:12px;line-height:18px;font-weight:500;letter-spacing:1.5px}

@@ -1,0 +1,401 @@
+{
+  "tema": "planetas",
+  "titulo": "Planetas e corpos",
+  "pergunta": "Em que estilo a grande variedade de corpos do universo deve aparecer?",
+  "nota": "Rodada 2. Cada variação é um estilo aplicado a um catálogo de 10 corpos diferentes (rochosos, lava, gelo, oceano, deserto, gigantes com anéis, luas, cometas, asteroides, estrelas de vários tipos, nebulosas e galáxias), com cores próprias da matéria (render.matterColors). A galeria abre com os corpos soltos no espaço; ligue \"Buraco negro\" para vê-los orbitando o núcleo 13.",
+  "incluir": [
+    "_base/nucleo-13.glsl"
+  ],
+  "alternarNucleo": true,
+  "nucleoInicial": false,
+  "quantidade": 20,
+  "eixos": [
+    "iluminação",
+    "estilo",
+    "atmosfera",
+    "saturação",
+    "conjunto"
+  ],
+  "variacoes": [
+    {
+      "id": "01",
+      "nome": "Atlas realista",
+      "descricao": "Superfícies detalhadas iluminadas pelo disco, atmosfera fina, cores médias. Conjunto: rochoso, lava, gelo, oceano, deserto, gasoso com anéis, gigante de gelo, lua, asteroide e cometa.",
+      "eixos": {
+        "iluminação": "terminador",
+        "estilo": "realista",
+        "atmosfera": "fina",
+        "saturação": "média",
+        "conjunto": "sistema planetário"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'realista' com iluminação 'terminador' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "02",
+      "nome": "Atlas ilustrado",
+      "descricao": "Faixas chapadas e contorno, como um atlas desenhado, cores vivas. Conjunto: rochoso, lava, gelo, oceano, deserto, gasoso com anéis, gigante de gelo, lua, asteroide e cometa.",
+      "eixos": {
+        "iluminação": "terminador",
+        "estilo": "ilustrado",
+        "atmosfera": "nenhuma",
+        "saturação": "viva",
+        "conjunto": "sistema planetário"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'ilustrado' com iluminação 'terminador' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "03",
+      "nome": "Gravura celeste",
+      "descricao": "Meio-tom de gravura com halo largo, cores contidas. Conjunto: mundos de lava e de gelo, gigante vermelha, gigante de gelo, estrela azul, cometa, asteroide e lua.",
+      "eixos": {
+        "iluminação": "terminador + contraluz",
+        "estilo": "gravura",
+        "atmosfera": "halo largo",
+        "saturação": "contida",
+        "conjunto": "gelo e fogo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'gravura' com iluminação 'terminador + contraluz' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "04",
+      "nome": "Silhuetas coloridas",
+      "descricao": "Corpos em contraluz com borda colorida e halo largo. Conjunto: anã vermelha, estrela azul, anã branca, gigante vermelha, nebulosa, galáxia, gasoso com anéis, oceano, cometas e asteroides.",
+      "eixos": {
+        "iluminação": "contraluz",
+        "estilo": "realista",
+        "atmosfera": "halo largo",
+        "saturação": "viva",
+        "conjunto": "estelar"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'realista' com iluminação 'contraluz' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "05",
+      "nome": "Minimal luminoso",
+      "descricao": "Gradientes limpos e luz emissiva suave, cores médias. Conjunto: rochoso, lava, gelo, gasoso com anéis, oceano, anã vermelha, galáxia, nebulosa e dois cometas.",
+      "eixos": {
+        "iluminação": "emissiva suave",
+        "estilo": "minimal",
+        "atmosfera": "fina",
+        "saturação": "média",
+        "conjunto": "misto com cometas"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'minimal' com iluminação 'emissiva suave' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "06",
+      "nome": "Fogo e gelo vivos",
+      "descricao": "Lava incandescente e gelo nítido, realista, cores vivas. Conjunto: mundos de lava e de gelo, gigante vermelha, gigante de gelo, estrela azul, cometa, asteroide e lua.",
+      "eixos": {
+        "iluminação": "terminador",
+        "estilo": "realista",
+        "atmosfera": "fina",
+        "saturação": "viva",
+        "conjunto": "gelo e fogo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'realista' com iluminação 'terminador' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "07",
+      "nome": "Estelar ilustrado",
+      "descricao": "Estrelas, nebulosa e galáxia em estilo ilustrado, dupla luz. Conjunto: anã vermelha, estrela azul, anã branca, gigante vermelha, nebulosa, galáxia, gasoso com anéis, oceano, cometas e asteroides.",
+      "eixos": {
+        "iluminação": "terminador + contraluz",
+        "estilo": "ilustrado",
+        "atmosfera": "fina",
+        "saturação": "média",
+        "conjunto": "estelar"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'ilustrado' com iluminação 'terminador + contraluz' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "08",
+      "nome": "Cometas em gravura",
+      "descricao": "Sistema misto com cometas em meio-tom, sem atmosfera. Conjunto: rochoso, lava, gelo, gasoso com anéis, oceano, anã vermelha, galáxia, nebulosa e dois cometas.",
+      "eixos": {
+        "iluminação": "terminador",
+        "estilo": "gravura",
+        "atmosfera": "nenhuma",
+        "saturação": "média",
+        "conjunto": "misto com cometas"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'gravura' com iluminação 'terminador' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "09",
+      "nome": "Contraluz contido",
+      "descricao": "Contraluz realista discreto, cores contidas, sem atmosfera. Conjunto: rochoso, lava, gelo, oceano, deserto, gasoso com anéis, gigante de gelo, lua, asteroide e cometa.",
+      "eixos": {
+        "iluminação": "contraluz",
+        "estilo": "realista",
+        "atmosfera": "nenhuma",
+        "saturação": "contida",
+        "conjunto": "sistema planetário"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'realista' com iluminação 'contraluz' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "10",
+      "nome": "Minimal estelar",
+      "descricao": "Gradientes e luz emissiva para estrelas e galáxias, cores vivas. Conjunto: anã vermelha, estrela azul, anã branca, gigante vermelha, nebulosa, galáxia, gasoso com anéis, oceano, cometas e asteroides.",
+      "eixos": {
+        "iluminação": "emissiva suave",
+        "estilo": "minimal",
+        "atmosfera": "halo largo",
+        "saturação": "viva",
+        "conjunto": "estelar"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'minimal' com iluminação 'emissiva suave' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "11",
+      "nome": "Ilustrado gelo e fogo",
+      "descricao": "Contorno e faixas para lava e gelo, contraluz, cores médias. Conjunto: mundos de lava e de gelo, gigante vermelha, gigante de gelo, estrela azul, cometa, asteroide e lua.",
+      "eixos": {
+        "iluminação": "contraluz",
+        "estilo": "ilustrado",
+        "atmosfera": "halo largo",
+        "saturação": "média",
+        "conjunto": "gelo e fogo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'ilustrado' com iluminação 'contraluz' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "12",
+      "nome": "Realista com cometas",
+      "descricao": "Dupla luz realista no sistema misto, halo largo, cores médias. Conjunto: rochoso, lava, gelo, gasoso com anéis, oceano, anã vermelha, galáxia, nebulosa e dois cometas.",
+      "eixos": {
+        "iluminação": "terminador + contraluz",
+        "estilo": "realista",
+        "atmosfera": "halo largo",
+        "saturação": "média",
+        "conjunto": "misto com cometas"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'realista' com iluminação 'terminador + contraluz' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "13",
+      "nome": "Gravura estelar",
+      "descricao": "Meio-tom aplicado a estrelas e planetas, luz emissiva, contido. Conjunto: anã vermelha, estrela azul, anã branca, gigante vermelha, nebulosa, galáxia, gasoso com anéis, oceano, cometas e asteroides.",
+      "eixos": {
+        "iluminação": "emissiva suave",
+        "estilo": "gravura",
+        "atmosfera": "fina",
+        "saturação": "contida",
+        "conjunto": "estelar"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'gravura' com iluminação 'emissiva suave' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "14",
+      "nome": "Planetário minimal",
+      "descricao": "Sistema planetário em gradientes, dupla luz, cores contidas. Conjunto: rochoso, lava, gelo, oceano, deserto, gasoso com anéis, gigante de gelo, lua, asteroide e cometa.",
+      "eixos": {
+        "iluminação": "terminador + contraluz",
+        "estilo": "minimal",
+        "atmosfera": "nenhuma",
+        "saturação": "contida",
+        "conjunto": "sistema planetário"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'minimal' com iluminação 'terminador + contraluz' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "15",
+      "nome": "Ilustrado misto",
+      "descricao": "Atlas desenhado do sistema misto, terminador, halo largo, contido. Conjunto: rochoso, lava, gelo, gasoso com anéis, oceano, anã vermelha, galáxia, nebulosa e dois cometas.",
+      "eixos": {
+        "iluminação": "terminador",
+        "estilo": "ilustrado",
+        "atmosfera": "halo largo",
+        "saturação": "contida",
+        "conjunto": "misto com cometas"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'ilustrado' com iluminação 'terminador' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "16",
+      "nome": "Gelo e fogo emissivo",
+      "descricao": "Lava e gelo com luz própria suave e atmosfera fina, cores vivas. Conjunto: mundos de lava e de gelo, gigante vermelha, gigante de gelo, estrela azul, cometa, asteroide e lua.",
+      "eixos": {
+        "iluminação": "emissiva suave",
+        "estilo": "realista",
+        "atmosfera": "nenhuma",
+        "saturação": "viva",
+        "conjunto": "gelo e fogo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'realista' com iluminação 'emissiva suave' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "17",
+      "nome": "Estelar contido",
+      "descricao": "Estrelas e nebulosas realistas com terminador, cores contidas. Conjunto: anã vermelha, estrela azul, anã branca, gigante vermelha, nebulosa, galáxia, gasoso com anéis, oceano, cometas e asteroides.",
+      "eixos": {
+        "iluminação": "terminador",
+        "estilo": "realista",
+        "atmosfera": "halo largo",
+        "saturação": "contida",
+        "conjunto": "estelar"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'realista' com iluminação 'terminador' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "18",
+      "nome": "Gravura viva",
+      "descricao": "Meio-tom com cores vivas e contraluz no sistema planetário. Conjunto: rochoso, lava, gelo, oceano, deserto, gasoso com anéis, gigante de gelo, lua, asteroide e cometa.",
+      "eixos": {
+        "iluminação": "contraluz",
+        "estilo": "gravura",
+        "atmosfera": "fina",
+        "saturação": "viva",
+        "conjunto": "sistema planetário"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'gravura' com iluminação 'contraluz' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "19",
+      "nome": "Minimal gelo e fogo",
+      "descricao": "Gradientes em contraluz para lava e gelo, cores médias. Conjunto: mundos de lava e de gelo, gigante vermelha, gigante de gelo, estrela azul, cometa, asteroide e lua.",
+      "eixos": {
+        "iluminação": "contraluz",
+        "estilo": "minimal",
+        "atmosfera": "fina",
+        "saturação": "média",
+        "conjunto": "gelo e fogo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'minimal' com iluminação 'contraluz' no fragment de um quad por corpo; cores de render.matterColors."
+    },
+    {
+      "id": "20",
+      "nome": "Ilustrado emissivo",
+      "descricao": "Faixas chapadas com luz própria no sistema misto, cores vivas. Conjunto: rochoso, lava, gelo, gasoso com anéis, oceano, anã vermelha, galáxia, nebulosa e dois cometas.",
+      "eixos": {
+        "iluminação": "emissiva suave",
+        "estilo": "ilustrado",
+        "atmosfera": "fina",
+        "saturação": "viva",
+        "conjunto": "misto com cometas"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Órbitas, rotação das superfícies, coroas e nebulosas param; forma, cor e luz permanecem.",
+      "porte": "Novo MatterAppearance: tipo de corpo vindo das populações (PlanetPopulation, SystemPopulation, GalaxyPopulation) e estilo 'ilustrado' com iluminação 'emissiva suave' no fragment de um quad por corpo; cores de render.matterColors."
+    }
+  ]
+}

@@ -1,0 +1,401 @@
+{
+  "tema": "consumo",
+  "titulo": "Consumo de matéria",
+  "pergunta": "Como poeira, rocha, gás e corpos grandes devem cair, se deformar e desaparecer no núcleo?",
+  "nota": "Núcleo fixo: 13 · Halo de poeira (sua escolha). Cada absorção começa com 4 s de queda; o material muda tamanho, cor e dureza. Use \"Material\" ou \"Ouvir sequência\" na vista ampliada para ver os quatro.",
+  "dica": "A queda dura 4 s antes da absorção.",
+  "incluir": [
+    "_base/nucleo-13.glsl"
+  ],
+  "duracaoQueda": 4.0,
+  "quantidade": 20,
+  "eixos": [
+    "trajetória",
+    "espaguetificação",
+    "rastro",
+    "contato com o horizonte",
+    "resposta do núcleo"
+  ],
+  "variacoes": [
+    {
+      "id": "01",
+      "nome": "Espiral avermelhada",
+      "descricao": "Espirala até o horizonte esticando-se como espaguete, deixa um filamento fino e congela avermelhando no contato; os arcos acendem.",
+      "eixos": {
+        "trajetória": "espiral",
+        "espaguetificação": "estiramento",
+        "rastro": "filamento",
+        "contato com o horizonte": "desvio para o vermelho",
+        "resposta do núcleo": "arcos acendem"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "A queda e a deformação continuam (trajetória essencial); disco, arcos e lente param de se mover.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'estiramento' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'espiral' vinda do Capture.kt; rastro 'filamento'; resposta 'arcos acendem' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "02",
+      "nome": "Mergulho com cauda",
+      "descricao": "Cai quase em linha reta, estica e arrasta uma cauda de poeira; apaga no horizonte e solta uma onda no espaço.",
+      "eixos": {
+        "trajetória": "mergulho",
+        "espaguetificação": "estiramento",
+        "rastro": "cauda de poeira",
+        "contato com o horizonte": "apagar",
+        "resposta do núcleo": "onda gravitacional"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "A queda continua (trajetória essencial); a onda não aparece e o disco para de girar.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'estiramento' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'mergulho' vinda do Capture.kt; rastro 'cauda de poeira'; resposta 'onda gravitacional' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "03",
+      "nome": "Órbita em fios",
+      "descricao": "Dá voltas cada vez mais apertadas e se desfia em cinco fios; um brilho suave marca o contato e o anel acende ali.",
+      "eixos": {
+        "trajetória": "órbita decaindo",
+        "espaguetificação": "fios",
+        "rastro": "filamento",
+        "contato com o horizonte": "brilho no contato",
+        "resposta do núcleo": "anel local"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "A queda e a deformação continuam (trajetória essencial); disco, arcos e lente param de se mover.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'fios' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'órbita decaindo' vinda do Capture.kt; rastro 'filamento'; resposta 'anel local' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "04",
+      "nome": "Nuvem que se dissolve",
+      "descricao": "Espirala e se expande em nuvem rarefeita com cauda; some no horizonte e o halo se recolhe por um instante.",
+      "eixos": {
+        "trajetória": "espiral",
+        "espaguetificação": "nuvem",
+        "rastro": "cauda de poeira",
+        "contato com o horizonte": "apagar",
+        "resposta do núcleo": "halo se recolhe"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "A queda e a deformação continuam (trajetória essencial); disco, arcos e lente param de se mover.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'nuvem' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'espiral' vinda do Capture.kt; rastro 'cauda de poeira'; resposta 'halo se recolhe' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "05",
+      "nome": "Mergulho estilhaçado",
+      "descricao": "Mergulha e se parte em fragmentos que soltam faíscas; congela avermelhado e solta uma onda.",
+      "eixos": {
+        "trajetória": "mergulho",
+        "espaguetificação": "fragmentos",
+        "rastro": "faíscas",
+        "contato com o horizonte": "desvio para o vermelho",
+        "resposta do núcleo": "onda gravitacional"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 2000,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "A queda continua (trajetória essencial); a onda não aparece e o disco para de girar.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'fragmentos' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'mergulho' vinda do Capture.kt; rastro 'faíscas'; resposta 'onda gravitacional' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "06",
+      "nome": "Órbita limpa",
+      "descricao": "Órbita decaindo sem rastro, só o corpo esticando; avermelha no contato e os arcos acendem.",
+      "eixos": {
+        "trajetória": "órbita decaindo",
+        "espaguetificação": "estiramento",
+        "rastro": "nenhum",
+        "contato com o horizonte": "desvio para o vermelho",
+        "resposta do núcleo": "arcos acendem"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "A queda e a deformação continuam (trajetória essencial); disco, arcos e lente param de se mover.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'estiramento' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'órbita decaindo' vinda do Capture.kt; rastro 'nenhum'; resposta 'arcos acendem' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "07",
+      "nome": "Espiral de fios e faíscas",
+      "descricao": "Espirala desfiando em fios que soltam faíscas; apaga no horizonte e o anel acende no ponto de entrada.",
+      "eixos": {
+        "trajetória": "espiral",
+        "espaguetificação": "fios",
+        "rastro": "faíscas",
+        "contato com o horizonte": "apagar",
+        "resposta do núcleo": "anel local"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 2000,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "A queda e o estouro de faíscas continuam, sem expansão radial do estouro; disco e lente param.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'fios' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'espiral' vinda do Capture.kt; rastro 'faíscas'; resposta 'anel local' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "08",
+      "nome": "Nuvem iluminada",
+      "descricao": "Mergulha como nuvem com filamento; um brilho suave no contato e os arcos acendem.",
+      "eixos": {
+        "trajetória": "mergulho",
+        "espaguetificação": "nuvem",
+        "rastro": "filamento",
+        "contato com o horizonte": "brilho no contato",
+        "resposta do núcleo": "arcos acendem"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "A queda e a deformação continuam (trajetória essencial); disco, arcos e lente param de se mover.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'nuvem' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'mergulho' vinda do Capture.kt; rastro 'filamento'; resposta 'arcos acendem' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "09",
+      "nome": "Órbita em pedaços",
+      "descricao": "Voltas apertadas que quebram o corpo em pedaços com cauda de poeira; apaga e solta uma onda.",
+      "eixos": {
+        "trajetória": "órbita decaindo",
+        "espaguetificação": "fragmentos",
+        "rastro": "cauda de poeira",
+        "contato com o horizonte": "apagar",
+        "resposta do núcleo": "onda gravitacional"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "A queda continua (trajetória essencial); a onda não aparece e o disco para de girar.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'fragmentos' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'órbita decaindo' vinda do Capture.kt; rastro 'cauda de poeira'; resposta 'onda gravitacional' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "10",
+      "nome": "Espiral de fragmentos",
+      "descricao": "Espirala em fragmentos sem rastro e acende no contato; o halo se recolhe.",
+      "eixos": {
+        "trajetória": "espiral",
+        "espaguetificação": "fragmentos",
+        "rastro": "nenhum",
+        "contato com o horizonte": "brilho no contato",
+        "resposta do núcleo": "halo se recolhe"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "A queda e a deformação continuam (trajetória essencial); disco, arcos e lente param de se mover.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'fragmentos' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'espiral' vinda do Capture.kt; rastro 'nenhum'; resposta 'halo se recolhe' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "11",
+      "nome": "Mergulho em fios rubros",
+      "descricao": "Mergulha desfiando sem rastro, congela avermelhado; o halo se recolhe.",
+      "eixos": {
+        "trajetória": "mergulho",
+        "espaguetificação": "fios",
+        "rastro": "nenhum",
+        "contato com o horizonte": "desvio para o vermelho",
+        "resposta do núcleo": "halo se recolhe"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "A queda e a deformação continuam (trajetória essencial); disco, arcos e lente param de se mover.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'fios' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'mergulho' vinda do Capture.kt; rastro 'nenhum'; resposta 'halo se recolhe' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "12",
+      "nome": "Órbita nebulosa",
+      "descricao": "Órbita decaindo como nuvem que solta faíscas; avermelha e o anel acende no ponto de entrada.",
+      "eixos": {
+        "trajetória": "órbita decaindo",
+        "espaguetificação": "nuvem",
+        "rastro": "faíscas",
+        "contato com o horizonte": "desvio para o vermelho",
+        "resposta do núcleo": "anel local"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 2000,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "A queda e o estouro de faíscas continuam, sem expansão radial do estouro; disco e lente param.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'nuvem' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'órbita decaindo' vinda do Capture.kt; rastro 'faíscas'; resposta 'anel local' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "13",
+      "nome": "Espiral com cauda viva",
+      "descricao": "Espirala esticando com cauda de poeira; brilho no contato e onda no espaço.",
+      "eixos": {
+        "trajetória": "espiral",
+        "espaguetificação": "estiramento",
+        "rastro": "cauda de poeira",
+        "contato com o horizonte": "brilho no contato",
+        "resposta do núcleo": "onda gravitacional"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "A queda continua (trajetória essencial); a onda não aparece e o disco para de girar.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'estiramento' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'espiral' vinda do Capture.kt; rastro 'cauda de poeira'; resposta 'onda gravitacional' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "14",
+      "nome": "Mergulho cintilante",
+      "descricao": "Mergulha esticando entre faíscas, acende no contato e o anel responde no ponto de entrada.",
+      "eixos": {
+        "trajetória": "mergulho",
+        "espaguetificação": "estiramento",
+        "rastro": "faíscas",
+        "contato com o horizonte": "brilho no contato",
+        "resposta do núcleo": "anel local"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 2000,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "A queda e o estouro de faíscas continuam, sem expansão radial do estouro; disco e lente param.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'estiramento' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'mergulho' vinda do Capture.kt; rastro 'faíscas'; resposta 'anel local' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "15",
+      "nome": "Órbita desfiada",
+      "descricao": "Voltas apertadas desfiando em fios com cauda; congela avermelhado e solta onda.",
+      "eixos": {
+        "trajetória": "órbita decaindo",
+        "espaguetificação": "fios",
+        "rastro": "cauda de poeira",
+        "contato com o horizonte": "desvio para o vermelho",
+        "resposta do núcleo": "onda gravitacional"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "A queda continua (trajetória essencial); a onda não aparece e o disco para de girar.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'fios' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'órbita decaindo' vinda do Capture.kt; rastro 'cauda de poeira'; resposta 'onda gravitacional' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "16",
+      "nome": "Espiral nebulosa",
+      "descricao": "Espirala como nuvem com filamento, avermelha no contato e solta onda.",
+      "eixos": {
+        "trajetória": "espiral",
+        "espaguetificação": "nuvem",
+        "rastro": "filamento",
+        "contato com o horizonte": "desvio para o vermelho",
+        "resposta do núcleo": "onda gravitacional"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "A queda continua (trajetória essencial); a onda não aparece e o disco para de girar.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'nuvem' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'espiral' vinda do Capture.kt; rastro 'filamento'; resposta 'onda gravitacional' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "17",
+      "nome": "Mergulho fragmentado",
+      "descricao": "Mergulha quebrando em fragmentos com filamento; apaga no horizonte e os arcos acendem.",
+      "eixos": {
+        "trajetória": "mergulho",
+        "espaguetificação": "fragmentos",
+        "rastro": "filamento",
+        "contato com o horizonte": "apagar",
+        "resposta do núcleo": "arcos acendem"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "A queda e a deformação continuam (trajetória essencial); disco, arcos e lente param de se mover.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'fragmentos' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'mergulho' vinda do Capture.kt; rastro 'filamento'; resposta 'arcos acendem' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "18",
+      "nome": "Órbita silenciosa",
+      "descricao": "Órbita decaindo esticando com filamento; apaga e o halo se recolhe.",
+      "eixos": {
+        "trajetória": "órbita decaindo",
+        "espaguetificação": "estiramento",
+        "rastro": "filamento",
+        "contato com o horizonte": "apagar",
+        "resposta do núcleo": "halo se recolhe"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "A queda e a deformação continuam (trajetória essencial); disco, arcos e lente param de se mover.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'estiramento' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'órbita decaindo' vinda do Capture.kt; rastro 'filamento'; resposta 'halo se recolhe' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "19",
+      "nome": "Espiral desfiada",
+      "descricao": "Espirala em fios com cauda de poeira, acende no contato e os arcos respondem.",
+      "eixos": {
+        "trajetória": "espiral",
+        "espaguetificação": "fios",
+        "rastro": "cauda de poeira",
+        "contato com o horizonte": "brilho no contato",
+        "resposta do núcleo": "arcos acendem"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "A queda e a deformação continuam (trajetória essencial); disco, arcos e lente param de se mover.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'fios' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'espiral' vinda do Capture.kt; rastro 'cauda de poeira'; resposta 'arcos acendem' no ScenePass por AbsorptionEvent."
+    },
+    {
+      "id": "20",
+      "nome": "Mergulho rubro",
+      "descricao": "Mergulha como nuvem com cauda, congela avermelhado; o anel acende no ponto de entrada.",
+      "eixos": {
+        "trajetória": "mergulho",
+        "espaguetificação": "nuvem",
+        "rastro": "cauda de poeira",
+        "contato com o horizonte": "desvio para o vermelho",
+        "resposta do núcleo": "anel local"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "A queda e a deformação continuam (trajetória essencial); disco, arcos e lente param de se mover.",
+      "porte": "Corpo desenhado no passe de matéria do SceneRenderer, com a forma 'nuvem' no fragment (quad por corpo, não ponto de 2,5 px) e trajetória 'mergulho' vinda do Capture.kt; rastro 'cauda de poeira'; resposta 'anel local' no ScenePass por AbsorptionEvent."
+    }
+  ]
+}

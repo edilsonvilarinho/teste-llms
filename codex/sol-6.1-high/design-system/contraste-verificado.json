@@ -1,0 +1,201 @@
+{
+  "status": "Pares de tokens verificados; validação da composição e do Android pendente",
+  "checks": [
+    {
+      "foreground": "textPrimary",
+      "background": "background",
+      "ratio": 19.215,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "textPrimary",
+      "background": "surface",
+      "ratio": 18.333,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "textPrimary",
+      "background": "surfaceRaised",
+      "ratio": 16.775,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "textPrimary",
+      "background": "surfacePressed",
+      "ratio": 14.298,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "textSecondary",
+      "background": "background",
+      "ratio": 11.371,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "textSecondary",
+      "background": "surface",
+      "ratio": 10.849,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "textSecondary",
+      "background": "surfaceRaised",
+      "ratio": 9.927,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "textSecondary",
+      "background": "surfacePressed",
+      "ratio": 8.461,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "textMuted",
+      "background": "background",
+      "ratio": 7.373,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "textMuted",
+      "background": "surface",
+      "ratio": 7.035,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "textMuted",
+      "background": "surfaceRaised",
+      "ratio": 6.437,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "textMuted",
+      "background": "surfacePressed",
+      "ratio": 5.486,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "accent",
+      "background": "background",
+      "ratio": 16.096,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "accent",
+      "background": "surface",
+      "ratio": 15.357,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "accent",
+      "background": "surfaceRaised",
+      "ratio": 14.052,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "accent",
+      "background": "surfacePressed",
+      "ratio": 11.977,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "success",
+      "background": "background",
+      "ratio": 11.198,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "success",
+      "background": "surface",
+      "ratio": 10.684,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "success",
+      "background": "surfaceRaised",
+      "ratio": 9.776,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "success",
+      "background": "surfacePressed",
+      "ratio": 8.332,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "error",
+      "background": "background",
+      "ratio": 10.897,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "error",
+      "background": "surface",
+      "ratio": 10.397,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "error",
+      "background": "surfaceRaised",
+      "ratio": 9.514,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "error",
+      "background": "surfacePressed",
+      "ratio": 8.109,
+      "minimum": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "borderControl",
+      "background": "background",
+      "ratio": 6.504,
+      "minimum": 3.0,
+      "pass": true
+    },
+    {
+      "foreground": "borderControl",
+      "background": "surface",
+      "ratio": 6.205,
+      "minimum": 3.0,
+      "pass": true
+    },
+    {
+      "foreground": "borderControl",
+      "background": "surfaceRaised",
+      "ratio": 5.678,
+      "minimum": 3.0,
+      "pass": true
+    },
+    {
+      "foreground": "borderControl",
+      "background": "surfacePressed",
+      "ratio": 4.839,
+      "minimum": 3.0,
+      "pass": true
+    }
+  ]
+}

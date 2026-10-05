@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#030508"><title>Obsidiana · Design system Umbra</title>
+<style id="generated-tokens">
+:root{
+  --obs-background:#030508;
+  --obs-surface:#090D13;
+  --obs-surface-raised:#111823;
+  --obs-surface-pressed:#202631;
+  --obs-text-primary:#FAF8F2;
+  --obs-text-secondary:#BBC2CC;
+  --obs-text-muted:#949CA9;
+  --obs-accent:#E9E4D9;
+  --obs-border-decorative:#353B44;
+  --obs-border-control:#8A929F;
+  --obs-success:#A9C7B5;
+  --obs-error:#E8B0A9;
+  --obs-disabled-text:#626B79;
+  --obs-disk-warm:#EEB676;
+  --obs-disk-mid:#DDD8CC;
+  --obs-disk-hot:#FAF8F2;
+  --obs-core:#000000;
+  --obs-space-xs:4px;
+  --obs-space-sm:8px;
+  --obs-space-md:12px;
+  --obs-space-lg:16px;
+  --obs-space-xl:24px;
+  --obs-space-xxl:32px;
+  --obs-space-xxxl:48px;
+  --obs-space-hero:64px;
+  --obs-motion-press:120ms;
+  --obs-motion-focus:120ms;
+  --obs-motion-panel-enter:220ms;
+  --obs-motion-panel-exit:180ms;
+  --obs-motion-screen-crossfade:350ms;
+  --obs-motion-audio-pause-fade:250ms;
+  --obs-motion-audio-resume-fade:600ms;
+  --obs-motion-absorption-ripple:800ms;
+  --obs-motion-camera-scale-transition:6000ms;
+  --obs-motion-audio-scale-crossfade:4000ms;
+  --obs-motion-release-brake:600ms;
+  --obs-action-radius:0px;
+  --obs-panel-radius:0px;
+  --obs-selector-radius:0px;
+  --obs-icon-visual-radius:22px;
+  --obs-focus-width:2px;
+  --obs-focus-offset:4px;
+  --obs-border-width:1px;
+  --obs-control-min-target:48px;
+  --obs-icon-visual-size:44px;
+  --obs-font:Arial, Helvetica, sans-serif;
+  --obs-ease:cubic-bezier(0.2,0.0,0.0,1.0);
+}
+.type-display{font-family:var(--obs-font);font-size:48px;line-height:56px;font-weight:400;letter-spacing:4px}
+.type-title{font-family:var(--obs-font);font-size:28px;line-height:36px;font-weight:400;letter-spacing:0.4px}
+.type-section{font-family:var(--obs-font);font-size:20px;line-height:28px;font-weight:500;letter-spacing:0px}
+.type-body{font-family:var(--obs-font);font-size:16px;line-height:24px;font-weight:400;letter-spacing:0px}
+.type-label{font-family:var(--obs-font);font-size:14px;line-height:20px;font-weight:500;letter-spacing:0.2px}
+.type-caption{font-family:var(--obs-font);font-size:12px;line-height:18px;font-weight:400;letter-spacing:0.2px}
+.type-overline{font-family:var(--obs-font);font-size:12px;line-height:18px;font-weight:500;letter-spacing:1.5px}
+</style>
+<style>
+:root{color-scheme:dark;--rail:220px}*{box-sizing:border-box}[hidden]{display:none!important}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--obs-background);color:var(--obs-text-primary);font:14px/1.7 var(--obs-font)}h1,h2,h3,h4,p{margin:0}h1{font-size:clamp(42px,6vw,78px);line-height:1.05;font-weight:400;letter-spacing:4px}h2{font-size:34px;line-height:1.2;font-weight:400;letter-spacing:-.5px}h3{font-size:20px;line-height:1.4;font-weight:400}p+p{margin-top:12px}button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:var(--obs-accent);text-decoration:none}a:hover{text-decoration:underline}button:disabled{cursor:not-allowed}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--obs-accent);outline-offset:4px}small{font-size:11px;color:var(--obs-text-muted)}svg.icon{width:20px;height:20px;display:block;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}code{color:var(--obs-accent);background:var(--obs-surface-raised);padding:2px 6px;font:11px/1.6 monospace}pre{padding:20px;background:var(--obs-surface);border:1px solid var(--obs-border-decorative);overflow:auto;font:11px/1.7 monospace;color:var(--obs-text-secondary)}.skip{position:fixed;top:-100px;left:15px;z-index:90;background:var(--obs-accent);color:var(--obs-background);padding:12px}.skip:focus{top:10px}
+.rail{position:fixed;inset:0 auto 0 0;width:var(--rail);border-right:1px solid var(--obs-border-decorative);padding:30px 20px;display:flex;flex-direction:column;background:var(--obs-surface);z-index:30}.wordmark{display:flex;align-items:center;gap:12px;font-size:15px;letter-spacing:2px}.brand-orbit{width:27px;height:27px;border:1px solid var(--obs-accent);border-radius:50%;position:relative}.brand-orbit:after{content:"";position:absolute;inset:10px -7px;border:1px solid var(--obs-accent);border-radius:50%;transform:rotate(9deg)}.rail .edition{color:var(--obs-text-muted);font-size:10px;letter-spacing:1.5px;margin:25px 0}.rail nav{display:flex;flex-direction:column;gap:5px;overflow:auto}.rail nav a{font-size:12px;color:var(--obs-text-secondary);padding:9px 8px;display:flex;gap:12px}.rail nav a span{font:10px monospace;color:var(--obs-text-muted);padding-top:4px}.rail nav a.active{border-left:1px solid var(--obs-accent);background:var(--obs-surface-raised);color:var(--obs-text-primary)}.rail .bottom{margin-top:auto;padding-top:30px;font-size:10px;color:var(--obs-text-muted)}.topbar{height:66px;margin-left:var(--rail);position:sticky;top:0;z-index:25;background:#030508ee;backdrop-filter:blur(16px);border-bottom:1px solid var(--obs-border-decorative);padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:15px}.topbar .path{font-size:11px;color:var(--obs-text-secondary)}.tag{display:inline-block;border:1px solid var(--obs-border-decorative);padding:4px 9px;font-size:10px;color:var(--obs-text-secondary);letter-spacing:.6px}.tag.approved{border-color:var(--obs-success);color:var(--obs-success)}main{margin-left:var(--rail);padding:0 40px 70px;max-width:1600px}.section{padding:64px 0;border-bottom:1px solid var(--obs-border-decorative);scroll-margin-top:15px}.eyebrow{display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:2px;color:var(--obs-text-secondary);text-transform:uppercase;margin-bottom:20px}.eyebrow:before{content:"";height:1px;width:28px;background:var(--obs-accent)}.lead{margin-top:20px;max-width:680px;font-size:15px;color:var(--obs-text-secondary)}.section-head{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;margin-bottom:28px}.section-head p{margin-top:13px;color:var(--obs-text-secondary);max-width:640px;font-size:13px}.grid{display:grid;gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}.card{padding:23px;border:1px solid var(--obs-border-decorative);background:var(--obs-surface);min-width:0}.card p{font-size:12px;color:var(--obs-text-secondary);margin-top:12px}.card-label{color:var(--obs-text-muted);font-size:10px;letter-spacing:1.2px;margin-bottom:14px;text-transform:uppercase}.stack{display:grid;gap:12px}.subsection{margin-top:30px}.note{margin-top:20px;border-left:1px solid var(--obs-accent);background:var(--obs-surface);padding:14px 18px;color:var(--obs-text-secondary);font-size:12px}.note strong{color:var(--obs-text-primary)}.note.good{border-color:var(--obs-success)}.note.error{border-color:var(--obs-error)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.doc-button{border:1px solid var(--obs-border-control);padding:10px 15px;min-height:42px;background:transparent;color:var(--obs-text-primary);font-size:12px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;justify-content:center}.doc-button:hover{background:var(--obs-surface-raised);text-decoration:none}.doc-button.primary{border-color:var(--obs-accent);color:var(--obs-accent)}.doc-button small{font-size:10px}.doc-button:disabled{color:var(--obs-disabled-text);border-color:var(--obs-border-decorative)}.hero{display:grid;grid-template-columns:.85fr 1.15fr;gap:35px;align-items:center}.hero-visual{position:relative;aspect-ratio:1.1;background:var(--obs-background);border:1px solid var(--obs-border-decorative);overflow:hidden}.hero-visual canvas{display:block;width:100%;height:100%}.hero-visual .stamp{position:absolute;top:20px;left:20px;font-size:9px;letter-spacing:2px;color:var(--obs-text-secondary)}.hero-visual .caption{position:absolute;bottom:20px;left:20px;font-size:10px;letter-spacing:1px;color:var(--obs-text-secondary)}.hero-meta{display:flex;gap:22px;margin-top:27px}.hero-meta b{font-size:16px;font-weight:400;display:block}.hero-meta small{font-size:9px;letter-spacing:1px}.hero .lead{font-size:14px}.mobile-jump{display:none}.header-actions{display:flex;gap:10px;align-items:center}.table-wrap{border:1px solid var(--obs-border-decorative);overflow:auto}table{border-collapse:collapse;width:100%;font-size:12px;min-width:610px}th{text-align:left;background:var(--obs-surface-raised);font-size:10px;letter-spacing:.7px;font-weight:500;color:var(--obs-accent)}td,th{padding:14px 17px;border-bottom:1px solid var(--obs-border-decorative);vertical-align:top}tr:last-child td{border-bottom:0}td{color:var(--obs-text-secondary)}td:first-child{color:var(--obs-text-primary)}.mono{font:11px/1.65 monospace}.tiny{font-size:11px;color:var(--obs-text-muted)}.success{color:var(--obs-success)}.error-color{color:var(--obs-error)}.muted{color:var(--obs-text-muted)}ul,ol{margin:12px 0 0;padding-left:20px;font-size:12px;color:var(--obs-text-secondary)}li+li{margin-top:8px}
+.native-button{min-height:48px;min-width:120px;padding:12px 20px;border:1px solid var(--obs-border-control);border-radius:var(--obs-action-radius);background:transparent;color:var(--obs-text-secondary);font:500 14px/20px var(--obs-font);letter-spacing:.2px;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:background var(--obs-motion-press) var(--obs-ease),border-color var(--obs-motion-press) var(--obs-ease)}.native-button.primary{min-height:52px;min-width:160px;border-color:var(--obs-accent);color:var(--obs-accent);padding:14px 24px}.native-button.text{border-color:transparent}.native-button:hover{background:var(--obs-surface-raised)}.native-button:active,.native-button.pressed{background:var(--obs-surface-pressed)}.native-button.focus-example{outline:var(--obs-focus-width) solid var(--obs-accent);outline-offset:var(--obs-focus-offset)}.native-button:disabled{color:var(--obs-disabled-text);border-color:var(--obs-border-decorative);background:transparent}.native-button.danger{color:var(--obs-error);border-color:var(--obs-error)}.native-button.busy{cursor:wait;color:var(--obs-text-secondary);border-color:var(--obs-border-control)}.icon-target{width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;background:transparent;border:0;color:var(--obs-text-secondary);position:relative;padding:0;flex-shrink:0}.icon-target:before{content:"";position:absolute;width:44px;height:44px;inset:2px;border:1px solid var(--obs-border-control);border-radius:50%;transition:background var(--obs-motion-press) var(--obs-ease)}.icon-target svg{position:relative}.icon-target:hover:before{background:var(--obs-surface-raised)}.icon-target:active:before{background:var(--obs-surface-pressed)}.icon-target.selected{color:var(--obs-accent)}.icon-target.selected:before{border-color:var(--obs-accent)}.spinner{display:inline-block;width:14px;height:14px;border:1px solid var(--obs-border-control);border-top-color:var(--obs-accent);border-radius:50%;animation:spin 1.8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.state-card{padding:21px;border:1px solid var(--obs-border-decorative);background:var(--obs-surface);display:flex;flex-direction:column;gap:17px}.state-card .native-button{align-self:flex-start}.state-card p{font-size:11px;color:var(--obs-text-muted)}.native-switch{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px;font-size:14px;cursor:pointer;color:var(--obs-text-primary)}.native-switch .switch-label{display:flex;flex-direction:column}.native-switch small{font-size:11px}.native-switch input{position:absolute;opacity:0;width:1px;height:1px}.switch-visual{width:40px;height:24px;border:1px solid var(--obs-border-control);display:block;position:relative;flex-shrink:0}.switch-visual:after{content:"";position:absolute;inset:3px auto 3px 3px;width:14px;background:var(--obs-text-muted);transition:transform 120ms var(--obs-ease)}.native-switch input:checked+.switch-visual{border-color:var(--obs-accent)}.native-switch input:checked+.switch-visual:after{background:var(--obs-accent);transform:translateX(18px)}.native-switch input:focus-visible+.switch-visual{outline:2px solid var(--obs-accent);outline-offset:4px}.native-range{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;min-height:48px;font-size:14px}.native-range output{color:var(--obs-text-secondary);font-size:12px;min-width:40px;text-align:right}.native-range input{grid-column:1/3;appearance:none;width:100%;height:48px;background:transparent;padding:0;margin:0}.native-range input::-webkit-slider-runnable-track{background:var(--obs-border-control);height:2px}.native-range input::-webkit-slider-thumb{appearance:none;width:16px;height:16px;background:var(--obs-accent);border:0;border-radius:50%;margin-top:-7px}.native-range input::-moz-range-track{background:var(--obs-border-control);height:2px}.native-range input::-moz-range-thumb{width:16px;height:16px;background:var(--obs-accent);border:0;border-radius:50%}.quality-group{display:flex;gap:8px;flex-wrap:wrap}.quality-group label{cursor:pointer;position:relative}.quality-group input{position:absolute;opacity:0;width:1px;height:1px}.quality-group span{display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px 16px;border:1px solid var(--obs-border-control);font-size:13px;color:var(--obs-text-secondary)}.quality-group input:checked+span{border-color:var(--obs-accent);background:var(--obs-surface-raised);color:var(--obs-accent)}.quality-group input:focus-visible+span{outline:2px solid var(--obs-accent);outline-offset:4px}.message-demo{background:var(--obs-surface);padding:24px;border:1px solid var(--obs-border-decorative);border-left-color:var(--obs-error)}.message-demo h4{font-size:18px;font-weight:400}.message-demo p{font-size:14px;color:var(--obs-text-secondary);margin:12px 0 20px}.message-demo .signal{font-size:11px;color:var(--obs-error);margin-bottom:12px;display:flex;align-items:center;gap:8px}.icon-gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}.icon-tile{border:1px solid var(--obs-border-decorative);background:var(--obs-surface);padding:22px 12px;display:flex;align-items:center;flex-direction:column;gap:12px}.icon-tile small{font-size:10px}.color-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.color-card{border:1px solid var(--obs-border-decorative);background:var(--obs-surface)}.color-block{height:78px;border-bottom:1px solid var(--obs-border-decorative);padding:12px;display:flex;align-items:flex-end;justify-content:space-between}.color-block code{font-size:10px;background:#030508d9;color:#faf8f2}.color-description{padding:15px}.color-description b{font-size:12px;font-weight:500}.color-description p{font-size:11px;color:var(--obs-text-secondary);margin-top:7px}.type-row{display:grid;grid-template-columns:135px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid var(--obs-border-decorative);align-items:center}.type-row .type-meta{font:11px/1.7 monospace;color:var(--obs-text-muted)}.type-row .type-meta b{display:block;font-weight:400;color:var(--obs-accent);font-size:12px;margin-bottom:7px}.type-sample{overflow-wrap:anywhere}.spacing-grid{display:flex;gap:20px;flex-wrap:wrap;padding:25px 0}.spacing-sample{width:70px;display:flex;flex-direction:column;gap:12px;font:11px monospace;color:var(--obs-text-secondary)}.spacing-bar{height:32px;background:var(--obs-text-muted);opacity:.65;min-width:4px}.sizing{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:20px}.target-guide{width:48px;height:48px;outline:1px dashed var(--obs-error);display:flex;align-items:center;justify-content:center}.target-guide .icon-target{position:relative}.contrast-pass{color:var(--obs-success)}
+.demo-layout{display:grid;grid-template-columns:1fr 260px;gap:20px}.demo-main{min-width:0}.tabs{display:flex;gap:5px;border-bottom:1px solid var(--obs-border-decorative);margin-bottom:15px;flex-wrap:wrap}.tabs button{padding:12px 14px;min-height:44px;border:0;border-bottom:1px solid transparent;background:transparent;color:var(--obs-text-secondary);font-size:12px}.tabs button[aria-selected=true]{border-bottom-color:var(--obs-accent);color:var(--obs-accent);background:var(--obs-surface)}.demo-other{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:15px}.demo-other label{font-size:11px;color:var(--obs-text-secondary)}.demo-other select{background:var(--obs-surface);border:1px solid var(--obs-border-control);color:var(--obs-text-primary);padding:8px 10px;font-size:11px;min-height:40px}.frame{position:relative;aspect-ratio:16/9;background:#030508;border:1px solid var(--obs-border-decorative);overflow:hidden;isolation:isolate}.frame>canvas{width:100%;height:100%;display:block}.ui-plane{position:absolute;top:0;left:0;width:960px;height:540px;transform:scale(var(--frame-scale,1));transform-origin:0 0;pointer-events:none;z-index:2;color:var(--obs-text-primary);font-family:var(--obs-font)}.ui-plane button,.ui-plane input,.ui-plane select,.ui-plane label{pointer-events:auto}.demo-watermark{position:absolute;bottom:9px;right:12px;font-size:8px;letter-spacing:.6px;color:var(--obs-text-muted);z-index:4;pointer-events:none}.home-scrim{position:absolute;inset:0;background:linear-gradient(90deg,transparent 35%,#030508d4 65%,#030508f5)}.home-menu{position:absolute;right:48px;top:0;bottom:0;width:320px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;text-align:right}.home-menu .type-display{font-size:48px;line-height:56px}.home-menu .type-overline{color:var(--obs-text-muted);margin-bottom:16px}.home-menu .type-body{color:var(--obs-text-secondary);margin:20px 0 32px;max-width:260px}.home-menu .native-button{width:240px}.home-menu .native-button.text{margin-top:8px}.game-tools{position:absolute;top:24px;right:24px;display:flex;gap:12px}.game-brand{position:absolute;top:37px;left:32px;font-size:14px;letter-spacing:2px;color:var(--obs-text-secondary)}.game-instruction{position:absolute;left:32px;bottom:32px;background:#030508eb;border-left:1px solid var(--obs-border-control);padding:10px 16px;color:var(--obs-text-secondary);font-size:16px;line-height:24px}.game-tools .icon-target{background:#030508e8;border-radius:50%}.screen-scrim{position:absolute;inset:0;background:#030508d6;display:flex;align-items:center;justify-content:center}.screen-panel{width:400px;max-height:492px;overflow:auto;padding:24px;border:1px solid var(--obs-border-decorative);background:var(--obs-surface);scrollbar-width:thin;scrollbar-color:var(--obs-border-control) var(--obs-surface)}.screen-panel .type-title{margin-bottom:8px}.screen-panel>.type-body{margin:12px 0 24px;color:var(--obs-text-secondary)}.screen-panel .native-button{width:100%;margin-top:8px}.screen-panel .panel-strap{font-size:12px;letter-spacing:1.5px;color:var(--obs-text-muted);margin-bottom:16px}.screen-panel .error-strap{color:var(--obs-error)}.screen-panel .success-strap{color:var(--obs-success)}.settings-panel{width:440px;max-height:500px}.settings-panel .native-range{margin:12px 0}.settings-panel .native-switch{margin:8px 0}.settings-panel .setting-heading{font-size:14px;line-height:20px;color:var(--obs-text-secondary);margin:16px 0 10px}.settings-panel .quality-group label{flex:1}.settings-panel .quality-group span{padding:10px 8px}.settings-panel .footer-row{display:flex;gap:8px}.settings-panel .footer-row .native-button{min-width:0;padding:12px 8px}.demo-side .card p{margin-top:10px;font-size:11px}.demo-side .stack{margin-top:18px}.screen-list{display:grid;gap:6px;margin:14px 0}.screen-list div{border-top:1px solid var(--obs-border-decorative);padding:10px 0;color:var(--obs-text-secondary);font-size:11px}.screen-list b{display:block;color:var(--obs-accent);font-weight:400;margin-bottom:4px}.motion-timeline{display:grid;gap:14px;margin-top:22px}.motion-row{display:grid;grid-template-columns:150px 1fr 60px;gap:15px;align-items:center;font-size:11px;color:var(--obs-text-secondary)}.motion-track{height:8px;background:var(--obs-surface-raised)}.motion-bar{height:100%;background:var(--obs-accent);opacity:.75}.motion-demo{height:140px;position:relative;border:1px solid var(--obs-border-decorative);overflow:hidden;background:var(--obs-surface)}.motion-demo .orbital-dot{position:absolute;left:24px;top:62px;width:16px;height:16px;border:1px solid var(--obs-accent);border-radius:50%;transition:transform 600ms var(--obs-ease)}.motion-demo .end{position:absolute;right:20px;top:50px;width:40px;height:40px;border:1px solid var(--obs-border-control);border-radius:50%}.motion-demo.active .orbital-dot{transform:translateX(var(--demo-travel,200px))}.motion-controls{display:flex;gap:10px;align-items:center;margin-top:15px;flex-wrap:wrap}.audio-visual{height:85px;display:flex;align-items:center;gap:5px;justify-content:center;background:var(--obs-background);border:1px solid var(--obs-border-decorative);margin-top:20px}.audio-visual span{width:2px;background:var(--obs-text-muted);height:12px;opacity:.5;transition:height .5s}.audio-visual.active span{height:var(--height)}.audio-visual.active{border-color:var(--obs-border-control)}.handoff-code{max-height:380px;overflow:auto}.toast{position:fixed;right:20px;bottom:20px;max-width:420px;border:1px solid var(--obs-border-control);background:var(--obs-surface-raised);color:var(--obs-text-primary);padding:14px 18px;font-size:12px;z-index:80}.fallback-copy{margin-top:18px}.fallback-copy textarea{width:100%;min-height:180px;max-height:360px;background:var(--obs-background);border:1px solid var(--obs-border-control);color:var(--obs-text-primary);font:11px/1.7 monospace;padding:14px}.footer{display:flex;justify-content:space-between;gap:20px;font-size:10px;color:var(--obs-text-muted);padding:26px 0}.check-status{font-size:11px;line-height:1.7;color:var(--obs-text-secondary);border-top:1px solid var(--obs-border-decorative);padding-top:13px;margin-top:18px}.native-map td code{white-space:nowrap}.reduced-motion *{animation:none!important;transition-duration:0ms!important}.reduced-motion .spinner{border-top-color:var(--obs-border-control)}
+.portrait-preview{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;margin-top:20px}.portrait-frame{position:relative;width:225px;aspect-ratio:375/812;border:1px solid var(--obs-border-decorative);overflow:hidden;background:var(--obs-background)}.portrait-frame canvas{position:absolute;inset:0;width:100%;height:100%}.portrait-ui{position:absolute;top:0;left:0;width:375px;height:812px;transform:scale(.6);transform-origin:0 0;font-family:var(--obs-font);color:var(--obs-text-primary);pointer-events:none}.portrait-ui .p-menu{position:absolute;left:16px;right:16px;bottom:40px;display:flex;flex-direction:column;align-items:stretch;text-align:center}.portrait-ui .p-menu .type-display{font-size:36px;line-height:44px}.portrait-ui .p-menu .type-body{color:var(--obs-text-secondary);margin:12px 0 24px}.portrait-ui .p-menu .native-button{width:100%;margin-top:8px}.portrait-ui .p-scrim{position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,#030508d4 62%,#030508f5)}.portrait-ui .p-brand{position:absolute;left:16px;top:40px;font-size:12px;letter-spacing:4px;color:var(--obs-text-muted)}.portrait-ui .p-tools{position:absolute;right:16px;top:28px;display:flex;gap:4px}.portrait-ui .p-tools span{width:48px;height:48px;border-radius:50%;border:1px solid var(--obs-border-control)}.portrait-ui .p-hint{position:absolute;left:16px;right:16px;bottom:40px;color:var(--obs-text-secondary);font-size:16px;line-height:24px}@media(max-width:560px){.portrait-preview{grid-template-columns:1fr}}
+@media(max-width:1250px){:root{--rail:190px}main{padding:0 28px 60px}.topbar{padding:0 28px}.rail{padding:25px 15px}.hero{grid-template-columns:1fr 1fr}.demo-layout{grid-template-columns:1fr}.demo-side{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid.four,.color-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero-visual{aspect-ratio:1}}
+@media(max-width:850px){:root{--rail:0px}.rail{display:none}.topbar{padding:0 20px}.topbar .tag{display:none}.mobile-jump{display:block;position:sticky;top:66px;z-index:24;padding:8px 20px;background:var(--obs-background);border-bottom:1px solid var(--obs-border-decorative)}.mobile-jump select{width:100%;background:var(--obs-surface);color:var(--obs-text-secondary);border:1px solid var(--obs-border-control);padding:8px;font-size:12px}main{padding:0 20px 50px}html{scroll-padding-top:135px}.section{padding:45px 0;scroll-margin-top:40px}.hero{grid-template-columns:1fr}.hero-visual{aspect-ratio:1.6}.grid.three{grid-template-columns:1fr}.color-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.type-row{grid-template-columns:100px 1fr}.icon-gallery{grid-template-columns:repeat(4,minmax(0,1fr))}.section-head{display:block}.section-head .tag{margin-top:15px}.hero h1{font-size:64px}}
+@media(max-width:560px){h2{font-size:28px}.hero h1{font-size:48px;letter-spacing:2px}.topbar .path{max-width:145px;line-height:1.4}.topbar .doc-button{font-size:10px;padding:8px}.topbar .header-actions{gap:8px}.topbar .header-actions .doc-button:last-child{display:none}.grid.two,.grid.four,.demo-side{grid-template-columns:1fr}.color-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.type-row{grid-template-columns:1fr;gap:12px}.type-row .type-display{font-size:36px;line-height:44px;letter-spacing:2px}.icon-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}.tabs button{padding:10px 11px;font-size:11px}.motion-row{grid-template-columns:95px 1fr 50px;gap:10px}.hero-meta{gap:18px}.section{padding:40px 0}.footer{display:block}.footer span{display:block;margin-top:8px}.native-button{width:100%}.native-button.primary{width:100%}.sizing .native-button{width:auto}.actions{gap:8px}.actions .doc-button{flex:1}.color-description{padding:12px}.color-block{height:65px}.tools{gap:8px}.hero-visual{aspect-ratio:1.3}.frame{aspect-ratio:16/9}.type-meta{display:flex;gap:10px;align-items:center}.type-row .type-meta b{margin-bottom:0}.state-card{padding:20px}.screen-note{font-size:11px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:0ms!important;animation:none!important}}
+@media print{.rail,.topbar,.mobile-jump,.tabs,.demo-other,.tools,.toast,.actions,.motion-controls,.fallback-copy{display:none!important}:root{--rail:0px}main{margin:0;padding:0}.section{padding:25px 0}.hero{display:block}.hero-visual{margin-top:20px;max-height:320px}.card,.state-card,.color-card,.type-row{break-inside:avoid}.table-wrap{overflow:visible}table{min-width:0;font-size:10px}th,td{padding:9px}.color-grid{grid-template-columns:repeat(4,1fr)}.grid.three{grid-template-columns:repeat(3,1fr)}body{print-color-adjust:exact;-webkit-print-color-adjust:exact}.type-display{font-size:36px;line-height:42px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para conteúdo</a>
+<!-- ICON_SPRITE_START -->
+<svg id="icon-sprite" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <symbol id="obs-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+  <symbol id="obs-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"/></symbol>
+  <symbol id="obs-back" viewBox="0 0 24 24"><path d="m13 5-7 7 7 7M6 12h14"/></symbol>
+  <symbol id="obs-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  <symbol id="obs-volume" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4ZM17 8c2 2 2 6 0 8M20 5c4 4 4 10 0 14"/></symbol>
+  <symbol id="obs-muted" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4ZM17 9l5 6M22 9l-5 6"/></symbol>
+  <symbol id="obs-settings" viewBox="0 0 24 24"><path d="M5 4v16M12 4v16M19 4v16M3 8h4M10 15h4M17 10h4"/></symbol>
+  <symbol id="obs-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 4M12 17h.01"/></symbol>
+  <symbol id="obs-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="obs-retry" viewBox="0 0 24 24"><path d="M19 9a7 7 0 1 0 0 6M19 4v5h-5"/></symbol>
+  <symbol id="obs-arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M7 5h12v12"/></symbol>
+  <symbol id="obs-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6ZM14 3v5h4M9 13h6M9 17h6"/></symbol>
+</svg>
+
+<!-- ICON_SPRITE_END -->
+<aside class="rail" aria-label="Navegação do design system"><a class="wordmark" href="#identidade"><span class="brand-orbit" aria-hidden="true"></span>UMBRA</a><div class="edition">OBSIDIANA / DS 1.0</div><nav><a href="#identidade" class="active"><span>01</span>Identidade</a><a href="#telas"><span>02</span>Telas e estados</a><a href="#cores"><span>03</span>Cores e contraste</a><a href="#tipo"><span>04</span>Tipografia e espaço</a><a href="#componentes"><span>05</span>Componentes</a><a href="#movimento"><span>06</span>Movimento e cena</a><a href="#som"><span>07</span>Som e conforto</a><a href="#handoff"><span>08</span>Handoff Android</a></nav><div class="bottom">Direção 02 · escolhida<br>30 set 2026 · versão 1.0.0<br><a href="../planejamento-horizonte.html">Voltar ao planejamento ↗</a></div></aside>
+<header class="topbar"><span class="path">Umbra / <strong style="font-weight:400;color:var(--obs-accent)">Design system Obsidiana</strong></span><div class="header-actions"><span class="tag approved">Direção escolhida</span><button class="doc-button" id="download-tokens">Baixar tokens</button><button class="doc-button" id="print-kit">Imprimir / PDF</button></div></header>
+<div class="mobile-jump"><label class="tiny" for="mobile-nav">Seção</label><select id="mobile-nav"><option value="identidade">01 · Identidade</option><option value="telas">02 · Telas e estados</option><option value="cores">03 · Cores e contraste</option><option value="tipo">04 · Tipografia e espaço</option><option value="componentes">05 · Componentes</option><option value="movimento">06 · Movimento e cena</option><option value="som">07 · Som e conforto</option><option value="handoff">08 · Handoff Android</option></select></div>
+<main id="conteudo">
+<section class="section" id="identidade"><div class="hero"><div><div class="eyebrow">Direção 02 · Contraste e precisão</div><h1>OBSIDIANA</h1><p class="lead">O espaço quase negro. O disco de luz marfim. Uma interface que deixa a matéria respirar. A direção escolhida se transforma em regras visuais e componentes para o futuro jogo nativo.</p><div class="actions"><a class="doc-button primary" href="#telas">Explorar as telas ↗</a><a class="doc-button" href="#componentes">Ver componentes</a></div><div class="hero-meta"><div><b>Marfim</b><small>INTERFACE</small></div><div><b>Âmbar</b><small>MATÉRIA</small></div><div><b>48 dp</b><small>ALVO DE TOQUE</small></div></div></div><div class="hero-visual"><canvas id="hero-canvas" width="1000" height="820" aria-label="Estudo de Gargantua na direção Obsidiana, com disco marfim e âmbar"></canvas><span class="stamp">GARGANTUA / ESTUDO DE LUZ</span><span class="caption">SILÊNCIO NA INTERFACE. PRESENÇA NA CENA.</span></div></div><div class="note good"><strong>Direção definida:</strong> Obsidiana foi escolhida pelo usuário. Este kit consolida a linguagem visual e sensorial; o aplicativo Android, o save e a simulação ainda não estão implementados. Os parâmetros de renderização e sensação serão medidos no protótipo.</div><div class="grid three subsection"><article class="card"><div class="card-label">Composição</div><h3>Assimetria com espaço.</h3><p>Abertura com núcleo à esquerda e ações à direita. Exploração coloca o núcleo no centro. A interface ocupa as bordas e não apresenta números de progresso.</p></article><article class="card"><div class="card-label">Material</div><h3>Contorno, não brilho.</h3><p>Botões retos, traço fino e painéis opacos. O brilho pertence ao disco e à matéria. Sem vidro, neon ou efeito volumoso nos menus.</p></article><article class="card"><div class="card-label">Ritmo</div><h3>Precisão sem cobrança.</h3><p>Movimento amortecido, poucos rastros e intervalos sonoros longos. Sem overshoot, flash, shake ou fanfarra de crescimento.</p></article></div></section>
+<section class="section" id="telas"><div class="section-head"><div><div class="eyebrow">02 · UI kit de telas</div><h2>O mesmo sistema.<br>Em cada momento do jogo.</h2><p>Artboard de referência 960 × 540, escalado para caber no documento. Use as abas e o seletor para revisar os estados. Os controles de pausa e save são demonstrações.</p></div><span class="tag">Interface de referência</span></div><div class="demo-layout"><div class="demo-main"><div class="tabs" role="tablist" aria-label="Telas do UI kit"><button role="tab" aria-selected="true" data-screen="home" aria-controls="app-frame">Abertura</button><button role="tab" aria-selected="false" data-screen="game" aria-controls="app-frame">Explorar</button><button role="tab" aria-selected="false" data-screen="pause" aria-controls="app-frame">Pausa</button><button role="tab" aria-selected="false" data-screen="settings" aria-controls="app-frame">Ajustes</button></div><div class="frame" id="app-frame"><canvas id="scene-canvas" width="1200" height="675" aria-label="Cena de Obsidiana com a tela de aplicativo em estudo"></canvas><div class="ui-plane" id="screen-ui"></div><span class="demo-watermark">UI KIT · ESTADO DEMONSTRATIVO</span></div><div class="demo-other"><label for="extra-screen">Mais estados</label><select id="extra-screen"><option value="">Selecionar…</option><option value="returning">Universo salvo</option><option value="loading">Carregamento</option><option value="loaderror">Falha ao carregar</option><option value="saveerror">Falha ao salvar</option><option value="recovery">Backup restaurado</option><option value="help">Ajuda</option><option value="credits">Créditos</option></select><button class="doc-button" id="reset-demo">Restaurar demonstração</button></div><div class="portrait-preview"><div class="portrait-frame" id="portrait-frame"><canvas id="portrait-canvas" width="375" height="812" aria-label="Prévia em retrato da tela em estudo"></canvas><div class="portrait-ui" id="portrait-ui"></div></div><div><div class="card-label">Retrato · 375 × 812</div><h3>As duas orientações</h3><p class="tiny">Abertura: núcleo no terço superior e menu embaixo, na largura útil com margem de 16 dp; o menu nunca cobre o núcleo. Exploração: núcleo no centro, marca no topo inicial, pausa e áudio no topo final, instrução embaixo. O tamanho do núcleo vale sobre a menor dimensão (<code>layout.coreSizeBasis</code>). Prévia ilustrativa do renderer de planejamento.</p></div></div><p class="tiny" style="margin-top:12px">No celular, o artboard é reduzido. Os alvos nativos de 48 dp são definidos no sistema; o tamanho físico da prévia HTML não é equivalente ao Android.</p><div class="note" id="webgl-notice" hidden><strong>Modo compatível:</strong> WebGL indisponível; a cena usa Canvas 2D simplificado. Os componentes e especificações permanecem acessíveis.</div></div><aside class="demo-side"><article class="card"><div class="card-label">Tela em estudo</div><h3 id="screen-name">Abertura</h3><p id="screen-contract"></p><div class="screen-list"><div><b>Ação principal</b><span id="screen-action"></span></div><div><b>O que preservar</b><span id="screen-preserve"></span></div></div></article><article class="card"><div class="card-label">Preferências da prévia</div><label class="native-switch"><span class="switch-label">Animar cena<small>Congela na pausa e nos ajustes.</small></span><input type="checkbox" id="animate-scene" checked><span class="switch-visual" aria-hidden="true"></span></label><label class="native-switch"><span class="switch-label">Movimento reduzido<small>Sem lente animada ou ruído.</small></span><input type="checkbox" id="reduced-motion"><span class="switch-visual" aria-hidden="true"></span></label><p class="tiny">Sem áudio automático. O estudo sonoro é ativado na seção Som.</p></article></aside></div></section>
+<section class="section" id="cores"><div class="section-head"><div><div class="eyebrow">03 · Paleta semântica</div><h2>Cor com função.<br>Luz com hierarquia.</h2><p>Marfim para ações e foco. Âmbar para matéria. Tons frios de cinza organizam a interface. Os valores abaixo vêm de tokens.json.</p></div><span class="tag" id="contrast-summary">Contraste dos tokens verificado</span></div><div class="color-grid" id="color-grid"></div><div class="subsection"><h3>Pares de contraste</h3><p class="tiny" style="margin:12px 0 18px">Cálculo sRGB entre os tokens de UI e os fundos definidos. Não comprova a composição sobre uma cena arbitrária: os textos usam scrim e painéis previsíveis.</p><div class="table-wrap"><table><thead><tr><th>Elemento</th><th>Fundos avaliados</th><th>Pior fundo de UI</th><th>Mínimo adotado</th><th>Resultado</th></tr></thead><tbody id="contrast-table"></tbody></table></div><div class="note"><strong>Contorno decorativo:</strong> #353B44 é apenas divisor. Controles ativos usam #8A929F ou #E9E4D9; um botão não pode ser identificável somente por uma borda decorativa de baixo contraste.</div></div></section>
+<section class="section" id="tipo"><div class="section-head"><div><div class="eyebrow">04 · Tipografia e geometria</div><h2>Sans-serif. Espaço.<br>Leitura antes de ornamentação.</h2><p>Android usa a fonte sans-serif do sistema. O HTML usa Arial/Helvetica; os exemplos representam a intenção e os tamanhos de referência. A fonte do Android é ampliável pelo usuário.</p></div></div><div id="type-specimens"></div><div class="grid two subsection"><article class="card"><div class="card-label">Escala de espaço</div><h3>Base de 4 dp.</h3><div class="spacing-grid" id="spacing-specimens"></div><p>Margens de tela: 24 dp; paisagem compacta: 16 dp. Somar safe areas reais do sistema. Evitar comprimir rótulos para encaixar o painel.</p></article><article class="card"><div class="card-label">Geometria dos controles</div><h3>Reto na ação. Circular no ícone.</h3><div class="sizing"><button class="native-button primary" type="button" data-component-demo="principal">Continuar</button><div class="target-guide" title="Alvo 48 × 48 dp, visual 44 × 44 dp"><button class="icon-target" aria-label="Exemplo de pausa" data-component-demo="pausa"><svg class="icon" aria-hidden="true"><use href="#obs-pause"/></svg></button></div></div><p>Botão principal: 52 dp de altura, raio zero. Ícone: visual circular 44 dp dentro de alvo 48 dp. Painel: raio zero e contorno decorativo de 1 dp.</p></article></div><div class="note"><strong>Fonte ampliada:</strong> permitir reflow e rolagem. Títulos podem reduzir dentro da escala definida em altura compacta; corpo e rótulos não são encolhidos para contornar a preferência de acessibilidade.</div></section>
+<section class="section" id="componentes"><div class="section-head"><div><div class="eyebrow">05 · Biblioteca e estados</div><h2>Peças pequenas.<br>Comportamento consistente.</h2><p>Exemplos em tamanho de referência, com estados explícitos. Foco é visível; pressionar muda o fundo; indisponibilidade tem uma razão legível.</p></div></div><div class="grid three"><article class="state-card"><div class="card-label">Normal · principal</div><button class="native-button primary" data-component-demo="principal">Continuar</button><p>Contorno e rótulo marfim. Altura de 52 dp.</p></article><article class="state-card"><div class="card-label">Foco de teclado · exemplo</div><button class="native-button primary focus-example" data-component-demo="foco">Continuar</button><p>Contorno externo de 2 dp, afastado 4 dp.</p></article><article class="state-card"><div class="card-label">Pressionado · exemplo</div><button class="native-button primary pressed" data-component-demo="pressionado">Continuar</button><p>Fundo surfacePressed; não aumentar escala nem brilho.</p></article><article class="state-card"><div class="card-label">Secundário</div><button class="native-button" data-component-demo="secundario">Voltar à abertura</button><p>Contorno borderControl, altura de 48 dp.</p></article><article class="state-card"><div class="card-label">Desabilitado</div><button class="native-button primary" disabled>Continuar</button><p>Exemplo: universo ainda não carregado. Explicar a causa fora do botão com texto legível.</p></article><article class="state-card"><div class="card-label">Em operação</div><button class="native-button busy" disabled aria-busy="true"><span class="spinner" aria-hidden="true"></span>Salvando…</button><p>Rótulo descreve a operação. Indicador estático em movimento reduzido.</p></article></div><div class="grid two subsection"><article class="card"><div class="card-label">Ajustes sensoriais</div><div class="stack"><label class="native-range"><span>Música</span><output id="component-music-value">50%</output><input id="component-music" type="range" min="0" max="100" value="50" aria-label="Volume de música do componente" aria-describedby="component-music-value"></label><label class="native-switch"><span class="switch-label">Vibração<small>Desligada por padrão.</small></span><input type="checkbox" id="component-vibration"><span class="switch-visual" aria-hidden="true"></span></label><label class="native-switch"><span class="switch-label">Movimento reduzido<small>Mesmo contrato da cena.</small></span><input type="checkbox" id="component-reduced"><span class="switch-visual" aria-hidden="true"></span></label></div><p>Rótulo e valor continuam visíveis. Cor e posição acompanham estado; não usar um ícone sem descrição como único controle.</p></article><article class="card"><div class="card-label">Seletor de qualidade</div><fieldset style="border:0;padding:0;margin:0"><legend class="type-label" style="margin-bottom:16px">Qualidade gráfica</legend><div class="quality-group"><label><input type="radio" name="quality-component" value="Auto" checked><span>Auto</span></label><label><input type="radio" name="quality-component" value="Alta"><span>Alta</span></label><label><input type="radio" name="quality-component" value="Econômica"><span>Econômica</span></label></div></fieldset><p id="quality-description">Auto adapta efeitos ao desempenho. A simulação mantém as mesmas regras.</p><p class="tiny">O seletor demonstra estado e aparência; não mede nem controla a GPU Android.</p></article></div><div class="grid two subsection"><article class="message-demo"><div class="signal"><svg class="icon" aria-hidden="true"><use href="#obs-file"/></svg>FALHA DE SALVAMENTO · EXEMPLO</div><h4>Vamos preservar.</h4><p id="message-copy">Não foi possível salvar agora. Seu universo continua aberto.</p><button class="native-button danger" id="message-retry">Tentar salvar novamente</button><p class="tiny" id="message-status" role="status" aria-live="polite">Nenhum save Android é gravado neste exemplo.</p></article><article class="card"><div class="card-label">Contrato da mensagem</div><h3>Erro não desaparece sozinho.</h3><ul><li>Mensagem explica a operação e o estado preservado.</li><li>Ação oferece tentativa segura; a sessão em memória permanece.</li><li>Durante operação, impedir acionamento duplicado.</li><li>Sucesso só aparece quando a tentativa termina.</li><li>Feedback de sucesso é discreto e não vira recompensa.</li></ul></article></div><div class="subsection"><h3>Iconografia original · 24 × 24</h3><p class="tiny" style="margin:12px 0 20px">Traço de 1,5; renderização em 20 dp. Labels descrevem a ação, não o desenho. Ícones decorativos ficam fora da árvore de acessibilidade.</p><div class="icon-gallery" id="icon-gallery"></div></div></section>
+<section class="section" id="movimento"><div class="section-head"><div><div class="eyebrow">06 · Movimento e renderização</div><h2>Sem sobressaltos.<br>Com resposta ao toque.</h2><p>A interface não pula nem cresce ao pressionar. Trajetórias e absorção dão a sensação de peso. A câmera mantém a silhueta de Gargantua legível.</p></div></div><div class="grid two"><article class="card"><div class="card-label">Tempos da interface</div><div class="motion-timeline" id="motion-timeline"></div><p>Easing de UI: cubic-bezier(0.2, 0, 0, 1). Câmera: cubic-bezier(0.4, 0, 0.2, 1). Valores iniciais serão ajustados com o protótipo.</p></article><article class="card"><div class="card-label">Resposta amortecida · demonstração</div><div class="motion-demo" id="motion-demo"><span class="orbital-dot"></span><span class="end"></span></div><div class="motion-controls"><button class="doc-button" id="run-motion">Experimentar transição</button><span class="tiny" id="motion-status">600 ms · sem overshoot</span></div><p>Este exemplo mostra a curva, não a simulação gravitacional. Movimento reduzido mantém apenas a mudança essencial de estado.</p></article></div><div class="table-wrap subsection"><table><thead><tr><th>Perfil (v2, a medir)</th><th>Partículas na GPU</th><th>Escala de render</th><th>Mips de bloom</th><th>Corpos sólidos</th></tr></thead><tbody id="render-budget"></tbody></table></div><div class="note"><strong>Budget para medir:</strong> os tetos não são capacidade comprovada. Preservar núcleo, disco e arcos; reduzir fundo, partículas e brilho primeiro. O HTML não valida temperatura, bateria ou frame pacing do Android.</div><div class="grid two subsection"><article class="card"><div class="card-label">Movimento reduzido</div><ul><li>Sem paralaxe, lente animada, granulação ou ondulação decorativa.</li><li>Trajetórias essenciais continuam legíveis.</li><li>Câmera ainda abre lentamente por 6 s; não saltar de escala.</li><li>Crossfade de UI em 120 ms, sem zoom ou elasticidade.</li><li>Seguir preferência de sistema quando disponível.</li></ul></article><article class="card"><div class="card-label">Fronteira do aplicativo</div><ul><li>Pausa e ajustes congelam a cena.</li><li>Perder foco suspende simulação e áudio.</li><li>Retornar ao jogo exige ação do usuário.</li><li>Restaurar texturas após recriar o contexto GPU.</li><li>Qualidade não altera massa, gravidade ou velocidade.</li></ul></article></div></section>
+<section class="section" id="som"><div class="section-head"><div><div class="eyebrow">07 · Paleta sonora</div><h2>Graves macios.<br>Encontros espaçados.</h2><p>Texturas limpas, pouco ataque e ressonâncias longas. O crescimento acrescenta timbre, sem escalada de volume. O áudio abaixo é síntese demonstrativa original.</p></div><span class="tag">Áudio começa desligado</span></div><div class="grid two"><article class="card"><div class="card-label">Ouvir a intenção</div><div class="tools"><button class="native-button primary" id="audio-toggle" aria-pressed="false">Ouvir ambiente</button><button class="native-button" id="audio-note">Ouvir absorção</button></div><div class="audio-visual" id="audio-visual" aria-hidden="true"></div><label class="native-range" style="margin-top:18px"><span>Música</span><output id="audio-music-value">50%</output><input id="audio-music" type="range" min="0" max="100" value="50" aria-label="Volume do ambiente demonstrativo" aria-describedby="audio-music-value"></label><label class="native-range"><span>Efeitos</span><output id="audio-effects-value">55%</output><input id="audio-effects" type="range" min="0" max="100" value="55" aria-label="Volume da absorção demonstrativa" aria-describedby="audio-effects-value"></label><p id="audio-status" role="status" aria-live="polite">Silencioso. Ative o ambiente ou uma nota para experimentar.</p></article><article class="card"><div class="card-label">Contrato para produção final</div><ul><li>Poeira: notas macias; rocha: textura abafada; gás: sopro; corpos grandes: ressonância longa.</li><li>Agrupar eventos em 120 ms; limitar inicialmente a 12 vozes de efeitos.</li><li>Loops sem emenda, crossfade de escala de 4 s.</li><li>Sem clipping, fanfarra, explosão ou ataques agudos insistentes.</li><li>Meta inicial −20 LUFS / pico até −1 dBTP, a medir na produção final.</li><li>Síntese original e CC0 verificado com inventário de origem/licença.</li></ul><p>A demonstração não é uma mixagem masterizada nem prova de latência nativa. Fones, alto-falante e Bluetooth entram na validação Android.</p></article></div></section>
+<section class="section" id="handoff"><div class="section-head"><div><div class="eyebrow">08 · Especificação reutilizável</div><h2>Uma fonte de valores.<br>Do kit ao Android.</h2><p>Tokens em JSON e CSS, sprite SVG e documentação. A implementação nativa consumirá a intenção com unidades próprias; este pacote não instala dependências ou cria classes Kotlin.</p></div><span class="tag">DS 1.0.0</span></div><div class="table-wrap"><table class="native-map"><thead><tr><th>Grupo</th><th>Consumidor nativo futuro</th><th>Unidade / contrato</th></tr></thead><tbody><tr><td><code>colors</code></td><td>Cores semânticas da interface e uniforms de material.</td><td>sRGB; converter para linear quando o passe exigir.</td></tr><tr><td><code>typography</code></td><td>TextStyle / Typography em Compose.</td><td>sp; seguir escala de fonte do usuário.</td></tr><tr><td><code>spacingDp / shapesDp</code></td><td>Layout, formas, alvos e safe areas.</td><td>dp; icon visual não substitui hit target.</td></tr><tr><td><code>motionMs / motion</code></td><td>Transições, câmera e política de movimento.</td><td>ms, easing e lifecycle.</td></tr><tr><td><code>render</code></td><td>Renderer GLES 3.0 e qualidade adaptável.</td><td>Normalizado; budgets iniciais a medir.</td></tr><tr><td><code>audio</code></td><td>Eventos de mixagem e configuração Oboe.</td><td>Hz, ganho, ms e vozes; foco de áudio Android.</td></tr></tbody></table></div><div class="grid two subsection"><article class="card"><div class="card-label">Arquivos do pacote</div><div class="stack"><a class="doc-button" href="tokens.json" download>tokens.json · fonte canônica</a><a class="doc-button" href="tokens.css" download>tokens.css · referência web</a><a class="doc-button" href="icons.svg" download>icons.svg · 12 símbolos</a><a class="doc-button" href="README.md">README.md · especificação nativa</a><a class="doc-button" href="contraste-verificado.json">Relatório de contraste dos tokens</a></div><p>O UI kit é independente de internet. Regenerar com scripts/build_obsidiana.py após mudar tokens ou ícones.</p></article><article class="card"><div class="card-label">Próximo gate</div><h3>Protótipo da sensação central.</h3><ul><li>Menu e controles usando este design system.</li><li>Uma região de poeira/asteroides, lente, disco e absorção.</li><li>Áudio, pausa e save reais.</li><li>Fonte ampliada, TalkBack nos menus, insets e lifecycle.</li><li>Adreno/Mali após 20 min; meta 60 FPS / p95 até 20 ms.</li></ul><div class="check-status">Ainda pendente: aplicação nativa, aparelhos reais, áudio final e budgets de GPU. Contraste dos tokens e funcionamento do UI kit serão verificados separadamente.</div></article></div><details class="subsection"><summary style="cursor:pointer;color:var(--obs-text-secondary)">Ver tokens incorporados no documento</summary><pre class="handoff-code" id="token-code"></pre></details><div class="fallback-copy" id="tokens-fallback" hidden><label class="tiny" for="tokens-copy">Tokens para copiar se o navegador não concluir o download</label><textarea id="tokens-copy" readonly spellcheck="false"></textarea></div><div class="note"><strong>Direção preservada:</strong> sem metas, pressão, moedas, ranking ou tela de próxima escala. A criação do design system não altera as 35 regras propostas no <a href="../planejamento-horizonte.html#regras">planejamento do jogo</a>.</div><p class="tiny" style="margin-top:20px">Referências: <a href="https://developer.android.com/guide/topics/ui/accessibility/apps" target="_blank" rel="noopener">Android / acessibilidade</a> · <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html" target="_blank" rel="noopener">W3C / contraste de componentes</a> · <a href="https://www.dneg.com/news/gravitational-lensing-by-spinning-black-holes" target="_blank" rel="noopener">DNEG / Gargantua</a>.</p></section>
+<footer class="footer"><span>UMBRA / OBSIDIANA · DESIGN SYSTEM 1.0.0</span><span>30 set 2026 · pt-BR · nome Umbra definido pelo usuário</span></footer>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script id="ds-token-data" type="application/json">{
+  "meta": {
+    "name": "Umbra / Obsidiana",
+    "version": "1.0.0",
+    "date": "2026-09-30",
+    "direction": 2,
+    "status": "Direção aprovada pelo usuário; especificação para prototipação, sem validação Android",
+    "canonical": "Este arquivo é a fonte dos valores incorporados no UI kit. Formato próprio de handoff; não é uma declaração de conformidade DTCG.",
+    "platform": "Android nativo, horizontal, Android 10+, OpenGL ES 3.0",
+    "units": "Dimensões nativas em dp, tipografia em sp, tempo em ms. HTML representa unidades de referência, sem garantir equivalência física com o Android."
+  },
+  "colors": {
+    "background": {
+      "value": "#030508",
+      "role": "Espaço profundo e fundo do aplicativo"
+    },
+    "surface": {
+      "value": "#090D13",
+      "role": "Painéis opacos de pausa e ajustes"
+    },
+    "surfaceRaised": {
+      "value": "#111823",
+      "role": "Seletores e áreas elevadas"
+    },
+    "surfacePressed": {
+      "value": "#202631",
+      "role": "Fundo temporário de controles pressionados"
+    },
+    "textPrimary": {
+      "value": "#FAF8F2",
+      "role": "Títulos, corpo e ações principais"
+    },
+    "textSecondary": {
+      "value": "#BBC2CC",
+      "role": "Descrições e informações de apoio"
+    },
+    "textMuted": {
+      "value": "#949CA9",
+      "role": "Legenda legível; nunca usar só baixa opacidade para instrução"
+    },
+    "accent": {
+      "value": "#E9E4D9",
+      "role": "Contorno da ação principal, foco e seleção"
+    },
+    "borderDecorative": {
+      "value": "#353B44",
+      "role": "Divisores e contornos decorativos; não identifica sozinho um controle"
+    },
+    "borderControl": {
+      "value": "#8A929F",
+      "role": "Contornos de controles interativos"
+    },
+    "success": {
+      "value": "#A9C7B5",
+      "role": "Confirmação de gravação concluída, sem recompensa"
+    },
+    "error": {
+      "value": "#E8B0A9",
+      "role": "Mensagem e recuperação de falha"
+    },
+    "disabledText": {
+      "value": "#626B79",
+      "role": "Controle indisponível; explicar a indisponibilidade em texto legível"
+    },
+    "diskWarm": {
+      "value": "#EEB676",
+      "role": "Matéria e brilho âmbar; não é a cor de ação da interface"
+    },
+    "diskMid": {
+      "value": "#DDD8CC",
+      "role": "Filamentos marfim e reflexos do disco"
+    },
+    "diskHot": {
+      "value": "#FAF8F2",
+      "role": "Regiões mais luminosas do disco; picos contidos"
+    },
+    "core": {
+      "value": "#000000",
+      "role": "Núcleo do buraco negro"
+    }
+  },
+  "typography": {
+    "familyNative": "sans-serif do sistema Android / FontFamily.Default",
+    "familyWeb": "Arial, Helvetica, sans-serif",
+    "fontAssets": "Nenhuma fonte externa nesta versão. Não garantir a mesma família tipográfica em OEMs diferentes.",
+    "styles": {
+      "display": {
+        "sizeSp": 48,
+        "lineHeightSp": 56,
+        "weight": 400,
+        "trackingSp": 4,
+        "usage": "Marca UMBRA na abertura; reduzir para 36 sp em altura compacta"
+      },
+      "title": {
+        "sizeSp": 28,
+        "lineHeightSp": 36,
+        "weight": 400,
+        "trackingSp": 0.4,
+        "usage": "Título de pausa, ajustes e mensagem"
+      },
+      "section": {
+        "sizeSp": 20,
+        "lineHeightSp": 28,
+        "weight": 500,
+        "trackingSp": 0,
+        "usage": "Grupos de configurações e documentação"
+      },
+      "body": {
+        "sizeSp": 16,
+        "lineHeightSp": 24,
+        "weight": 400,
+        "trackingSp": 0,
+        "usage": "Descrição e instruções; sentence case"
+      },
+      "label": {
+        "sizeSp": 14,
+        "lineHeightSp": 20,
+        "weight": 500,
+        "trackingSp": 0.2,
+        "usage": "Botões e rótulos de controle"
+      },
+      "caption": {
+        "sizeSp": 12,
+        "lineHeightSp": 18,
+        "weight": 400,
+        "trackingSp": 0.2,
+        "usage": "Texto auxiliar; nunca a única instrução"
+      },
+      "overline": {
+        "sizeSp": 12,
+        "lineHeightSp": 18,
+        "weight": 500,
+        "trackingSp": 1.5,
+        "usage": "Assinatura curta; caixa alta apenas para marca e etiquetas"
+      }
+    }
+  },
+  "spacingDp": {
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "xxl": 32,
+    "xxxl": 48,
+    "hero": 64
+  },
+  "shapesDp": {
+    "actionRadius": 0,
+    "panelRadius": 0,
+    "selectorRadius": 0,
+    "iconVisualRadius": 22,
+    "focusWidth": 2,
+    "focusOffset": 4,
+    "borderWidth": 1,
+    "controlMinTarget": 48,
+    "iconVisualSize": 44
+  },
+  "layout": {
+    "orientation": [
+      "landscape",
+      "portrait"
+    ],
+    "orientationPolicy": "Jogável em retrato e em paisagem, girando a qualquer momento sem perder sessão, áudio ou contexto GL (D7, 02/10/2026)",
+    "coreSizeBasis": "smallestDimension",
+    "rotationRescaleMs": 600,
+    "referenceWidth": 960,
+    "referenceHeight": 540,
+    "safeInsetDp": 24,
+    "compactSafeInsetDp": 16,
+    "opening": {
+      "menuSide": "right",
+      "menuMaxWidthDp": 320,
+      "holeCenterNormalized": [
+        0.3,
+        0.5
+      ],
+      "textAlignment": "end"
+    },
+    "openingPortrait": {
+      "menuSide": "bottom",
+      "menuMarginDp": 16,
+      "holeCenterNormalized": [
+        0.5,
+        0.3
+      ],
+      "textAlignment": "center",
+      "rule": "Núcleo no terço superior e menu embaixo, ocupando a largura útil; o menu nunca cobre o núcleo"
+    },
+    "game": {
+      "holeCenterNormalized": [
+        0.5,
+        0.5
+      ],
+      "toolsPosition": "top-end",
+      "brandPosition": "top-start",
+      "instructionPosition": "bottom-start",
+      "instructionDismiss": "Primeiro gesto ou acesso ao menu"
+    },
+    "panels": {
+      "maxWidthDp": 400,
+      "paddingDp": 24,
+      "compactPaddingDp": 16,
+      "scrollOnOverflow": true,
+      "scrimColor": "#030508",
+      "scrimAlpha": 0.84
+    },
+    "accessibility": "Somar insets do sistema; fonte ampliada provoca reflow e rolagem, sem truncar ação de recuperação. Não bloquear escala de fonte."
+  },
+  "components": {
+    "primaryButton": {
+      "heightDp": 52,
+      "minWidthDp": 160,
+      "paddingHorizontalDp": 24,
+      "border": "accent",
+      "foreground": "accent",
+      "background": "transparent",
+      "pressedBackground": "surfacePressed",
+      "radiusDp": 0
+    },
+    "secondaryButton": {
+      "heightDp": 48,
+      "paddingHorizontalDp": 20,
+      "border": "borderControl",
+      "foreground": "textSecondary",
+      "background": "transparent",
+      "radiusDp": 0
+    },
+    "textButton": {
+      "heightDp": 48,
+      "foreground": "textSecondary",
+      "background": "transparent",
+      "radiusDp": 0
+    },
+    "iconButton": {
+      "targetDp": 48,
+      "visualDp": 44,
+      "glyphDp": 20,
+      "border": "borderControl",
+      "radiusDp": 22,
+      "contentDescriptionRequired": true
+    },
+    "slider": {
+      "targetHeightDp": 48,
+      "trackHeightDp": 2,
+      "thumbDp": 16,
+      "range": [
+        0,
+        100
+      ],
+      "step": 1,
+      "labelStyle": "label",
+      "valueAlwaysVisible": true
+    },
+    "switch": {
+      "targetHeightDp": 48,
+      "visualWidthDp": 40,
+      "visualHeightDp": 24,
+      "labelAlwaysVisible": true,
+      "selectedColor": "accent",
+      "offBorder": "borderControl",
+      "shape": "Retangular; indicador desliza sem salto"
+    },
+    "qualitySelector": {
+      "values": [
+        "Auto",
+        "Alta",
+        "Econômica"
+      ],
+      "default": "Auto",
+      "targetHeightDp": 48,
+      "selectedBorder": "accent",
+      "selectedBackground": "surfaceRaised"
+    },
+    "message": {
+      "surface": "surface",
+      "foreground": "textPrimary",
+      "support": "textSecondary",
+      "errorColor": "error",
+      "mustIncludeAction": true,
+      "noAutoDismissOnError": true
+    },
+    "states": [
+      "normal",
+      "foco",
+      "pressionado",
+      "selecionado",
+      "desabilitado",
+      "em operação",
+      "erro"
+    ]
+  },
+  "motionMs": {
+    "press": 120,
+    "focus": 120,
+    "panelEnter": 220,
+    "panelExit": 180,
+    "screenCrossfade": 350,
+    "audioPauseFade": 250,
+    "audioResumeFade": 600,
+    "absorptionRipple": 800,
+    "cameraScaleTransition": 6000,
+    "audioScaleCrossfade": 4000,
+    "releaseBrake": 600
+  },
+  "motion": {
+    "interfaceEasing": [
+      0.2,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "cameraEasing": [
+      0.4,
+      0.0,
+      0.2,
+      1.0
+    ],
+    "continuous": "Somente quando o app está em primeiro plano e a tela admite simulação. Pausa e ajustes congelam a cena.",
+    "reduced": {
+      "parallax": 0,
+      "animatedLensing": false,
+      "filmGrain": 0,
+      "ripples": false,
+      "screenCrossfadeMs": 120,
+      "cameraScaleTransitionMs": 6000,
+      "note": "Manter trajetórias essenciais e abrir escala lentamente; não pular a câmera."
+    },
+    "forbidden": [
+      "Sacudir câmera",
+      "Flash branco",
+      "Estrobo",
+      "Fanfarra de crescimento",
+      "Zoom instantâneo"
+    ]
+  },
+  "render": {
+    "model": "Aproximação artística 2,5D por shaders; não é renderer relativístico",
+    "matterColors": {
+      "role": "Cores exclusivas da matéria (planetas, luas, estrelas, nebulosas), dessaturadas para conviver com o Obsidiana. UI, núcleo, disco e arcos continuam marfim/âmbar. Decisão do usuário em 01/10/2026.",
+      "ice": "#A9C8D8",
+      "lava": "#D2714E",
+      "ocean": "#4F8E8A",
+      "land": "#8C9A6A",
+      "desert": "#CDA77C",
+      "gasViolet": "#9C8CC0",
+      "starBlue": "#B4CBF2",
+      "starRed": "#E0896B",
+      "nebulaRose": "#C090A8"
+    },
+    "coreHeightRange": [
+      0.12,
+      0.24
+    ],
+    "diskTilt": -0.12,
+    "arcRelativeStrength": 0.72,
+    "nebulaStrength": 0.04,
+    "grainStrength": 0.0,
+    "starDensity": "Baixa; fundo legível e escuro",
+    "preserveAtAllQualities": [
+      "Núcleo negro",
+      "Disco marfim/âmbar fino",
+      "Arcos acima e abaixo",
+      "Distorção legível do fundo"
+    ],
+    "qualityBudgetsInitial": {
+      "high": {
+        "visibleParticlesMax": 8000,
+        "bloomScale": 0.5,
+        "auxiliaryResolution": 1.0
+      },
+      "balanced": {
+        "visibleParticlesMax": 4000,
+        "bloomScale": 0.25,
+        "auxiliaryResolution": 0.75
+      },
+      "economy": {
+        "visibleParticlesMax": 1600,
+        "bloomScale": 0.25,
+        "auxiliaryResolution": 0.5
+      }
+    },
+    "budgetStatus": "Teto inicial para medir no protótipo nativo; não quantidade garantida nem performance comprovada",
+    "performanceGoal": "60 FPS; pelo menos 95% dos quadros até 20 ms após aquecimento, em intermediários Adreno e Mali",
+    "particles": {
+      "role": "Orçamento de partículas na GPU (transform feedback) do Protótipo 2; matéria visual, a massa vem dos corpos e aglomerados do core. Decisão D5 de 02/10/2026.",
+      "status": "A medir em Adreno e Mali (A117); os perfis podem cair",
+      "floatsPerParticle": 10,
+      "ambientDustShare": 0.22,
+      "diskSeedShare": 0.28,
+      "diskSmokeShare": 0.12,
+      "referenceCount": 32000,
+      "budgets": {
+        "economy": {
+          "count": 14000,
+          "renderScale": 0.6,
+          "bloomMips": 4,
+          "solidBodies": 18
+        },
+        "balanced": {
+          "count": 32000,
+          "renderScale": 0.75,
+          "bloomMips": 5,
+          "solidBodies": 26
+        },
+        "high": {
+          "count": 64000,
+          "renderScale": 1.0,
+          "bloomMips": 6,
+          "solidBodies": 34
+        }
+      }
+    },
+    "bloom": {
+      "role": "Kawase dual filter sobre a cena HDR; RGBA16F quando renderizável, senão RGBA8 com limiar menor",
+      "thresholdHdr": 1.0,
+      "thresholdRgba8": 0.7,
+      "knee": 0.5,
+      "intensity": 0.6,
+      "exposure": 1.1,
+      "gamma": 0.9,
+      "vignette": 0.35
+    },
+    "lens": {
+      "role": "Lente pontual aplicada só à camada de trás; os arcos surgem da lente sobre o disco de partículas",
+      "einsteinRadiusR": 1.55,
+      "shadowEdgeR": [
+        0.88,
+        1.06
+      ],
+      "haloRadiusR": 1.06,
+      "haloSigmaR": 0.06,
+      "rimRadiusR": 1.02,
+      "rimSigmaR": 0.01
+    },
+    "growthBand": {
+      "role": "Crescimento visível (D6): o núcleo cresce na tela dentro de cada faixa de escala; ao trocar de faixa a câmera recua com a curva de câmera, sem fanfarra nem flash",
+      "coreDiameterRange": [
+        0.12,
+        0.24
+      ],
+      "sizeBasis": "smallestDimension",
+      "absorptionSwell": 0.05,
+      "smoothingTauMs": 800,
+      "bandMassBounds": [
+        4.0,
+        32.0,
+        256.0,
+        2048.0
+      ],
+      "beyondLastBandFactor": 8.0
+    },
+    "jets": {
+      "role": "Jatos 11 (feixe de partículas): só visual, nunca altera massa nem simulação",
+      "everyAbsorptions": 4,
+      "minIntervalMs": 12000,
+      "durationMs": 8000,
+      "axis": [
+        0.1191,
+        0.9929
+      ],
+      "backBrightness": 0.5
+    }
+  },
+  "audio": {
+    "implementation": "Oboe / C++ no futuro app; Web Audio somente para demonstração no UI kit",
+    "defaultMusic": 0.5,
+    "defaultEffects": 0.55,
+    "vibrationDefault": false,
+    "mutedDefault": false,
+    "previewAutoPlay": false,
+    "materialPalette": [
+      "Poeira: nota macia",
+      "Rocha: textura abafada",
+      "Gás: sopro contínuo",
+      "Corpo grande: ressonância longa"
+    ],
+    "demoNotesHz": [
+      293.6648,
+      329.6276,
+      369.9944,
+      440,
+      493.8833
+    ],
+    "demoDroneHz": [
+      73.4162,
+      110,
+      146.8324
+    ],
+    "effectVoicesMax": 12,
+    "groupEventsMs": 120,
+    "initialMixTargetLufs": -20,
+    "truePeakMaxDbtp": -1,
+    "scaleBehavior": "Enriquecer timbre sem aumentar continuamente volume ou tensão",
+    "focusBehavior": "Interromper ao perder foco, em chamada ou em segundo plano; desconectar fone não joga áudio no alto-falante inesperadamente",
+    "assetPolicy": "Síntese original e CC0 verificado; inventário de origem/autoria/licença. Não há assets finais de trilha neste pacote."
+  },
+  "copy": {
+    "brand": "UMBRA",
+    "opening": "Deslize. Observe. Permaneça.",
+    "instruction": "Deslize para explorar. Solte para observar.",
+    "pauseTitle": "Uma pausa.",
+    "pauseBody": "Continue quando quiser.",
+    "settingsTitle": "Seu ritmo.",
+    "saveError": "Não foi possível salvar agora. Seu universo continua aberto.",
+    "recovery": "O último arquivo não pôde ser lido. Recuperamos a cópia anterior válida.",
+    "avoid": [
+      "Corra",
+      "Complete",
+      "Bata o recorde",
+      "Não perca sua sequência",
+      "Resgate a recompensa"
+    ]
+  },
+  "validation": {
+    "normalTextContrastMin": 4.5,
+    "largeTextAndControlContrastMin": 3.0,
+    "minimumTargetDp": 48,
+    "nativeStatus": "Pendente: aparelhos reais, fonte ampliada, TalkBack nos menus, GPU, áudio e temperatura"
+  }
+}</script>
+<script id="ds-contrast-data" type="application/json">[{"foreground": "textPrimary", "background": "background", "ratio": 19.215, "minimum": 4.5, "pass": true}, {"foreground": "textPrimary", "background": "surface", "ratio": 18.333, "minimum": 4.5, "pass": true}, {"foreground": "textPrimary", "background": "surfaceRaised", "ratio": 16.775, "minimum": 4.5, "pass": true}, {"foreground": "textPrimary", "background": "surfacePressed", "ratio": 14.298, "minimum": 4.5, "pass": true}, {"foreground": "textSecondary", "background": "background", "ratio": 11.371, "minimum": 4.5, "pass": true}, {"foreground": "textSecondary", "background": "surface", "ratio": 10.849, "minimum": 4.5, "pass": true}, {"foreground": "textSecondary", "background": "surfaceRaised", "ratio": 9.927, "minimum": 4.5, "pass": true}, {"foreground": "textSecondary", "background": "surfacePressed", "ratio": 8.461, "minimum": 4.5, "pass": true}, {"foreground": "textMuted", "background": "background", "ratio": 7.373, "minimum": 4.5, "pass": true}, {"foreground": "textMuted", "background": "surface", "ratio": 7.035, "minimum": 4.5, "pass": true}, {"foreground": "textMuted", "background": "surfaceRaised", "ratio": 6.437, "minimum": 4.5, "pass": true}, {"foreground": "textMuted", "background": "surfacePressed", "ratio": 5.486, "minimum": 4.5, "pass": true}, {"foreground": "accent", "background": "background", "ratio": 16.096, "minimum": 4.5, "pass": true}, {"foreground": "accent", "background": "surface", "ratio": 15.357, "minimum": 4.5, "pass": true}, {"foreground": "accent", "background": "surfaceRaised", "ratio": 14.052, "minimum": 4.5, "pass": true}, {"foreground": "accent", "background": "surfacePressed", "ratio": 11.977, "minimum": 4.5, "pass": true}, {"foreground": "success", "background": "background", "ratio": 11.198, "minimum": 4.5, "pass": true}, {"foreground": "success", "background": "surface", "ratio": 10.684, "minimum": 4.5, "pass": true}, {"foreground": "success", "background": "surfaceRaised", "ratio": 9.776, "minimum": 4.5, "pass": true}, {"foreground": "success", "background": "surfacePressed", "ratio": 8.332, "minimum": 4.5, "pass": true}, {"foreground": "error", "background": "background", "ratio": 10.897, "minimum": 4.5, "pass": true}, {"foreground": "error", "background": "surface", "ratio": 10.397, "minimum": 4.5, "pass": true}, {"foreground": "error", "background": "surfaceRaised", "ratio": 9.514, "minimum": 4.5, "pass": true}, {"foreground": "error", "background": "surfacePressed", "ratio": 8.109, "minimum": 4.5, "pass": true}, {"foreground": "borderControl", "background": "background", "ratio": 6.504, "minimum": 3.0, "pass": true}, {"foreground": "borderControl", "background": "surface", "ratio": 6.205, "minimum": 3.0, "pass": true}, {"foreground": "borderControl", "background": "surfaceRaised", "ratio": 5.678, "minimum": 3.0, "pass": true}, {"foreground": "borderControl", "background": "surfacePressed", "ratio": 4.839, "minimum": 3.0, "pass": true}]</script>
+<script id="space-renderer">const VERTEX_SHADER=`attribute vec2 aPosition; varying vec2 vUV; void main(){vUV=aPosition*.5+.5;gl_Position=vec4(aPosition,0.,1.);}`;
+const FRAGMENT_SHADER=`precision highp float;
+varying vec2 vUV;
+uniform vec2 uResolution,uCenter;
+uniform vec3 uBg,uLight;
+uniform float uTime,uHole,uTilt,uArc,uNebula,uGrain,uEnvironment,uScale;
+float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+float noise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hash(i),hash(i+vec2(1.,0.)),f.x),mix(hash(i+vec2(0.,1.)),hash(i+vec2(1.,1.)),f.x),f.y);}
+float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<4;i++){v+=a*noise(p);p=mat2(.8,.6,-.6,.8)*p*2.05+vec2(5.7,8.1);a*=.5;}return v;}
+float stars(vec2 p,float density){vec2 grid=p*density,cell=floor(grid),f=fract(grid);float seed=hash(cell);vec2 pos=vec2(hash(cell+2.1),hash(cell+6.4));float dist=length(f-pos);float bright=pow(seed,18.);return exp(-dist*dist*2500.)*bright*1.6+exp(-dist*dist*140.)*bright*.1;}
+void main(){
+ float aspect=uResolution.x/uResolution.y;
+ vec2 uv=(vUV-.5)*vec2(aspect,1.);
+ vec2 p=(uv-uCenter)/uHole;
+ float r=length(p),theta=atan(p.y,p.x);
+ vec2 lensP=uv+(p/max(r,.001))*(.012/(max(r-.13,.06)))*uHole;
+ float warp=.13*exp(-r*3.5);
+ lensP+=vec2(-p.y,p.x)*warp;
+ float cloud=fbm(uv*3.+vec2(uTime*.004,2.));
+ float cloud2=fbm(uv*5.+vec2(8.,uTime*.003));
+ vec3 col=uBg*(.035+uNebula*cloud*cloud*.65);
+ col+=mix(uBg*.4,uLight*.045,cloud2)*uNebula*pow(cloud,3.)*.7;
+ float starAmount=uEnvironment==6.? .38:1.;
+ float star=stars(lensP+4.,90.)+stars(lensP+11.2,47.)*.7;
+ col+=vec3(.72,.78,.87)*star*starAmount;
+ if(uEnvironment==2.){float wave=exp(-pow((uv.y-.09*sin(uv.x*4.+uTime*.025))/.15,2.));col+=uBg*wave*.35*cloud2;}
+ if(uEnvironment==3.){float orbital=abs(length((uv-vec2(.22,0.))*vec2(.75,1.))- .39);col+=vec3(.3,.36,.48)*exp(-orbital*orbital*90000.)*.22;}
+ if(uEnvironment==5.){float aurora=pow(max(0.,sin(uv.x*5.+fbm(uv*2.)*4.+uTime*.015)),7.);col+=uBg*aurora*exp(-pow((uv.y-.1)/.4,2.))*.45;}
+ if(uEnvironment==7.){vec2 debris=uv*19.;vec2 cell=floor(debris);vec2 local=fract(debris)-.5;float seed=hash(cell);float body=max(abs(local.x+local.y*.3),abs(local.y-local.x*.3));float asteroid=(1.-smoothstep(.065,.09,body))*step(.977,seed);col+=vec3(.35,.4,.47)*asteroid*(.5+local.y*3.)*(1.-exp(-r*4.));}
+ if(uScale>1.5){vec2 g=uv-vec2(-.65,.24);float gr=length(g),ga=atan(g.y,g.x);float arms=pow(max(0.,sin(ga*2.+gr*34.)),5.)*exp(-gr*8.);col+=mix(uBg*1.7,uLight*.3,.35)*arms*.5;}
+ if(uScale>.5&&uScale<1.5){vec2 planet=uv-vec2(-.59,-.13);float pr=length(planet);float sphere=1.-smoothstep(.085,.088,pr);float shade=max(0.,1.-pr/.088);col=mix(col,uBg*1.5*shade+uLight*.12*max(0.,-planet.x/.088),sphere);}
+ float shadow=1.-smoothstep(.181,.185,r);
+ col*=1.-shadow;
+ vec2 diskP=vec2(p.x,(p.y-uTilt*p.x)*6.4);
+ float dr=length(diskP),da=atan(diskP.y,diskP.x);
+ float diskMask=smoothstep(.194,.215,dr)*(1.-smoothstep(.66,.78,dr));
+ float bands=.48+.26*sin(dr*172.+fbm(diskP*15.)*3.-uTime*.16)+.12*sin(dr*370.+da*3.-uTime*.32);
+ float diskTexture=.62+.5*noise(vec2(dr*95.,da*18.+uTime*.11));
+ float diskBright=diskMask*bands*diskTexture*(.27+.12/max(dr-.13,.12));
+ if(r<.183 && diskP.y>-.018)diskBright=0.;
+ float side=.72+.3*smoothstep(-.5,.5,p.x);
+ col+=mix(uLight,vec3(1.,.96,.82),.45*exp(-pow((dr-.25)/.12,2.)))*diskBright*side;
+ float bend=.207+.106*pow(abs(sin(theta)),.7)*uArc;
+ float width=.01+.026*pow(abs(sin(theta)),1.7);
+ float arcMask=exp(-pow((r-bend)/width,2.))*pow(abs(sin(theta)),.55);
+ float arcTex=.73+.15*sin(r*300.-uTime*.11+theta*8.)+.1*noise(p*110.);
+ float arcBrightness=(p.y>0.? .84:.48)*uArc;
+ col+=mix(uLight,vec3(1.,.92,.74),.36)*arcMask*arcTex*arcBrightness;
+ float photon=exp(-pow((r-.187)/.0022,2.));
+ col+=vec3(1.,.88,.63)*photon*.65;
+ float bloom=exp(-pow((r-bend)/.075,2.))*pow(abs(sin(theta)),.5)*.085;
+ float diskGlow=exp(-abs(p.y-uTilt*p.x)*25.)*exp(-abs(p.x)*2.3)*.075;
+ col+=uLight*(bloom+diskGlow)*(1.-shadow);
+ if(uEnvironment==4.)col+=uLight*pow(noise(lensP*65.),25.)*.08*(1.-shadow);
+ float vignette=1.-.34*pow(length((vUV-.5)*1.1),1.3);
+ col*=vignette;
+ col=1.-exp(-col*1.52);
+ col=pow(max(col,vec3(0.)),vec3(.89));
+ col+=(hash(gl_FragCoord.xy+floor(uTime*7.))-.5)*uGrain*.06;
+ gl_FragColor=vec4(max(col,vec3(0.)),1.);
+}`;
+class SpaceRenderer{
+ constructor(){this.canvas=document.createElement('canvas');this.gl=this.canvas.getContext('webgl',{alpha:false,antialias:false,preserveDrawingBuffer:true});this.ready=false;if(!this.gl)return;try{const gl=this.gl;const compile=(type,source)=>{const shader=gl.createShader(type);gl.shaderSource(shader,source);gl.compileShader(shader);if(!gl.getShaderParameter(shader,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(shader));return shader};this.program=gl.createProgram();gl.attachShader(this.program,compile(gl.VERTEX_SHADER,VERTEX_SHADER));gl.attachShader(this.program,compile(gl.FRAGMENT_SHADER,FRAGMENT_SHADER));gl.linkProgram(this.program);if(!gl.getProgramParameter(this.program,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(this.program));gl.useProgram(this.program);const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);const loc=gl.getAttribLocation(this.program,'aPosition');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);this.uniforms={};['uResolution','uCenter','uBg','uLight','uTime','uHole','uTilt','uArc','uNebula','uGrain','uEnvironment','uScale'].forEach(n=>this.uniforms[n]=gl.getUniformLocation(this.program,n));this.ready=true;this.canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();this.ready=false;$('webgl-notice').hidden=false})}catch(error){console.warn('Prévia WebGL indisponível:',error.message);this.ready=false}}
+ render(target,theme,{time=12,scale=0,hero=false,game=false,x=0,y=0}={}){const ctx=target.getContext('2d');if(!ctx)return;if(!this.ready){this.fallback(ctx,target,theme,hero,game);return}const gl=this.gl;const width=Math.min(target.width,hero?900:1000),height=Math.round(width*target.height/target.width);if(this.canvas.width!==width||this.canvas.height!==height){this.canvas.width=width;this.canvas.height=height}gl.viewport(0,0,width,height);gl.useProgram(this.program);gl.uniform2f(this.uniforms.uResolution,width,height);let center=hero?[0,.06]:game?[x,y]:theme.center;gl.uniform2fv(this.uniforms.uCenter,center);gl.uniform3fv(this.uniforms.uBg,theme.bg);gl.uniform3fv(this.uniforms.uLight,theme.light);gl.uniform1f(this.uniforms.uTime,time);gl.uniform1f(this.uniforms.uHole,theme.hole*(hero?1.18:1));gl.uniform1f(this.uniforms.uTilt,theme.tilt);gl.uniform1f(this.uniforms.uArc,theme.arc);gl.uniform1f(this.uniforms.uNebula,theme.nebula);gl.uniform1f(this.uniforms.uGrain,animationEnabled?theme.grain:Math.min(theme.grain,.04));gl.uniform1f(this.uniforms.uEnvironment,theme.environment);gl.uniform1f(this.uniforms.uScale,scale);gl.drawArrays(gl.TRIANGLES,0,6);ctx.drawImage(this.canvas,0,0,target.width,target.height)}
+ fallback(ctx,target,t,hero,game){const w=target.width,h=target.height;ctx.fillStyle=t.palette[0];ctx.fillRect(0,0,w,h);for(let i=0;i<150;i++){const a=Math.sin(i*42.47)*437.13,b=Math.cos(i*75.22)*244.82;ctx.fillStyle=`rgba(220,225,235,${.15+(i%5)*.11})`;ctx.fillRect((a-Math.floor(a))*w,(b-Math.floor(b))*h,i%12===0?2:1,1)}const cx=w*.5+(hero||game?0:t.center[0]*h),cy=h*.5-(hero?0:t.center[1]*h),r=h*.17*t.hole;ctx.save();ctx.translate(cx,cy);ctx.strokeStyle=t.accent;ctx.shadowColor=t.accent;ctx.shadowBlur=22;ctx.lineWidth=r*.15;ctx.beginPath();ctx.ellipse(0,0,r*1.4,r*1.6,0,0,Math.PI*2);ctx.stroke();ctx.fillStyle='#000';ctx.shadowBlur=0;ctx.beginPath();ctx.arc(0,0,r,0,Math.PI*2);ctx.fill();ctx.lineWidth=r*.08;ctx.shadowBlur=18;for(let i=0;i<9;i++){ctx.globalAlpha=.6-i*.035;ctx.beginPath();ctx.ellipse(0,r*.04,r*(1.7+i*.05),r*(.17+i*.023),-t.tilt,0,Math.PI);ctx.stroke()}ctx.restore()}
+}
+
+const THEME={id:2,name:'Obsidiana',signature:'Contraste e precisão',description:'Núcleo quase recortado no vazio. Um disco branco e âmbar estreito acompanha botões lineares, caracteres retos e uma composição assimétrica.',palette:['#030508','#353b44','#ddd8cc','#eeb676','#faf8f2'],accent:'#e9e4d9',font:'Arial, sans-serif',layout:'right',style:'line',radius:'0px',uiBg:'#090d13',hole:.86,tilt:-.12,arc:.72,nebula:.04,grain:.08,environment:0,bg:[.045,.06,.09],light:[.91,.82,.66],center:[-.35,.02],title:'UMBRA',subtitle:'Deslize. Observe. Permaneça.',type:'Sans geométrica · caixa alta',composition:'Núcleo à esquerda e menu alinhado à direita.',material:'Luz marfim, disco estreito, bordas bem definidas.',motion:'Movimento preciso e amortecido; poucos rastros.',sound:'Texturas limpas, graves macios e longos intervalos.',cost:'Baixo a médio: fundo simples, lente preservada.',tradeoff:'Muito legível e contido; menos exuberância de partículas que as opções atmosféricas.',fit:'Mais essencial'};
+THEME.grain=0;
+</script>
+<script id="ui-kit-logic">const $ = id => document.getElementById(id);
+const TOKENS = JSON.parse($('ds-token-data').textContent);
+const CONTRAST = JSON.parse($('ds-contrast-data').textContent);
+const prefs = {music:50,effects:55,vibration:false,reduced:matchMedia('(prefers-reduced-motion: reduce)').matches,quality:'Auto'};
+let screen='home', settingsOrigin='home', infoOrigin='settings', animationEnabled=true, sceneTime=12, lastFrame=0, heroVisible=true, sceneVisible=false, hint=true;
+let audioContext, ambientGain, effectsGain, audioOn=false, effectVoices=0, lastNote=-Infinity, noteIndex=0;
+let toastTimer, retryTimer;
+const engine=new SpaceRenderer();
+$('webgl-notice').hidden=engine.ready;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const glyph=name=>`<svg class="icon" aria-hidden="true"><use href="#obs-${name}"/></svg>`;
+const button=(label,action,kind='')=>`<button class="native-button ${kind}" data-action="${action}">${label}</button>`;
+const iconButton=(label,action,name)=>`<button class="icon-target" data-action="${action}" aria-label="${label}"><span class="icon-visual">${glyph(name)}</span></button>`;
+const range=(label,key)=>`<label class="native-range"><span>${label}</span><output>${prefs[key]}%</output><input type="range" min="0" max="100" value="${prefs[key]}" data-pref="${key}" aria-label="${label}"/></label>`;
+const toggle=(label,key,note)=>`<label class="native-switch"><span class="switch-label">${label}<small>${note}</small></span><input type="checkbox" data-pref="${key}" ${prefs[key]?'checked':''}/><span class="switch-visual" aria-hidden="true"></span></label>`;
+const panel=(title,body,actions,strap='',extra='')=>`<div class="screen-scrim"><section class="screen-panel">${strap?`<div class="panel-strap">${strap}</div>`:''}<h3 class="type-title">${title}</h3><p class="type-body">${body}</p>${extra}${actions}</section></div>`;
+const SCREENS={
+ home:['Abertura','Núcleo à esquerda; menu à direita. Nenhum número de progresso.','Começar','Silhueta e área livre para observação.'],
+ returning:['Universo salvo','Variante da abertura para um universo existente.','Continuar','Nunca reiniciar sem intenção explícita.'],
+ game:['Explorar','Ferramentas discretas nas bordas; um dedo explora.','Pausar','Núcleo, disco e arcos legíveis.'],
+ pause:['Pausa','Cena congelada. Retomar exige uma ação.','Continuar','Universo e preferências.'],
+ settings:['Ajustes','Painel opaco, controles rotulados e rolagem quando necessário.','Voltar','Preferências e ponto de origem.'],
+ loading:['Carregamento','Indicar operação, sem contagem regressiva ou pressão.','Aguardar / cancelar','Não mostrar um universo vazio como save válido.'],
+ loaderror:['Falha ao carregar','Explicar a operação que falhou e oferecer tentativa segura.','Tentar novamente','Arquivos existentes; não substituir por um universo novo.'],
+ saveerror:['Falha ao salvar','Mensagem persistente; sessão em memória permanece aberta.','Tentar salvar novamente','Universo atual e última cópia válida.'],
+ recovery:['Backup restaurado','Avisar somente após recuperar uma cópia válida.','Continuar','Cópia restaurada e clareza sobre a recuperação.'],
+ help:['Ajuda','Instruções curtas, sem tutoriais obrigatórios.','Voltar','O ponto de origem e a sessão.'],
+ credits:['Créditos','Autoria e licenças verificáveis; referência visual identificada.','Voltar','Separação entre inspiração e material original.']
+};
+function toast(text){clearTimeout(toastTimer);$('toast').textContent=text;$('toast').hidden=false;toastTimer=setTimeout(()=>$('toast').hidden=true,4500)}
+function screenMarkup(){
+ if(['home','returning'].includes(screen))return `<div class="home-scrim"></div><div class="home-menu"><div class="type-overline">NO SEU TEMPO</div><h3 class="type-display">${esc(TOKENS.copy.brand)}</h3><p class="type-body">${screen==='returning'?'Seu universo está aqui, como você deixou.':TOKENS.copy.opening}</p>${button(screen==='returning'?'Continuar':'Começar','game','primary')}${button('Ajustes','settings','text')}</div>`;
+ if(screen==='game')return `<span class="game-brand">${esc(TOKENS.copy.brand)}</span><div class="game-tools">${iconButton(audioOn?'Silenciar áudio demonstrativo':'Ouvir áudio demonstrativo','sound',audioOn?'volume':'muted')}${iconButton('Pausar exploração','pause','pause')}</div>${hint?`<p class="game-instruction">${TOKENS.copy.instruction}</p>`:''}`;
+ if(screen==='pause')return panel(TOKENS.copy.pauseTitle,TOKENS.copy.pauseBody,button('Continuar','game','primary')+button('Ajustes','settings')+button('Voltar à abertura','home','text'),'O UNIVERSO PODE ESPERAR');
+ if(screen==='settings')return `<div class="screen-scrim"><section class="screen-panel settings-panel"><h3 class="type-title">Seu ritmo.</h3><p class="type-body">Ajuste o conforto da experiência.</p>${range('Música','music')}${range('Efeitos','effects')}${toggle('Vibração','vibration','Desligada por padrão.')}${toggle('Movimento reduzido','reduced','Menos movimento decorativo.')}<fieldset style="border:0;padding:0;margin:12px 0"><legend class="setting-heading">Qualidade gráfica</legend><div class="quality-group">${['Auto','Alta','Econômica'].map(q=>`<label><input type="radio" name="screen-quality" value="${q}" data-pref="quality" ${prefs.quality===q?'checked':''}/><span>${q}</span></label>`).join('')}</div></fieldset><div class="footer-row">${button('Ajuda','help','text')}${button('Créditos','credits','text')}</div>${button('Voltar','settings-back','primary')}</section></div>`;
+ if(screen==='loading')return panel('Seu universo está voltando.','Preparando a cena. Este estado é demonstrativo.',button('Cancelar','home','text'),'CARREGAMENTO', '<div class="spinner" role="img" aria-label="Carregando"></div>');
+ if(screen==='loaderror')return panel('Não conseguimos abrir.','O arquivo não pôde ser lido. Você pode tentar novamente; não vamos substituir seu universo.',button('Tentar novamente','retry-load','primary')+button('Voltar','home','text'),'FALHA AO CARREGAR');
+ if(screen==='saveerror')return panel('Vamos preservar.',TOKENS.copy.saveError,button('Tentar salvar novamente','retry-save','primary')+button('Continuar a observar','game','text'),'FALHA DE SALVAMENTO');
+ if(screen==='recovery')return panel('Uma cópia preservada.',TOKENS.copy.recovery,button('Continuar','game','primary'),'RECUPERAÇÃO · EXEMPLO');
+ if(screen==='help')return panel('Apenas explore.','Deslize um dedo para mover o buraco negro. Solte para observar. Matéria próxima entra em órbita e pode ser absorvida. O crescimento abre a câmera lentamente. Não há derrota, metas ou tempo limite.',button('Voltar','info-back','primary'));
+ return panel('Feito para permanecer.','Umbra é o nome escolhido para o jogo. Arte procedural e ícones originais neste estudo. Gargantua, de Interstellar, é referência visual. Este pacote não inclui cenas, trilha ou assets do filme. Créditos finais do jogo serão preenchidos com autoria e licenças verificadas.',button('Voltar','info-back','primary'),'CRÉDITOS DO ESTUDO');
+}
+function portraitMarkup(){const opening=['home','returning'].includes(screen);if(opening)return `<div class="p-scrim"></div><div class="p-menu"><div class="type-overline">NO SEU TEMPO</div><h3 class="type-display">${esc(TOKENS.copy.brand)}</h3><p class="type-body">${screen==='returning'?'Seu universo está aqui, como você deixou.':'Deslize. Observe. Permaneça.'}</p><span class="native-button primary">${screen==='returning'?'Continuar':'Começar'}</span><span class="native-button text">Ajustes</span></div>`;return `<div class="p-brand">${esc(TOKENS.copy.brand).toUpperCase()}</div><div class="p-tools"><span></span><span></span></div>${screen==='game'&&hint?'<p class="p-hint">Deslize para explorar. Solte para observar.</p>':''}`}
+function drawPortrait(){const opening=['home','returning'].includes(screen),c=TOKENS.layout.openingPortrait.holeCenterNormalized;engine.render($('portrait-canvas'),{...THEME,hole:THEME.hole*375/812},{time:sceneTime,game:true,x:0,y:opening?.5-c[1]:0})}
+function draw(){engine.render($('scene-canvas'),THEME,{time:sceneTime,game:!['home','returning'].includes(screen)});engine.render($('hero-canvas'),THEME,{time:sceneTime,hero:true});$('portrait-ui').innerHTML=portraitMarkup();drawPortrait()}
+function showScreen(next){if(!SCREENS[next])return;if(next==='settings'&&screen!=='settings')settingsOrigin=screen;if(['help','credits'].includes(next))infoOrigin=screen;if(next==='game'&&['home','returning'].includes(screen))hint=true;else if(next!=='game')hint=false;screen=next;renderScreen();draw();syncAudio();}
+function renderScreen(){
+ $('screen-ui').innerHTML=screenMarkup();const data=SCREENS[screen];['screen-name','screen-contract','screen-action','screen-preserve'].forEach((id,i)=>$(id).textContent=data[i]);
+ document.querySelectorAll('[data-screen]').forEach(b=>{b.setAttribute('aria-selected',String(b.dataset.screen===screen));b.tabIndex=b.dataset.screen===screen?0:-1});
+ if(!document.querySelector('[data-screen][aria-selected="true"]'))document.querySelector('[data-screen]').tabIndex=0;
+ $('extra-screen').value=['home','game','pause','settings'].includes(screen)?'':screen;
+}
+function syncPreferences(){
+ ['component-music','audio-music','audio-effects'].forEach(id=>{const k=id.includes('effects')?'effects':'music';$(id).value=prefs[k];$(id+'-value').textContent=prefs[k]+'%'});
+ ['reduced-motion','component-reduced'].forEach(id=>$(id).checked=prefs.reduced);$('component-vibration').checked=prefs.vibration;
+ document.querySelectorAll('[name="quality-component"]').forEach(r=>r.checked=r.value===prefs.quality);
+ $('quality-description').textContent={Auto:'Auto adapta efeitos ao desempenho. A simulação mantém as mesmas regras.',Alta:'Alta preserva mais partículas e resolução auxiliar. O budget ainda será medido.',Econômica:'Econômica reduz efeitos auxiliares e preserva núcleo, disco e arcos.'}[prefs.quality];
+ document.body.classList.toggle('reduced-motion',prefs.reduced);animationEnabled=$('animate-scene').checked&&!prefs.reduced;draw();syncAudio();
+}
+document.querySelectorAll('[data-screen]').forEach(b=>{b.addEventListener('click',()=>showScreen(b.dataset.screen));b.addEventListener('keydown',e=>{const tabs=[...document.querySelectorAll('[data-screen]')];let index=tabs.indexOf(b);if(e.key==='ArrowRight')index=(index+1)%tabs.length;else if(e.key==='ArrowLeft')index=(index+tabs.length-1)%tabs.length;else if(e.key==='Home')index=0;else if(e.key==='End')index=tabs.length-1;else return;e.preventDefault();showScreen(tabs[index].dataset.screen);tabs[index].focus()})});
+$('extra-screen').addEventListener('change',e=>{if(e.target.value)showScreen(e.target.value)});
+$('screen-ui').addEventListener('click',async e=>{
+ const b=e.target.closest('[data-action]');if(!b)return;const action=b.dataset.action;
+ if(action==='sound'){await toggleAudio();renderScreen();return}
+ if(action==='settings-back'){showScreen(settingsOrigin);return}if(action==='info-back'){showScreen(infoOrigin);return}
+ if(action==='retry-load'||action==='retry-save'){b.disabled=true;b.setAttribute('aria-busy','true');b.textContent='Tentando…';clearTimeout(retryTimer);retryTimer=setTimeout(()=>{if((action==='retry-load'&&screen==='loaderror')||(action==='retry-save'&&screen==='saveerror')){showScreen(action==='retry-load'?'returning':'pause');toast('Tentativa concluída na demonstração. Nenhum arquivo Android foi alterado.')}},650);return}
+ showScreen(action);
+});
+$('screen-ui').addEventListener('input',e=>{const k=e.target.dataset.pref;if(!k)return;prefs[k]=e.target.type==='checkbox'?e.target.checked:k==='quality'?e.target.value:Number(e.target.value);if(e.target.type==='range')e.target.parentElement.querySelector('output').textContent=prefs[k]+'%';syncPreferences()});
+$('app-frame').addEventListener('pointerdown',e=>{if(screen==='game'&&!e.target.closest('button')){hint=false;renderScreen();toast('Gesto ilustrativo: a física será implementada no protótipo nativo.')}});
+$('reset-demo').addEventListener('click',()=>{clearTimeout(retryTimer);Object.assign(prefs,{music:50,effects:55,vibration:false,reduced:matchMedia('(prefers-reduced-motion: reduce)').matches,quality:'Auto'});audioOn=false;hint=true;settingsOrigin='home';$('animate-scene').checked=true;showScreen('home');syncPreferences();toast('Demonstração restaurada.')});
+['component-music','audio-music','audio-effects'].forEach(id=>$(id).addEventListener('input',e=>{prefs[id.includes('effects')?'effects':'music']=Number(e.target.value);syncPreferences();if(screen==='settings')renderScreen()}));
+['reduced-motion','component-reduced'].forEach(id=>$(id).addEventListener('change',e=>{prefs.reduced=e.target.checked;syncPreferences();if(screen==='settings')renderScreen()}));
+$('component-vibration').addEventListener('change',e=>{prefs.vibration=e.target.checked;if(screen==='settings')renderScreen();toast('Estado demonstrado. O HTML não aciona o motor de vibração.')});
+document.querySelectorAll('[name="quality-component"]').forEach(r=>r.addEventListener('change',()=>{prefs.quality=r.value;syncPreferences();if(screen==='settings')renderScreen()}));
+$('animate-scene').addEventListener('change',syncPreferences);
+document.querySelectorAll('[data-component-demo]').forEach(b=>b.addEventListener('click',()=>toast('Componente: '+b.dataset.componentDemo+'. A ação é ilustrativa.')));
+let messageSuccess=false;
+$('message-retry').addEventListener('click',()=>{const b=$('message-retry');if(messageSuccess){messageSuccess=false;b.textContent='Tentar salvar novamente';$('message-copy').textContent=TOKENS.copy.saveError;$('message-status').textContent='Falha reapresentada para revisão.';return}b.disabled=true;b.setAttribute('aria-busy','true');b.textContent='Tentando…';setTimeout(()=>{messageSuccess=true;b.disabled=false;b.removeAttribute('aria-busy');b.textContent='Repetir exemplo de falha';$('message-copy').textContent='Tentativa concluída neste exemplo.';$('message-status').textContent='Sucesso demonstrativo. Nenhum save Android foi gravado.'},650)});
+$('color-grid').innerHTML=Object.entries(TOKENS.colors).map(([key,c])=>`<article class="color-card"><div class="color-block" style="background:${c.value}"></div><div class="color-description"><b>${esc(key)}</b><code>${c.value}</code><p>${esc(c.role)}</p></div></article>`).join('');
+const groups=[...new Set(CONTRAST.map(c=>c.foreground))];
+$('contrast-table').innerHTML=groups.map(k=>{const rows=CONTRAST.filter(c=>c.foreground===k);return `<tr><td>${k}</td><td>4 fundos de UI</td><td>${Math.min(...rows.map(r=>r.ratio)).toFixed(2)}:1</td><td>${rows[0].minimum}:1</td><td class="success">${rows.every(r=>r.pass)?'Passou':'Revisar'}</td></tr>`}).join('');
+$('contrast-summary').textContent=`${CONTRAST.length} pares verificados por luminância sRGB. Todos atingem o limiar definido. Não inclui texto diretamente sobre a cena.`;
+$('type-specimens').innerHTML=Object.entries(TOKENS.typography.styles).map(([k,v])=>`<div class="type-row"><div class="type-meta"><b>${k}</b><span>${v.sizeSp} / ${v.lineHeightSp} sp<br>${v.weight} · ${v.trackingSp} sp</span></div><div><p class="type-${k}">${k==='display'?esc(TOKENS.copy.brand):k==='overline'?'NO SEU TEMPO':k==='title'?'Uma pausa.':'Deslize. Observe. Permaneça.'}</p><p class="tiny">${esc(v.usage)}</p></div></div>`).join('');
+$('spacing-specimens').innerHTML=Object.entries(TOKENS.spacingDp).map(([k,v])=>`<div class="space-item"><div class="space-block" style="width:${v}px;height:${v}px;background:var(--obs-accent)"></div><b>${v} dp</b><span>${k}</span></div>`).join('');
+const iconNames={pause:'Pausar',play:'Continuar',back:'Voltar',close:'Fechar',volume:'Áudio ativo',muted:'Áudio silenciado',settings:'Ajustes',help:'Ajuda',check:'Concluído',retry:'Tentar novamente',arrow:'Avançar',file:'Arquivo'};
+$('icon-gallery').innerHTML=Object.entries(iconNames).map(([k,v])=>`<div class="icon-tile">${glyph(k)}<span>${v}</span><code>obs-${k}</code></div>`).join('');
+$('motion-timeline').innerHTML=[['Pressão','press'],['Entrada de painel','panelEnter'],['Saída de painel','panelExit'],['Troca de tela','screenCrossfade'],['Pausa de áudio','audioPauseFade']].map(([label,k])=>`<div class="motion-row"><span>${label}</span><div class="motion-track"><div class="motion-bar" style="width:${TOKENS.motionMs[k]/350*100}%"></div></div><span>${TOKENS.motionMs[k]} ms</span></div>`).join('');
+$('render-budget').innerHTML=Object.entries(TOKENS.render.particles.budgets).map(([k,v])=>`<tr><td>${{high:'Alta',balanced:'Equilíbrio · Auto inicia',economy:'Econômica'}[k]}</td><td>${v.count.toLocaleString('pt-BR')}</td><td>${v.renderScale}</td><td>${v.bloomMips}</td><td>${v.solidBodies}</td></tr>`).join('');
+$('run-motion').addEventListener('click',()=>{$('motion-demo').classList.toggle('active');$('motion-status').textContent=prefs.reduced?'Mudança essencial · movimento reduzido':'600 ms · sem overshoot'});
+new ResizeObserver(entries=>{for(const e of entries){if(e.target.id==='app-frame')e.target.style.setProperty('--frame-scale',e.contentRect.width/960);else e.target.style.setProperty('--demo-travel',Math.max(0,e.contentRect.width-68)+'px')}}).observe($('app-frame'));
+const motionResize=new ResizeObserver(entries=>{for(const e of entries)e.target.style.setProperty('--demo-travel',Math.max(0,e.contentRect.width-68)+'px')});motionResize.observe($('motion-demo'));
+function syncAudio(){
+ const paused=!['home','returning','game'].includes(screen)||document.hidden;
+ if(audioContext&&ambientGain){const t=audioContext.currentTime;ambientGain.gain.cancelScheduledValues(t);ambientGain.gain.setTargetAtTime(audioOn&&!paused?prefs.music/100*.055:0,t,.09);effectsGain.gain.setTargetAtTime(prefs.effects/100*.18,t,.05)}
+ $('audio-toggle').setAttribute('aria-pressed',String(audioOn));$('audio-toggle').textContent=audioOn?'Silenciar ambiente':'Ouvir ambiente';$('audio-visual').classList.toggle('active',audioOn&&!paused);
+ $('audio-status').textContent=audioOn?(paused?'Ambiente suspenso durante pausa, ajustes ou tela de apoio.':'Ambiente demonstrativo ativo. Sem mixagem final.'):'Silencioso. Ative o ambiente ou uma nota para experimentar.';
+}
+async function ensureAudio(){
+ const AudioAPI=window.AudioContext||window.webkitAudioContext;if(!AudioAPI){toast('Este navegador não oferece Web Audio. A especificação permanece disponível.');return false}
+ try{if(!audioContext){audioContext=new AudioAPI();ambientGain=audioContext.createGain();ambientGain.gain.value=0;ambientGain.connect(audioContext.destination);effectsGain=audioContext.createGain();effectsGain.gain.value=prefs.effects/100*.18;effectsGain.connect(audioContext.destination);TOKENS.audio.demoDroneHz.forEach((hz,i)=>{const o=audioContext.createOscillator(),g=audioContext.createGain();o.type='sine';o.frequency.value=hz;g.gain.value=[.55,.3,.15][i];o.connect(g);g.connect(ambientGain);o.start()})}await audioContext.resume();return true}catch(e){toast('Áudio indisponível: '+e.message);return false}
+}
+async function toggleAudio(){if(!audioOn&&!await ensureAudio())return;audioOn=!audioOn;syncAudio()}
+$('audio-toggle').addEventListener('click',async()=>{await toggleAudio();if(screen==='game')renderScreen()});
+$('audio-note').addEventListener('click',async()=>{if(!await ensureAudio())return;const t=audioContext.currentTime;if(t-lastNote<TOKENS.audio.groupEventsMs/1000||effectVoices>=TOKENS.audio.effectVoicesMax)return;lastNote=t;effectVoices++;const o=audioContext.createOscillator(),g=audioContext.createGain();o.type='sine';o.frequency.value=TOKENS.audio.demoNotesHz[noteIndex++%TOKENS.audio.demoNotesHz.length];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.32,t+.08);g.gain.exponentialRampToValueAtTime(.0001,t+2.6);o.connect(g);g.connect(effectsGain);o.start(t);o.stop(t+2.7);o.onended=()=>{effectVoices--;o.disconnect();g.disconnect()};if(!audioOn)$('audio-status').textContent='Nota demonstrativa de absorção · ataque macio, cauda longa.'});
+$('audio-visual').innerHTML=Array.from({length:45},(_,i)=>`<span style="--height:${14+Math.round(Math.abs(Math.sin(i*.44))*48)}px"></span>`).join('');
+document.addEventListener('visibilitychange',()=>{if(document.hidden){audioOn=false;syncAudio();if(audioContext)audioContext.suspend();if(screen==='game')showScreen('pause')}lastFrame=0});
+window.addEventListener('blur',()=>{audioOn=false;syncAudio();if(audioContext)audioContext.suspend();if(screen==='game')showScreen('pause')});
+const tokenText=JSON.stringify(TOKENS,null,2);$('token-code').textContent=tokenText;$('tokens-copy').value=tokenText;
+$('download-tokens').addEventListener('click',()=>{const a=document.createElement('a'),url=URL.createObjectURL(new Blob([tokenText],{type:'application/json'}));a.href=url;a.download='umbra-obsidiana-tokens.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('tokens-fallback').hidden=false;toast('Tokens preparados. Uma cópia manual também está disponível no handoff.')});
+$('print-kit').addEventListener('click',()=>window.print());
+$('mobile-nav').addEventListener('change',e=>$(e.target.value).scrollIntoView({behavior:prefs.reduced?'instant':'smooth'}));
+const sectionObserver=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting);if(!visible.length)return;const id=visible[0].target.id;document.querySelectorAll('.rail nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));$('mobile-nav').value=id},{rootMargin:'-15% 0px -65% 0px'});document.querySelectorAll('main>.section').forEach(s=>sectionObserver.observe(s));
+const sceneObserver=new IntersectionObserver(entries=>{for(const e of entries){if(e.target.id==='hero-canvas')heroVisible=e.isIntersecting;else sceneVisible=e.isIntersecting}});sceneObserver.observe($('hero-canvas'));sceneObserver.observe($('app-frame'));
+function loop(timestamp){requestAnimationFrame(loop);if(document.hidden||!animationEnabled){lastFrame=timestamp;return}if(timestamp-lastFrame<40)return;const delta=lastFrame?Math.min(.1,(timestamp-lastFrame)/1000):0;lastFrame=timestamp;if(['home','returning','game'].includes(screen)){sceneTime+=delta;if(sceneVisible)engine.render($('scene-canvas'),THEME,{time:sceneTime,game:screen==='game'});if(sceneVisible)drawPortrait();if(heroVisible)engine.render($('hero-canvas'),THEME,{time:sceneTime,hero:true})}}
+renderScreen();syncPreferences();requestAnimationFrame(loop);
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+// 20 · Deriva com erupções — Deriva suave, coroas em erupção, anéis cintilantes e giro rápido com uma lua.
+const float GIRO = 2.0; // rotação própria: rápida
+const float LUAS = 1.0; // luas: uma por planeta
+const float ESTELAR = 2.0; // atividade estelar: erupções na coroa
+const float MOVIMENTO = 0.0; // movimento no espaço: deriva suave
+const float EXTRA = 2.0; // vida extra: anéis cintilantes
+vec3 cena(vec2 p) {
+    return corposAnimados(p, GIRO, LUAS, ESTELAR, MOVIMENTO, EXTRA);
+}
+//== pontos ==
+void pontos(int i, int n, out vec2 pos, out float tamanho, out vec3 cor, out float alfa) {
+    poeiraHalo(i, pos, tamanho, cor, alfa);
+}

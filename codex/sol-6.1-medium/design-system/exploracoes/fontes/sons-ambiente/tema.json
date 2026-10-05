@@ -1,0 +1,209 @@
+{
+  "tema": "sons-ambiente",
+  "titulo": "Música ambiente · rodada 2",
+  "pergunta": "Qual música você quer ouvir durante o jogo? Escolha a principal e as favoritas.",
+  "nota": "Rodada 2 (03/10/2026), após o retorno do realme C61: a música anterior (senóides de 73–147 Hz) quase não soava em alto-falante de celular. Estas 10 têm conteúdo principal entre 200 Hz e 2 kHz e nível normalizado. Abra uma variação, ative o som e ouça por 30 s; teste também no celular.",
+  "incluir": [
+    "_base/nucleo-13.glsl"
+  ],
+  "quantidade": 10,
+  "eixos": [
+    "textura",
+    "harmonia",
+    "registro",
+    "movimento",
+    "espaço"
+  ],
+  "variacoes": [
+    {
+      "id": "01",
+      "nome": "Pad de quintas",
+      "descricao": "Serrilhas filtradas em quintas abertas (Ré–Lá–Mi), troca a cada 10 s, eco curto.",
+      "eixos": {
+        "textura": "pad serrilhado",
+        "harmonia": "quintas abertas",
+        "registro": "médio",
+        "movimento": "acorde a cada 10 s",
+        "espaço": "eco curto"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Osciladores, biquads e eco com retorno <= 0,45 em Oboe/C++, sem alocação no callback; bus de música separado."
+    },
+    {
+      "id": "02",
+      "nome": "Sinos esparsos",
+      "descricao": "Sinos FM na pentatônica de Ré menor, notas soltas a cada 2,5 s, eco longo.",
+      "eixos": {
+        "textura": "sino FM",
+        "harmonia": "pentatônica menor",
+        "registro": "médio-agudo",
+        "movimento": "notas soltas 2,5 s",
+        "espaço": "eco longo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Osciladores, biquads e eco com retorno <= 0,45 em Oboe/C++, sem alocação no callback; bus de música separado."
+    },
+    {
+      "id": "03",
+      "nome": "Coro distante",
+      "descricao": "Serrilhas por filtros de formante (vogal “a”), progressão Rém–Si♭–Fá–Dó, 8 s.",
+      "eixos": {
+        "textura": "coro formante",
+        "harmonia": "menor i–VI–III–VII",
+        "registro": "médio",
+        "movimento": "acorde a cada 8 s",
+        "espaço": "eco médio"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Osciladores, biquads e eco com retorno <= 0,45 em Oboe/C++, sem alocação no callback; bus de música separado."
+    },
+    {
+      "id": "04",
+      "nome": "Cordas lentas",
+      "descricao": "Três serrilhas desafinadas por voz, Rém9 em movimento lento a cada 12 s, sem eco.",
+      "eixos": {
+        "textura": "cordas",
+        "harmonia": "menor com nona",
+        "registro": "médio-grave",
+        "movimento": "acorde a cada 12 s",
+        "espaço": "seco"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Osciladores, biquads e eco com retorno <= 0,45 em Oboe/C++, sem alocação no callback; bus de música separado."
+    },
+    {
+      "id": "05",
+      "nome": "Pulso orbital",
+      "descricao": "Ostinato de corda pinçada a 72 bpm em Ré dórico sobre pad grave, eco no tempo.",
+      "eixos": {
+        "textura": "pinçado + pad",
+        "harmonia": "dórico",
+        "registro": "médio",
+        "movimento": "pulso 72 bpm",
+        "espaço": "eco no tempo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Osciladores, biquads e eco com retorno <= 0,45 em Oboe/C++, sem alocação no callback; bus de música separado."
+    },
+    {
+      "id": "06",
+      "nome": "Vidro harmônico",
+      "descricao": "Parciais senoidais agudas em Sol lídio surgindo e sumindo devagar, eco longo.",
+      "eixos": {
+        "textura": "parciais de vidro",
+        "harmonia": "lídio",
+        "registro": "agudo",
+        "movimento": "cintilação lenta",
+        "espaço": "eco longo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Osciladores, biquads e eco com retorno <= 0,45 em Oboe/C++, sem alocação no callback; bus de música separado."
+    },
+    {
+      "id": "07",
+      "nome": "Órgão respirando",
+      "descricao": "Aditivo com harmônicos 1–6 sobre Lá 220 Hz, troca modal a cada 20 s, respiração lenta.",
+      "eixos": {
+        "textura": "órgão aditivo",
+        "harmonia": "drone modal",
+        "registro": "médio",
+        "movimento": "respiração 20 s",
+        "espaço": "seco"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Osciladores, biquads e eco com retorno <= 0,45 em Oboe/C++, sem alocação no callback; bus de música separado."
+    },
+    {
+      "id": "08",
+      "nome": "Piano etéreo",
+      "descricao": "Notas de queda longa (triângulo filtrado) em Fá maior pentatônico, frase a cada 9 s, eco médio.",
+      "eixos": {
+        "textura": "piano suave",
+        "harmonia": "maior pentatônica",
+        "registro": "médio-agudo",
+        "movimento": "frase a cada 9 s",
+        "espaço": "eco médio"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Osciladores, biquads e eco com retorno <= 0,45 em Oboe/C++, sem alocação no callback; bus de música separado."
+    },
+    {
+      "id": "09",
+      "nome": "Maré tonal",
+      "descricao": "Ondas de ruído rosa filtrado (9 s) sob acorde Ré sus2 sustentado, eco curto.",
+      "eixos": {
+        "textura": "ondas + acorde",
+        "harmonia": "sus2",
+        "registro": "médio",
+        "movimento": "ondas de 9 s",
+        "espaço": "eco curto"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Osciladores, biquads e eco com retorno <= 0,45 em Oboe/C++, sem alocação no callback; bus de música separado."
+    },
+    {
+      "id": "10",
+      "nome": "Marimba modal",
+      "descricao": "Notas de marimba suave em Ré mixolídio, motivo ascendente a cada 6 s, eco no tempo.",
+      "eixos": {
+        "textura": "marimba",
+        "harmonia": "mixolídio",
+        "registro": "médio",
+        "movimento": "motivo a cada 6 s",
+        "espaço": "eco no tempo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Osciladores, biquads e eco com retorno <= 0,45 em Oboe/C++, sem alocação no callback; bus de música separado."
+    }
+  ]
+}

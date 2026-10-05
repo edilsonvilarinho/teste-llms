@@ -1,0 +1,401 @@
+{
+  "tema": "animacao-corpos",
+  "titulo": "Animação dos corpos",
+  "pergunta": "Como os corpos do estilo 04 devem se mover e ganhar vida no espaço?",
+  "nota": "Estilo fixo: planetas 04 · Silhuetas coloridas (sua escolha), num catálogo de 12 corpos: oceano, gasoso com anéis, estrela azul, cometa, lava, gigante vermelha, gelo, galáxia, asteroide, gigante de gelo, nebulosa e deserto. Varia só a animação. Ligue \"Buraco negro\" para vê-los orbitando o núcleo.",
+  "incluir": [
+    "_base/nucleo-13.glsl"
+  ],
+  "alternarNucleo": true,
+  "nucleoInicial": false,
+  "quantidade": 20,
+  "eixos": [
+    "rotação própria",
+    "luas",
+    "atividade estelar",
+    "movimento no espaço",
+    "vida extra"
+  ],
+  "variacoes": [
+    {
+      "id": "01",
+      "nome": "Mundos vivos",
+      "descricao": "Rotação visível, uma lua por planeta, estrelas pulsando, deriva suave e nuvens com tempestades.",
+      "eixos": {
+        "rotação própria": "visível",
+        "luas": "uma por planeta",
+        "atividade estelar": "pulsação",
+        "movimento no espaço": "deriva suave",
+        "vida extra": "nuvens e tempestades"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'pulsação'; movimento 'deriva suave' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "02",
+      "nome": "Sistema em órbita",
+      "descricao": "Todos os corpos giram juntos ao redor de um centro, com sistemas de luas e coroas em erupção.",
+      "eixos": {
+        "rotação própria": "lenta",
+        "luas": "sistemas de luas",
+        "atividade estelar": "erupções na coroa",
+        "movimento no espaço": "órbita compartilhada",
+        "vida extra": "tudo junto"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'erupções na coroa'; movimento 'órbita compartilhada' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "03",
+      "nome": "Viagem em paralaxe",
+      "descricao": "Camadas de corpos passam em velocidades diferentes; cometas com cauda viva.",
+      "eixos": {
+        "rotação própria": "visível",
+        "luas": "nenhuma",
+        "atividade estelar": "calma",
+        "movimento no espaço": "paralaxe em camadas",
+        "vida extra": "cauda viva de cometa"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'calma'; movimento 'paralaxe em camadas' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "04",
+      "nome": "Coroas ativas",
+      "descricao": "Estrelas com proeminências subindo da borda; planetas girando devagar e balançando.",
+      "eixos": {
+        "rotação própria": "lenta",
+        "luas": "uma por planeta",
+        "atividade estelar": "proeminências",
+        "movimento no espaço": "balanço",
+        "vida extra": "anéis cintilantes"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'proeminências'; movimento 'balanço' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "05",
+      "nome": "Rotação rápida",
+      "descricao": "Superfícies girando rápido, nuvens e tempestades, sem luas, deriva suave.",
+      "eixos": {
+        "rotação própria": "rápida",
+        "luas": "nenhuma",
+        "atividade estelar": "calma",
+        "movimento no espaço": "deriva suave",
+        "vida extra": "nuvens e tempestades"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'calma'; movimento 'deriva suave' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "06",
+      "nome": "Luas em dança",
+      "descricao": "Sistemas de luas orbitando cada planeta e estrelas pulsando, com balanço.",
+      "eixos": {
+        "rotação própria": "visível",
+        "luas": "sistemas de luas",
+        "atividade estelar": "pulsação",
+        "movimento no espaço": "balanço",
+        "vida extra": "anéis cintilantes"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'pulsação'; movimento 'balanço' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "07",
+      "nome": "Céu em movimento",
+      "descricao": "Paralaxe em camadas com tudo junto: nuvens, cauda viva e anéis cintilantes.",
+      "eixos": {
+        "rotação própria": "lenta",
+        "luas": "uma por planeta",
+        "atividade estelar": "erupções na coroa",
+        "movimento no espaço": "paralaxe em camadas",
+        "vida extra": "tudo junto"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'erupções na coroa'; movimento 'paralaxe em camadas' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "08",
+      "nome": "Órbita calma",
+      "descricao": "Órbita compartilhada lenta, estrelas calmas, uma lua por planeta, nuvens.",
+      "eixos": {
+        "rotação própria": "lenta",
+        "luas": "uma por planeta",
+        "atividade estelar": "calma",
+        "movimento no espaço": "órbita compartilhada",
+        "vida extra": "nuvens e tempestades"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'calma'; movimento 'órbita compartilhada' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "09",
+      "nome": "Erupções e cometas",
+      "descricao": "Coroas em erupção e cometas com cauda viva, rotação visível e deriva.",
+      "eixos": {
+        "rotação própria": "visível",
+        "luas": "nenhuma",
+        "atividade estelar": "erupções na coroa",
+        "movimento no espaço": "deriva suave",
+        "vida extra": "cauda viva de cometa"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'erupções na coroa'; movimento 'deriva suave' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "10",
+      "nome": "Anéis em giro",
+      "descricao": "Anéis cintilantes, rotação rápida e sistemas de luas em órbita compartilhada.",
+      "eixos": {
+        "rotação própria": "rápida",
+        "luas": "sistemas de luas",
+        "atividade estelar": "calma",
+        "movimento no espaço": "órbita compartilhada",
+        "vida extra": "anéis cintilantes"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'calma'; movimento 'órbita compartilhada' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "11",
+      "nome": "Proeminências em paralaxe",
+      "descricao": "Estrelas com proeminências passando em camadas; nuvens e tempestades.",
+      "eixos": {
+        "rotação própria": "visível",
+        "luas": "nenhuma",
+        "atividade estelar": "proeminências",
+        "movimento no espaço": "paralaxe em camadas",
+        "vida extra": "nuvens e tempestades"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'proeminências'; movimento 'paralaxe em camadas' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "12",
+      "nome": "Balanço completo",
+      "descricao": "Tudo junto com balanço suave e estrelas pulsando, giro lento.",
+      "eixos": {
+        "rotação própria": "lenta",
+        "luas": "nenhuma",
+        "atividade estelar": "pulsação",
+        "movimento no espaço": "balanço",
+        "vida extra": "tudo junto"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'pulsação'; movimento 'balanço' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "13",
+      "nome": "Giro e cauda",
+      "descricao": "Rotação rápida, uma lua, pulsação e cauda viva em órbita compartilhada.",
+      "eixos": {
+        "rotação própria": "rápida",
+        "luas": "uma por planeta",
+        "atividade estelar": "pulsação",
+        "movimento no espaço": "órbita compartilhada",
+        "vida extra": "cauda viva de cometa"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'pulsação'; movimento 'órbita compartilhada' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "14",
+      "nome": "Sistemas em paralaxe",
+      "descricao": "Sistemas de luas atravessando o quadro em camadas, anéis cintilantes.",
+      "eixos": {
+        "rotação própria": "lenta",
+        "luas": "sistemas de luas",
+        "atividade estelar": "calma",
+        "movimento no espaço": "paralaxe em camadas",
+        "vida extra": "anéis cintilantes"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'calma'; movimento 'paralaxe em camadas' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "15",
+      "nome": "Estrelas inquietas",
+      "descricao": "Erupções na coroa com balanço e nuvens; rotação visível com uma lua.",
+      "eixos": {
+        "rotação própria": "visível",
+        "luas": "uma por planeta",
+        "atividade estelar": "erupções na coroa",
+        "movimento no espaço": "balanço",
+        "vida extra": "nuvens e tempestades"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'erupções na coroa'; movimento 'balanço' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "16",
+      "nome": "Tudo vivo",
+      "descricao": "Rotação rápida, sistemas de luas, proeminências, deriva e todos os efeitos.",
+      "eixos": {
+        "rotação própria": "rápida",
+        "luas": "sistemas de luas",
+        "atividade estelar": "proeminências",
+        "movimento no espaço": "deriva suave",
+        "vida extra": "tudo junto"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'proeminências'; movimento 'deriva suave' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "17",
+      "nome": "Cometas em balanço",
+      "descricao": "Cauda viva de cometa com balanço suave e sistemas de luas, estrelas calmas.",
+      "eixos": {
+        "rotação própria": "lenta",
+        "luas": "sistemas de luas",
+        "atividade estelar": "calma",
+        "movimento no espaço": "balanço",
+        "vida extra": "cauda viva de cometa"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'calma'; movimento 'balanço' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "18",
+      "nome": "Anéis em paralaxe",
+      "descricao": "Anéis cintilantes passando em camadas com estrelas pulsando e giro rápido.",
+      "eixos": {
+        "rotação própria": "rápida",
+        "luas": "nenhuma",
+        "atividade estelar": "pulsação",
+        "movimento no espaço": "paralaxe em camadas",
+        "vida extra": "anéis cintilantes"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'pulsação'; movimento 'paralaxe em camadas' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "19",
+      "nome": "Órbita com proeminências",
+      "descricao": "Órbita compartilhada, proeminências, nuvens, uma lua, giro visível.",
+      "eixos": {
+        "rotação própria": "visível",
+        "luas": "uma por planeta",
+        "atividade estelar": "proeminências",
+        "movimento no espaço": "órbita compartilhada",
+        "vida extra": "nuvens e tempestades"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'proeminências'; movimento 'órbita compartilhada' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    },
+    {
+      "id": "20",
+      "nome": "Deriva com erupções",
+      "descricao": "Deriva suave, coroas em erupção, anéis cintilantes e giro rápido com uma lua.",
+      "eixos": {
+        "rotação própria": "rápida",
+        "luas": "uma por planeta",
+        "atividade estelar": "erupções na coroa",
+        "movimento no espaço": "deriva suave",
+        "vida extra": "anéis cintilantes"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "Rotação, nuvens, luas, coroas, caudas e deriva congelam; formas, cores e luz permanecem.",
+      "porte": "MatterAppearance com rotação da normal (relevo atravessa o disco), camada de nuvens própria, luas como quads filhos e animação estelar 'erupções na coroa'; movimento 'deriva suave' só no modo de exibição solto, no jogo a órbita vem da simulação."
+    }
+  ]
+}

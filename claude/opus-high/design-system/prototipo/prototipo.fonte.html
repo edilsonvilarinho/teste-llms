@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Umbra · Protótipo</title>
+<!-- Gerado por scripts/build_prototipo.py a partir de design-system/prototipo/prototipo.fonte.html. Editar a fonte. -->
+<style>
+{{TOKENS_CSS}}
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--obs-background);color:var(--obs-text-primary);font-family:var(--obs-font);font-size:16px;line-height:24px;-webkit-user-select:none;user-select:none}
+#cena{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:crosshair}
+.camada{position:fixed;inset:0;pointer-events:none;padding:max(var(--obs-space-xl),env(safe-area-inset-top,0px)) max(var(--obs-space-xl),env(safe-area-inset-right,0px)) max(var(--obs-space-xl),env(safe-area-inset-bottom,0px)) max(var(--obs-space-xl),env(safe-area-inset-left,0px))}
+.camada [data-interativo]{pointer-events:auto}
+[hidden]{display:none!important}
+.botao{min-height:52px;padding:0 var(--obs-space-xl);background:var(--obs-surface);color:var(--obs-text-primary);border:var(--obs-border-width) solid var(--obs-border-control);border-radius:var(--obs-action-radius);font:inherit;font-size:16px;cursor:pointer;transition:background var(--obs-motion-press) var(--obs-ease);text-align:left}
+.botao.primario{border-color:var(--obs-accent)}
+.botao.texto{border-color:transparent;background:transparent;min-height:48px;padding:0 var(--obs-space-sm)}
+.botao:active{background:var(--obs-surface-pressed)}
+.botao:focus-visible,.icone:focus-visible,input:focus-visible,select:focus-visible{outline:var(--obs-focus-width) solid var(--obs-accent);outline-offset:var(--obs-focus-offset)}
+.icone{width:48px;height:48px;display:grid;place-items:center;background:transparent;border:0;padding:0;cursor:pointer;color:var(--obs-text-primary)}
+.icone span{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--obs-background) 72%,transparent);border:var(--obs-border-width) solid var(--obs-border-control)}
+.icone svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+/* Abertura: núcleo à esquerda, menu alinhado à direita, sem cobrir o buraco negro. */
+#abertura{display:flex;justify-content:flex-end;align-items:center}
+.menu{display:flex;flex-direction:column;gap:var(--obs-space-md);width:min(360px,100%);margin-right:4vw}
+.marca{font-size:48px;line-height:56px;letter-spacing:4px;font-weight:400;margin:0}
+.frase{color:var(--obs-text-secondary);margin:0 0 var(--obs-space-lg)}
+/* Exploração: marca discreta no início, pausa e áudio no canto final. */
+#jogo{display:flex;flex-direction:column;justify-content:space-between}
+.barra{display:flex;justify-content:space-between;align-items:flex-start}
+.marca-jogo{font-size:14px;letter-spacing:4px;color:var(--obs-text-secondary);padding-top:var(--obs-space-sm)}
+.ferramentas{display:flex;gap:var(--obs-space-xs)}
+#instrucao{align-self:center;margin:0 0 var(--obs-space-xl);padding:var(--obs-space-sm) var(--obs-space-lg);background:color-mix(in srgb,var(--obs-background) 72%,transparent);color:var(--obs-text-secondary);font-size:16px;transition:opacity 600ms var(--obs-ease)}
+/* Painéis opacos sobre scrim; sem vidro. */
+.scrim{position:fixed;inset:0;background:color-mix(in srgb,var(--obs-background) 84%,transparent);display:grid;place-items:center;padding:var(--obs-space-lg);pointer-events:auto}
+.painel{width:min(400px,100%);max-height:100%;overflow:auto;background:var(--obs-surface);border:var(--obs-border-width) solid var(--obs-border-decorative);padding:var(--obs-space-xl);display:flex;flex-direction:column;gap:var(--obs-space-md)}
+.painel h2{font-size:28px;line-height:36px;font-weight:400;margin:0}
+.painel p{margin:0;color:var(--obs-text-secondary)}
+.linha{display:flex;align-items:center;justify-content:space-between;gap:var(--obs-space-md);min-height:48px}
+.linha label{flex:1}
+input[type=checkbox]{width:22px;height:22px;accent-color:var(--obs-accent)}
+input[type=range]{flex:1;accent-color:var(--obs-accent)}
+select{font:inherit;min-height:48px;background:var(--obs-surface-raised);color:var(--obs-text-primary);border:var(--obs-border-width) solid var(--obs-border-control);border-radius:0;padding:0 var(--obs-space-sm)}
+.nota{font-size:14px;line-height:20px;color:var(--obs-text-muted)!important}
+#analise{position:fixed;left:max(var(--obs-space-lg),env(safe-area-inset-left,0px));bottom:max(var(--obs-space-lg),env(safe-area-inset-bottom,0px));width:min(300px,calc(100% - 32px));background:var(--obs-surface);border:var(--obs-border-width) solid var(--obs-border-decorative);padding:var(--obs-space-md);font-size:14px;line-height:20px;pointer-events:auto;display:flex;flex-direction:column;gap:var(--obs-space-sm)}
+#analise dl{display:grid;grid-template-columns:auto 1fr;gap:2px var(--obs-space-md);margin:0;font-variant-numeric:tabular-nums}
+#analise dt{color:var(--obs-text-muted)}#analise dd{margin:0}
+#analise .acoes{display:flex;gap:var(--obs-space-sm);flex-wrap:wrap}
+#analise .botao{min-height:40px;font-size:14px;padding:0 var(--obs-space-md)}
+.etiqueta{font-size:12px;letter-spacing:1.5px;color:var(--obs-text-muted);text-transform:uppercase}
+@media (max-width:640px){#abertura{align-items:flex-end}.menu{margin:0;width:100%}.marca{font-size:36px;line-height:44px}}
+@media (prefers-reduced-motion:reduce){.botao,#instrucao{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">{{ICONES}}</svg>
+<canvas id="cena" aria-label="Universo do Umbra. Deslize para explorar."></canvas>
+
+<section id="abertura" class="camada" aria-labelledby="marca">
+  <div class="menu" data-interativo>
+    <h1 class="marca" id="marca"></h1>
+    <p class="frase" id="frase"></p>
+    <button type="button" class="botao primario" id="comecar">Começar</button>
+    <button type="button" class="botao" id="abrir-ajustes">Ajustes</button>
+    <p class="nota">Protótipo em HTML com as direções escolhidas. Não grava universo nem mede desempenho do Android.</p>
+  </div>
+</section>
+
+<section id="jogo" class="camada" hidden>
+  <div class="barra">
+    <span class="marca-jogo" aria-hidden="true">UMBRA</span>
+    <div class="ferramentas" data-interativo>
+      <button type="button" class="icone" id="botao-som" aria-label="Silenciar áudio"><span><svg><use href="#obs-volume"></use></svg></span></button>
+      <button type="button" class="icone" id="botao-pausa" aria-label="Pausar exploração"><span><svg><use href="#obs-pause"></use></svg></span></button>
+    </div>
+  </div>
+  <p id="instrucao"></p>
+</section>
+
+<div id="pausa" class="scrim" role="dialog" aria-modal="true" aria-labelledby="pausa-titulo" hidden>
+  <div class="painel">
+    <h2 id="pausa-titulo"></h2>
+    <p id="pausa-texto"></p>
+    <button type="button" class="botao primario" id="continuar">Continuar</button>
+    <button type="button" class="botao" id="pausa-ajustes">Ajustes</button>
+    <button type="button" class="botao" id="recomecar">Recomeçar universo</button>
+    <button type="button" class="botao texto" id="sair">Voltar à abertura</button>
+  </div>
+</div>
+
+<div id="ajustes" class="scrim" role="dialog" aria-modal="true" aria-labelledby="ajustes-titulo" hidden>
+  <div class="painel">
+    <h2 id="ajustes-titulo"></h2>
+    <div class="linha"><label for="aj-som">Som</label><input type="checkbox" id="aj-som"></div>
+    <div class="linha"><label for="aj-efeitos">Efeitos</label><input type="range" id="aj-efeitos" min="0" max="100"></div>
+    <div class="linha"><label for="aj-reduzido">Movimento reduzido</label><input type="checkbox" id="aj-reduzido"></div>
+    <div class="linha"><label for="aj-qualidade">Qualidade</label><select id="aj-qualidade"></select></div>
+    <div class="linha"><label for="aj-analise">Painel do protótipo</label><input type="checkbox" id="aj-analise"></div>
+    <p class="nota">O painel mostra escala, massa e quadros, e permite acelerar o crescimento para ver todas as escalas. Não faz parte do jogo final, que não tem HUD.</p>
+    <button type="button" class="botao primario" id="ajustes-voltar">Voltar</button>
+  </div>
+</div>
+
+<aside id="analise" aria-label="Painel do protótipo" hidden>
+  <span class="etiqueta">Protótipo</span>
+  <dl>
+    <dt>Escala</dt><dd id="an-escala">—</dd>
+    <dt>Massa</dt><dd id="an-massa">—</dd>
+    <dt>Corpos</dt><dd id="an-corpos">—</dd>
+    <dt>Absorções</dt><dd id="an-absorcoes">—</dd>
+    <dt>Quadro</dt><dd id="an-quadro">—</dd>
+  </dl>
+  <div class="acoes">
+    <button type="button" class="botao" id="an-crescer">Crescer ×2</button>
+    <button type="button" class="botao" id="an-escala-prox">Próxima escala</button>
+    <button type="button" class="botao" id="an-jato">Jato</button>
+  </div>
+</aside>
+
+<script type="application/json" id="tokens">{{TOKENS_JSON}}</script>
+<script>
+{{PROTOTIPO_JS}}
+</script>
+</body>
+</html>

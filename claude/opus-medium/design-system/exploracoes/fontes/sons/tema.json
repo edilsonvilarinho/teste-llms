@@ -1,0 +1,400 @@
+{
+  "tema": "sons",
+  "titulo": "Sons",
+  "pergunta": "Qual paleta sonora para o consumo, o núcleo e os jatos?",
+  "nota": "A cena é a mesma em todas (núcleo 13). Amplie uma variação, clique em \"Ouvir sequência\" (poeira, rocha, gás, corpo grande e jato) e compare; o drone do núcleo toca enquanto a variação está aberta. Síntese original no navegador; o app usará a mesma receita em Oboe.",
+  "dica": "Use fones ou alto-falante; o medidor no rodapé mostra o pico.",
+  "incluir": [
+    "_base/nucleo-13.glsl"
+  ],
+  "quantidade": 20,
+  "eixos": [
+    "timbre da absorção",
+    "drone do núcleo",
+    "diferença entre materiais",
+    "som do jato",
+    "espacialização"
+  ],
+  "variacoes": [
+    {
+      "id": "01",
+      "nome": "Sinos de cristal",
+      "descricao": "Absorções em sino FM com altura por material, drone grave puro e jato em sopro ascendente.",
+      "eixos": {
+        "timbre da absorção": "sino",
+        "drone do núcleo": "grave puro",
+        "diferença entre materiais": "altura",
+        "som do jato": "sopro ascendente",
+        "espacialização": "central"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'sino' por voz, drone 'grave puro' no AmbientSound, materiais por 'altura', jato 'sopro ascendente' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "02",
+      "nome": "Vento do disco",
+      "descricao": "Absorções em sopro filtrado espalhadas pelo ângulo; acorde aberto no núcleo; jato em acorde.",
+      "eixos": {
+        "timbre da absorção": "sopro",
+        "drone do núcleo": "acorde aberto",
+        "diferença entre materiais": "altura",
+        "som do jato": "acorde ascendente",
+        "espacialização": "pan pelo ângulo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'sopro' por voz, drone 'acorde aberto' no AmbientSound, materiais por 'altura', jato 'acorde ascendente' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "03",
+      "nome": "Harpa gravitacional",
+      "descricao": "Cordas dedilhadas (Karplus-Strong), pad em movimento e sub grave no jato.",
+      "eixos": {
+        "timbre da absorção": "corda",
+        "drone do núcleo": "pad em movimento",
+        "diferença entre materiais": "altura",
+        "som do jato": "sub grave",
+        "espacialização": "central"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'corda' por voz, drone 'pad em movimento' no AmbientSound, materiais por 'altura', jato 'sub grave' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "04",
+      "nome": "Coro distante",
+      "descricao": "Coral de senos suaves, pulso lento no núcleo, jato em coro brilhante; espacializado.",
+      "eixos": {
+        "timbre da absorção": "coral",
+        "drone do núcleo": "pulso lento",
+        "diferença entre materiais": "duração",
+        "som do jato": "coro",
+        "espacialização": "pan pelo ângulo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'coral' por voz, drone 'pulso lento' no AmbientSound, materiais por 'duração', jato 'coro' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "05",
+      "nome": "Poeira granular",
+      "descricao": "Grãos de ruído filtrado em cada absorção, sem drone; jato em sopro.",
+      "eixos": {
+        "timbre da absorção": "granular",
+        "drone do núcleo": "sem drone",
+        "diferença entre materiais": "altura",
+        "som do jato": "sopro ascendente",
+        "espacialização": "central"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'granular' por voz, drone 'sem drone' no AmbientSound, materiais por 'altura', jato 'sopro ascendente' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "06",
+      "nome": "Paleta por material",
+      "descricao": "Cada material tem síntese própria (sino, grãos, sopro, coral); drone grave; jato em acorde.",
+      "eixos": {
+        "timbre da absorção": "sino",
+        "drone do núcleo": "grave puro",
+        "diferença entre materiais": "timbre",
+        "som do jato": "acorde ascendente",
+        "espacialização": "pan pelo ângulo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'sino' por voz, drone 'grave puro' no AmbientSound, materiais por 'timbre', jato 'acorde ascendente' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "07",
+      "nome": "Sopro longo",
+      "descricao": "Sopros com duração crescente por material, pad em movimento e jato em coro.",
+      "eixos": {
+        "timbre da absorção": "sopro",
+        "drone do núcleo": "pad em movimento",
+        "diferença entre materiais": "duração",
+        "som do jato": "coro",
+        "espacialização": "central"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'sopro' por voz, drone 'pad em movimento' no AmbientSound, materiais por 'duração', jato 'coro' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "08",
+      "nome": "Cordas no acorde",
+      "descricao": "Cordas com duração por material sobre acorde aberto; jato em sopro; espacializado.",
+      "eixos": {
+        "timbre da absorção": "corda",
+        "drone do núcleo": "acorde aberto",
+        "diferença entre materiais": "duração",
+        "som do jato": "sopro ascendente",
+        "espacialização": "pan pelo ângulo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'corda' por voz, drone 'acorde aberto' no AmbientSound, materiais por 'duração', jato 'sopro ascendente' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "09",
+      "nome": "Coral grave",
+      "descricao": "Coral com altura por material sobre drone grave; jato em sub grave.",
+      "eixos": {
+        "timbre da absorção": "coral",
+        "drone do núcleo": "grave puro",
+        "diferença entre materiais": "altura",
+        "som do jato": "sub grave",
+        "espacialização": "central"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'coral' por voz, drone 'grave puro' no AmbientSound, materiais por 'altura', jato 'sub grave' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "10",
+      "nome": "Grãos pulsantes",
+      "descricao": "Grãos com duração por material, pulso lento no núcleo; jato em acorde; espacializado.",
+      "eixos": {
+        "timbre da absorção": "granular",
+        "drone do núcleo": "pulso lento",
+        "diferença entre materiais": "duração",
+        "som do jato": "acorde ascendente",
+        "espacialização": "pan pelo ângulo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'granular' por voz, drone 'pulso lento' no AmbientSound, materiais por 'duração', jato 'acorde ascendente' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "11",
+      "nome": "Sinos no pad",
+      "descricao": "Sinos com duração por material sobre pad em movimento; jato em coro; espacializado.",
+      "eixos": {
+        "timbre da absorção": "sino",
+        "drone do núcleo": "pad em movimento",
+        "diferença entre materiais": "duração",
+        "som do jato": "coro",
+        "espacialização": "pan pelo ângulo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'sino' por voz, drone 'pad em movimento' no AmbientSound, materiais por 'duração', jato 'coro' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "12",
+      "nome": "Silêncio com sopro",
+      "descricao": "Sem drone; sopros por material com síntese própria; jato em sub grave; espacializado.",
+      "eixos": {
+        "timbre da absorção": "sopro",
+        "drone do núcleo": "sem drone",
+        "diferença entre materiais": "timbre",
+        "som do jato": "sub grave",
+        "espacialização": "pan pelo ângulo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'sopro' por voz, drone 'sem drone' no AmbientSound, materiais por 'timbre', jato 'sub grave' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "13",
+      "nome": "Cordas pulsantes",
+      "descricao": "Cordas com altura por material e pulso lento; jato em coro; espacializado.",
+      "eixos": {
+        "timbre da absorção": "corda",
+        "drone do núcleo": "pulso lento",
+        "diferença entre materiais": "altura",
+        "som do jato": "coro",
+        "espacialização": "pan pelo ângulo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'corda' por voz, drone 'pulso lento' no AmbientSound, materiais por 'altura', jato 'coro' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "14",
+      "nome": "Coral em acorde",
+      "descricao": "Coral com timbre por material sobre acorde aberto; jato em sopro.",
+      "eixos": {
+        "timbre da absorção": "coral",
+        "drone do núcleo": "acorde aberto",
+        "diferença entre materiais": "timbre",
+        "som do jato": "sopro ascendente",
+        "espacialização": "central"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'coral' por voz, drone 'acorde aberto' no AmbientSound, materiais por 'timbre', jato 'sopro ascendente' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "15",
+      "nome": "Grãos no pad",
+      "descricao": "Grãos com altura por material sobre pad; jato em sub grave; espacializado.",
+      "eixos": {
+        "timbre da absorção": "granular",
+        "drone do núcleo": "pad em movimento",
+        "diferença entre materiais": "altura",
+        "som do jato": "sub grave",
+        "espacialização": "pan pelo ângulo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'granular' por voz, drone 'pad em movimento' no AmbientSound, materiais por 'altura', jato 'sub grave' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "16",
+      "nome": "Sinos pulsantes",
+      "descricao": "Sinos com altura por material e pulso lento; jato em sub grave.",
+      "eixos": {
+        "timbre da absorção": "sino",
+        "drone do núcleo": "pulso lento",
+        "diferença entre materiais": "altura",
+        "som do jato": "sub grave",
+        "espacialização": "central"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'sino' por voz, drone 'pulso lento' no AmbientSound, materiais por 'altura', jato 'sub grave' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "17",
+      "nome": "Sopro grave",
+      "descricao": "Sopros com timbre por material sobre drone grave; jato em coro; espacializado.",
+      "eixos": {
+        "timbre da absorção": "sopro",
+        "drone do núcleo": "grave puro",
+        "diferença entre materiais": "timbre",
+        "som do jato": "coro",
+        "espacialização": "pan pelo ângulo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'sopro' por voz, drone 'grave puro' no AmbientSound, materiais por 'timbre', jato 'coro' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "18",
+      "nome": "Cordas sem drone",
+      "descricao": "Cordas com timbre por material, sem drone; jato em acorde.",
+      "eixos": {
+        "timbre da absorção": "corda",
+        "drone do núcleo": "sem drone",
+        "diferença entre materiais": "timbre",
+        "som do jato": "acorde ascendente",
+        "espacialização": "central"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'corda' por voz, drone 'sem drone' no AmbientSound, materiais por 'timbre', jato 'acorde ascendente' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "19",
+      "nome": "Coral sem drone",
+      "descricao": "Coral com duração por material, sem drone; jato em sopro; espacializado.",
+      "eixos": {
+        "timbre da absorção": "coral",
+        "drone do núcleo": "sem drone",
+        "diferença entre materiais": "duração",
+        "som do jato": "sopro ascendente",
+        "espacialização": "pan pelo ângulo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'coral' por voz, drone 'sem drone' no AmbientSound, materiais por 'duração', jato 'sopro ascendente' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    },
+    {
+      "id": "20",
+      "nome": "Grãos em acorde",
+      "descricao": "Grãos com timbre por material sobre acorde aberto; jato em coro.",
+      "eixos": {
+        "timbre da absorção": "granular",
+        "drone do núcleo": "acorde aberto",
+        "diferença entre materiais": "timbre",
+        "som do jato": "coro",
+        "espacialização": "central"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; a cena congela como no núcleo 13.",
+      "porte": "Receita Oboe/C++ em audio_palette.h: timbre 'granular' por voz, drone 'acorde aberto' no AmbientSound, materiais por 'timbre', jato 'coro' disparado pelo agendador visual; mantém 12 vozes, agrupamento de 120 ms e limitador −1 dBFS."
+    }
+  ]
+}

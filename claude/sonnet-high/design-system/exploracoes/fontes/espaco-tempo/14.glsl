@@ -1,0 +1,18 @@
+// 14 · Céu ondulante — Estrelas arrastadas sem torção, ondulando com o quadrupolo contínuo.
+const float REPRESENTACAO = 1.0; // representação: estrelas arrastadas
+const float ONDAS = 1.0; // ondas gravitacionais: quadrupolo contínuo
+const float ARRASTO = 0.0; // arrasto de referenciais: nenhum
+const float ALCANCE = 1.0; // alcance: médio
+const float INTENSIDADE = 0.0; // intensidade: sutil
+vec3 cena(vec2 p) {
+    return espacoTempo(p, REPRESENTACAO, ONDAS, ARRASTO, ALCANCE, INTENSIDADE);
+}
+//== pontos ==
+const float REPRESENTACAO = 1.0; // representação: estrelas arrastadas
+const float ONDAS = 1.0; // ondas gravitacionais: quadrupolo contínuo
+const float ARRASTO = 0.0; // arrasto de referenciais: nenhum
+const float ALCANCE = 1.0; // alcance: médio
+const float INTENSIDADE = 0.0; // intensidade: sutil
+void pontos(int i, int n, out vec2 pos, out float tamanho, out vec3 cor, out float alfa) {
+    pontosEspaco(i, n, REPRESENTACAO, ARRASTO, ALCANCE, INTENSIDADE, pos, tamanho, cor, alfa);
+}

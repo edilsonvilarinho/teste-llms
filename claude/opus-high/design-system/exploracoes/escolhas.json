@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "fonte": "design-system/exploracoes",
+  "temas": {
+    "buraco-negro": {
+      "principal": "13",
+      "favoritas": [
+        "13"
+      ],
+      "nome": "Halo de poeira",
+      "observacao": "Escolhido pelo usuário em 01/10/2026; pediu as galerias dos demais temas (consumo, planetas, sons, partículas, espaço-tempo, jatos).",
+      "data": "2026-10-01"
+    },
+    "consumo": {
+      "principal": "12",
+      "favoritas": [
+        "12"
+      ],
+      "nome": "Órbita nebulosa",
+      "observacao": "Escolhido pelo usuário em 01/10/2026.",
+      "data": "2026-10-01"
+    },
+    "disco-acrecao": {
+      "principal": "01",
+      "favoritas": [
+        "01"
+      ],
+      "nome": "Filamentos keplerianos",
+      "observacao": "Escolhido pelo usuário em 01/10/2026.",
+      "data": "2026-10-01"
+    },
+    "espaco-tempo": {
+      "principal": "01",
+      "favoritas": [
+        "01"
+      ],
+      "nome": "Grade de Einstein",
+      "observacao": "Escolhido pelo usuário em 01/10/2026.",
+      "data": "2026-10-01"
+    },
+    "jatos": {
+      "principal": "11",
+      "favoritas": [
+        "11"
+      ],
+      "nome": "Feixe de partículas",
+      "observacao": "Escolhido pelo usuário em 01/10/2026.",
+      "data": "2026-10-01"
+    },
+    "particulas": {
+      "principal": "13",
+      "favoritas": [
+        "13"
+      ],
+      "nome": "Céu à deriva",
+      "observacao": "Escolhido pelo usuário em 01/10/2026.",
+      "data": "2026-10-01"
+    },
+    "planetas": {
+      "principal": "04",
+      "favoritas": [
+        "04"
+      ],
+      "nome": "Silhuetas coloridas",
+      "observacao": "Escolhido pelo usuário em 01/10/2026 (rodada 2, corpos soltos no espaço); pediu animação melhor: galeria animacao-corpos.",
+      "data": "2026-10-01"
+    },
+    "sons": {
+      "principal": "05",
+      "favoritas": [
+        "05"
+      ],
+      "nome": "Poeira granular",
+      "observacao": "Escolhido pelo usuário em 01/10/2026.",
+      "data": "2026-10-01"
+    },
+    "animacao-corpos": {
+      "principal": "01",
+      "favoritas": [
+        "01"
+      ],
+      "nome": "Mundos vivos",
+      "observacao": "Fixada pelo usuário em 02/10/2026 ao criar o plano v2 (issue #3).",
+      "data": "2026-10-02"
+    },
+    "sons-consumo": {
+      "principal": "07",
+      "favoritas": [
+        "07"
+      ],
+      "nome": "Cristal",
+      "observacao": "Escolhido pelo usuário em 03/10/2026 (rodada 2). O jato não deve ter som.",
+      "data": "2026-10-03",
+      "autorDaEscolha": "usuário",
+      "rodadaAnterior": {
+        "principal": "01",
+        "favoritas": [
+          "01"
+        ],
+        "nome": "Seno de poeira",
+        "observacao": "Escolha técnica provisória do Codex, sob autorização de concluir a Etapa 9 sem depender de permissão. Não representa aprovação sensorial do usuário; pode ser substituída após escuta.",
+        "data": "2026-10-02",
+        "autorDaEscolha": "codex",
+        "aceiteSensorial": "pendente"
+      }
+    },
+    "sons-ambiente": {
+      "principal": "08",
+      "favoritas": [
+        "08"
+      ],
+      "nome": "Piano etéreo",
+      "observacao": "Escolhido pelo usuário em 03/10/2026 (rodada 2).",
+      "data": "2026-10-03",
+      "autorDaEscolha": "usuário",
+      "rodadaAnterior": {
+        "principal": "01",
+        "favoritas": [
+          "01"
+        ],
+        "nome": "Maré grave",
+        "observacao": "Escolha técnica provisória do Codex, sob autorização de concluir a Etapa 9 sem depender de permissão. Não representa aprovação sensorial do usuário; pode ser substituída após escuta.",
+        "data": "2026-10-02",
+        "autorDaEscolha": "codex",
+        "aceiteSensorial": "pendente"
+      }
+    },
+    "hud": {
+      "principal": "02",
+      "favoritas": [
+        "02"
+      ],
+      "nome": "Régua cósmica",
+      "observacao": "Escolhido pelo usuário em 03/10/2026 (galeria hud.html, A132).",
+      "data": "2026-10-03",
+      "autorDaEscolha": "usuário"
+    }
+  }
+}

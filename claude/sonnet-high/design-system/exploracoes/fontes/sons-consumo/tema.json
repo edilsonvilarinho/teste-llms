@@ -1,0 +1,214 @@
+{
+  "tema": "sons-consumo",
+  "titulo": "Efeitos · consumo e jato · rodada 2",
+  "pergunta": "Qual som você quer ao absorver matéria e ao disparar o jato? Escolha a principal e as favoritas.",
+  "nota": "Rodada 2 (03/10/2026): 10 consumos suaves (ataque >= 40 ms, sem estalo) com altura por material e volume pela massa, e jato próprio. Sem música nesta galeria. Toque na cena para absorver; troque o material para ouvir as alturas.",
+  "incluir": [
+    "_base/nucleo-13.glsl"
+  ],
+  "jatosAutomaticos": true,
+  "cadenciaJato": [
+    10,
+    16
+  ],
+  "quantidade": 10,
+  "eixos": [
+    "timbre",
+    "envelope",
+    "cauda",
+    "espaço",
+    "jato"
+  ],
+  "variacoes": [
+    {
+      "id": "01",
+      "nome": "Coral curto",
+      "descricao": "Serrilha por formantes de vogal, ataque 60 ms; jato em sopro com tom.",
+      "eixos": {
+        "timbre": "coral",
+        "envelope": "ataque 60 ms",
+        "cauda": "média",
+        "espaço": "central",
+        "jato": "sopro tonal"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Voz sintetizada em Oboe/C++ (osciladores, biquad, eco <= 0,4) sem alocação no callback; 12 vozes, agrupamento de 120 ms."
+    },
+    {
+      "id": "02",
+      "nome": "Sopro macio",
+      "descricao": "Ruído rosa em banda estreita varrendo para baixo, ataque 90 ms; jato em sopro largo.",
+      "eixos": {
+        "timbre": "sopro",
+        "envelope": "ataque 90 ms",
+        "cauda": "curta",
+        "espaço": "pan pela queda",
+        "jato": "sopro largo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Voz sintetizada em Oboe/C++ (osciladores, biquad, eco <= 0,4) sem alocação no callback; 12 vozes, agrupamento de 120 ms."
+    },
+    {
+      "id": "03",
+      "nome": "Sino macio",
+      "descricao": "Sino FM com ataque de 40 ms e cauda longa; jato em glissando de sino.",
+      "eixos": {
+        "timbre": "sino FM",
+        "envelope": "ataque 40 ms",
+        "cauda": "longa",
+        "espaço": "central",
+        "jato": "glissando tonal"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Voz sintetizada em Oboe/C++ (osciladores, biquad, eco <= 0,4) sem alocação no callback; 12 vozes, agrupamento de 120 ms."
+    },
+    {
+      "id": "04",
+      "nome": "Pad breve",
+      "descricao": "Duas serrilhas filtradas em quinta, ataque 120 ms; jato em sopro grave.",
+      "eixos": {
+        "timbre": "pad",
+        "envelope": "ataque 120 ms",
+        "cauda": "média",
+        "espaço": "pan pela queda",
+        "jato": "sopro grave"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Voz sintetizada em Oboe/C++ (osciladores, biquad, eco <= 0,4) sem alocação no callback; 12 vozes, agrupamento de 120 ms."
+    },
+    {
+      "id": "05",
+      "nome": "Cordas em arco",
+      "descricao": "Serrilha com vibrato e crescendo de 160 ms, como arco curto; jato em cordas subindo.",
+      "eixos": {
+        "timbre": "cordas",
+        "envelope": "ataque 160 ms",
+        "cauda": "média",
+        "espaço": "central",
+        "jato": "cordas subindo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Voz sintetizada em Oboe/C++ (osciladores, biquad, eco <= 0,4) sem alocação no callback; 12 vozes, agrupamento de 120 ms."
+    },
+    {
+      "id": "06",
+      "nome": "Glide grave",
+      "descricao": "Seno que desliza uma oitava para baixo, como queda no núcleo, ataque 50 ms; jato em sopro escuro.",
+      "eixos": {
+        "timbre": "seno com glide",
+        "envelope": "ataque 50 ms",
+        "cauda": "longa",
+        "espaço": "pan pela queda",
+        "jato": "sopro escuro"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Voz sintetizada em Oboe/C++ (osciladores, biquad, eco <= 0,4) sem alocação no callback; 12 vozes, agrupamento de 120 ms."
+    },
+    {
+      "id": "07",
+      "nome": "Cristal",
+      "descricao": "Parciais senoidais inarmônicas agudas (vidro), ataque 40 ms; jato em brilho de vidro.",
+      "eixos": {
+        "timbre": "vidro",
+        "envelope": "ataque 40 ms",
+        "cauda": "longa",
+        "espaço": "central",
+        "jato": "brilho agudo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Voz sintetizada em Oboe/C++ (osciladores, biquad, eco <= 0,4) sem alocação no callback; 12 vozes, agrupamento de 120 ms."
+    },
+    {
+      "id": "08",
+      "nome": "Gota tonal",
+      "descricao": "Seno curto subindo uma terça com eco em 180 ms, ataque 45 ms; jato em gotas ascendentes.",
+      "eixos": {
+        "timbre": "gota",
+        "envelope": "ataque 45 ms",
+        "cauda": "curta com eco",
+        "espaço": "pan pela queda",
+        "jato": "sopro com eco"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Voz sintetizada em Oboe/C++ (osciladores, biquad, eco <= 0,4) sem alocação no callback; 12 vozes, agrupamento de 120 ms."
+    },
+    {
+      "id": "09",
+      "nome": "Harpa reversa",
+      "descricao": "Envelope invertido: cresce em 300 ms e solta macio, como harpa ao contrário; jato em varredura lenta.",
+      "eixos": {
+        "timbre": "harpa",
+        "envelope": "ataque 300 ms",
+        "cauda": "curta",
+        "espaço": "central",
+        "jato": "varredura lenta"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Voz sintetizada em Oboe/C++ (osciladores, biquad, eco <= 0,4) sem alocação no callback; 12 vozes, agrupamento de 120 ms."
+    },
+    {
+      "id": "10",
+      "nome": "Kalimba suave",
+      "descricao": "Triângulo com parciais de lâmina, ataque 40 ms, queda curta e eco leve; jato em pulsos.",
+      "eixos": {
+        "timbre": "kalimba",
+        "envelope": "ataque 40 ms",
+        "cauda": "curta com eco",
+        "espaço": "central",
+        "jato": "sopro tonal agudo"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "Som igual; movimento decorativo da cena congelado.",
+      "porte": "Voz sintetizada em Oboe/C++ (osciladores, biquad, eco <= 0,4) sem alocação no callback; 12 vozes, agrupamento de 120 ms."
+    }
+  ]
+}

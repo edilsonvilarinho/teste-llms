@@ -1,0 +1,90 @@
+*{box-sizing:border-box}
+body{margin:0;background:var(--obs-background);color:var(--obs-text-primary);font-family:var(--obs-font);line-height:24px}
+header.topo-pagina{position:sticky;top:0;z-index:5;background:var(--obs-background);border-bottom:1px solid var(--obs-border-decorative);padding:var(--obs-space-md) var(--obs-space-lg);display:flex;flex-wrap:wrap;gap:var(--obs-space-md);align-items:center}
+header .marca{letter-spacing:2px;color:var(--obs-text-secondary);font-size:14px}
+header label{font-size:14px;color:var(--obs-text-secondary);display:flex;gap:var(--obs-space-sm);align-items:center}
+header input[type=range]{width:min(320px,60vw)}
+button,select{min-height:48px;min-width:48px;background:var(--obs-surface);color:var(--obs-text-primary);border:1px solid var(--obs-border-control);border-radius:0;padding:0 var(--obs-space-lg);font:inherit;font-size:14px;cursor:pointer}
+button[aria-pressed=true]{background:var(--obs-surface-pressed);border-color:var(--obs-accent)}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--obs-accent);outline-offset:4px}
+#leitura{font-size:13px;color:var(--obs-text-muted)}
+main{max-width:1440px;margin:0 auto;padding:var(--obs-space-xl) var(--obs-space-lg)}
+h1{font-size:28px;line-height:36px;font-weight:400;margin:0 0 var(--obs-space-sm)}
+.intro p{color:var(--obs-text-secondary);max-width:860px;margin:0 0 var(--obs-space-md)}
+#resumo{color:var(--obs-text-muted);font-size:14px}
+#grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,410px),1fr));gap:var(--obs-space-xl);margin-top:var(--obs-space-xl)}
+.card{background:var(--obs-surface);border:1px solid var(--obs-border-decorative);padding:var(--obs-space-md);display:flex;flex-direction:column;gap:var(--obs-space-md)}
+.card.escolhida{border-color:var(--obs-accent)}
+.info h2{font-size:18px;font-weight:400;margin:0}
+.info h2 span{color:var(--obs-text-muted)}
+.info p{font-size:14px;line-height:20px;color:var(--obs-text-secondary);margin:var(--obs-space-xs) 0}
+.info dl{display:grid;grid-template-columns:auto 1fr;gap:2px var(--obs-space-md);font-size:13px;line-height:18px;margin:var(--obs-space-sm) 0}
+.info dt{color:var(--obs-text-muted)} .info dd{margin:0;color:var(--obs-text-secondary)}
+.acoes{display:flex;gap:var(--obs-space-sm);flex-wrap:wrap}
+/* Tela do jogo: 1 px CSS ≈ 1 dp (realme C61 tem 360 dp de largura). */
+.tela{position:relative;overflow:hidden;background:#000 center/cover no-repeat;margin:0 auto;width:100%}
+.tela.retrato{max-width:390px;aspect-ratio:390/608;background-image:var(--fundo-retrato)}
+.tela.paisagem{aspect-ratio:780/461;background-image:var(--fundo-paisagem)}
+.camada{position:absolute;inset:0;font-size:12px;line-height:16px;color:var(--obs-text-primary)}
+/* Primitivas do HUD (Obsidiana: sem âmbar, sem vidro, raio 0, fundo background a 91%). */
+.h{position:absolute;max-width:calc(100% - 32px)}
+.h .forte{font-size:14px;line-height:20px;color:var(--obs-text-primary)}
+.h .grande{font-size:20px;line-height:26px;color:var(--obs-text-primary)}
+.h .grande small{font-size:13px;color:var(--obs-text-secondary)}
+.h .sec{font-size:12px;line-height:16px;color:var(--obs-text-secondary)}
+.h .ter{font-size:11px;line-height:15px;color:var(--obs-text-muted)}
+.h .linha{display:flex;justify-content:space-between;gap:var(--obs-space-md);align-items:baseline}
+.h.topo{left:16px;top:52px}
+.h.base{left:16px;right:16px;bottom:16px;max-width:none}
+.h.base-esq{left:16px;bottom:20px}
+.h.direita{right:12px;top:58px}
+.h.esquerda{left:8px;top:56px;bottom:20px}
+.h.marca-tempo{left:88px;top:15px;font-size:11px;color:var(--obs-text-muted)}
+.cartao{background:rgba(3,5,8,.91);padding:var(--obs-space-sm) var(--obs-space-md)}
+.cartao.largo{right:16px;max-width:400px}
+.fio{position:relative;height:2px;background:var(--obs-border-decorative);flex:1;min-width:40px}
+.fio i{position:absolute;inset:0 auto 0 0;background:var(--obs-text-secondary)}
+.fio.curto{width:160px;flex:none;margin:6px 0 4px}
+.pontas{display:flex;align-items:center;gap:var(--obs-space-sm);font-size:11px;color:var(--obs-text-muted);margin-top:4px}
+.pontas span{white-space:nowrap;max-width:40%;overflow:hidden;text-overflow:ellipsis}
+.regua-cosmica{background:rgba(3,5,8,.91);padding:var(--obs-space-sm) var(--obs-space-md) 22px}
+.regua{position:relative;height:2px;background:var(--obs-border-decorative);margin-top:10px}
+.regua b{position:absolute;top:-4px;width:1px;height:10px;background:var(--obs-border-control)}
+.regua b em{position:absolute;top:11px;transform:translateX(-50%);font-style:normal;font-size:10px;color:var(--obs-text-muted);white-space:nowrap}
+.regua u,.decadas u{position:absolute;top:-4px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--obs-text-primary);text-decoration:none}
+.decadas{position:relative;height:2px;background:var(--obs-border-decorative);margin:10px 0 8px}
+.decadas b{position:absolute;top:-3px;width:1px;height:8px;background:var(--obs-border-decorative)}
+.decadas b.on{background:var(--obs-text-secondary)}
+.silhuetas{display:flex;gap:var(--obs-space-md);align-items:center}
+.silhuetas .alvo{fill:none;stroke:var(--obs-text-secondary);stroke-width:1}
+.silhuetas .nucleo{fill:#000;stroke:var(--obs-text-primary);stroke-width:1}
+.escada{background:rgba(3,5,8,.91);padding:var(--obs-space-sm) var(--obs-space-md);width:150px}
+.escada ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column-reverse;gap:2px}
+.escada li{font-size:11px;line-height:16px;color:var(--obs-text-secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.escada li.passado{color:var(--obs-text-muted);text-decoration:line-through}
+.escada li.voce{color:var(--obs-text-primary);font-size:12px}
+.anel{display:flex;flex-direction:column;align-items:center;background:rgba(3,5,8,.91);padding:var(--obs-space-sm);width:104px}
+.anel .trilho{fill:none;stroke:var(--obs-border-decorative);stroke-width:3}
+.anel .prog{fill:none;stroke:var(--obs-text-secondary);stroke-width:3}
+.anel text{fill:var(--obs-text-primary);font:12px var(--obs-font)}
+.anel .centro{text-align:center;max-width:96px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chip{background:rgba(3,5,8,.91);border:1px solid var(--obs-border-decorative);padding:4px var(--obs-space-md);transition:padding var(--obs-motion-panel-enter) var(--obs-ease)}
+.chip.aberto{padding:var(--obs-space-sm) var(--obs-space-md);border-color:var(--obs-border-control)}
+.faixa{display:flex;align-items:center;gap:var(--obs-space-md);background:rgba(3,5,8,.91);padding:var(--obs-space-sm) var(--obs-space-md)}
+.faixa .meio{flex:1;display:flex;align-items:center;gap:6px;min-width:0}
+.faixa em{font-style:normal;font-size:10px;color:var(--obs-text-muted);white-space:nowrap;max-width:28%;overflow:hidden;text-overflow:ellipsis}
+.eras{display:flex;gap:3px;margin:8px 0 6px}
+.era{position:relative;flex:1;height:4px;background:var(--obs-border-decorative)}
+.era i{position:absolute;inset:0 auto 0 0;background:var(--obs-text-muted)}
+.era.on i{background:var(--obs-text-primary)}
+.vertical{width:150px;max-width:none}
+.vertical .trilho{position:absolute;left:10px;top:0;bottom:56px;width:2px;background:var(--obs-border-decorative)}
+.vertical .trilho b{position:absolute;left:-3px;width:8px;height:1px;background:var(--obs-border-control)}
+.vertical .trilho b em{position:absolute;left:12px;top:-8px;font-style:normal;font-size:10px;color:var(--obs-text-muted);white-space:nowrap}
+.vertical .trilho b.on em{color:var(--obs-text-secondary)}
+.vertical .trilho u{position:absolute;left:-4px;width:10px;height:10px;margin-bottom:-5px;border-radius:50%;background:var(--obs-text-primary);text-decoration:none}
+.vertical .rodape{position:absolute;left:0;bottom:0;background:rgba(3,5,8,.91);padding:4px 8px}
+@media (prefers-reduced-motion:reduce){.chip{transition:none}}
+/* Paisagem em escala real (~800 dp no realme C61): cartões largos para não ampliar o HUD. */
+body.modo-paisagem #grade{grid-template-columns:repeat(auto-fill,minmax(min(100%,812px),1fr))}
+.tela.paisagem{max-width:780px}

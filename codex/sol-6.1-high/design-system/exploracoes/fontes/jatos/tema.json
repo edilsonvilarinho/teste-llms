@@ -1,0 +1,425 @@
+{
+  "tema": "jatos",
+  "titulo": "Jatos relativísticos",
+  "pergunta": "Quando e como os jatos relativísticos devem aparecer de tempos em tempos?",
+  "nota": "Núcleo fixo: 13 · Halo de poeira. O gatilho de cada variação é real na galeria: cadência, a cada 4 absorções ou ao absorver um corpo grande. Use \"Disparar jato\" na vista ampliada para ver na hora.",
+  "dica": "Cada variação dispara pelo próprio gatilho; \"Disparar jato\" força um.",
+  "incluir": [
+    "_base/nucleo-13.glsl"
+  ],
+  "jatosAutomaticos": true,
+  "cadenciaJato": [
+    5,
+    9
+  ],
+  "quantidade": 20,
+  "eixos": [
+    "gatilho",
+    "forma",
+    "duração",
+    "cor",
+    "extra"
+  ],
+  "variacoes": [
+    {
+      "id": "01",
+      "nome": "Feixe âmbar",
+      "descricao": "Feixe fino e reto, âmbar, curto. O jato dispara em intervalos regulares (5–9 s na galeria).",
+      "eixos": {
+        "gatilho": "cadência",
+        "forma": "feixe colimado",
+        "duração": "curto",
+        "cor": "âmbar",
+        "extra": "nenhum"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'cadência' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "cadencia"
+    },
+    {
+      "id": "02",
+      "nome": "Hélice marfim",
+      "descricao": "Dois fios marfim girando em hélice, com partículas subindo. O jato dispara a cada 4 absorções.",
+      "eixos": {
+        "gatilho": "massa acumulada",
+        "forma": "hélice",
+        "duração": "médio",
+        "cor": "marfim",
+        "extra": "partículas no jato"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 2800,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'massa acumulada' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "massa"
+    },
+    {
+      "id": "03",
+      "nome": "Nós de choque",
+      "descricao": "Nós brilhantes correm pelo feixe; o contra-jato aparece contornando a sombra. O jato dispara quando um corpo grande é absorvido.",
+      "eixos": {
+        "gatilho": "corpo grande",
+        "forma": "nós de choque",
+        "duração": "longo",
+        "cor": "gradiente",
+        "extra": "contra-jato lenteado"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'corpo grande' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "grande"
+    },
+    {
+      "id": "04",
+      "nome": "Plumas largas",
+      "descricao": "O feixe se abre em plumas turbulentas na ponta, anunciado por um clarão polar. O jato dispara em intervalos regulares (5–9 s na galeria).",
+      "eixos": {
+        "gatilho": "cadência",
+        "forma": "plumas",
+        "duração": "longo",
+        "cor": "âmbar",
+        "extra": "clarão polar"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'cadência' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "cadencia"
+    },
+    {
+      "id": "05",
+      "nome": "Espinha e bainha",
+      "descricao": "Espinha estreita e quente dentro de uma bainha turbulenta. O jato dispara a cada 4 absorções.",
+      "eixos": {
+        "gatilho": "massa acumulada",
+        "forma": "núcleo e bainha",
+        "duração": "curto",
+        "cor": "gradiente",
+        "extra": "nenhum"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'massa acumulada' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "massa"
+    },
+    {
+      "id": "06",
+      "nome": "Feixe com eco",
+      "descricao": "Feixe colimado marfim e contra-jato lenteado. O jato dispara quando um corpo grande é absorvido.",
+      "eixos": {
+        "gatilho": "corpo grande",
+        "forma": "feixe colimado",
+        "duração": "médio",
+        "cor": "marfim",
+        "extra": "contra-jato lenteado"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "economia"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'corpo grande' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "grande"
+    },
+    {
+      "id": "07",
+      "nome": "Hélice longa",
+      "descricao": "Hélice marfim longa, anunciada por clarão polar. O jato dispara em intervalos regulares (5–9 s na galeria).",
+      "eixos": {
+        "gatilho": "cadência",
+        "forma": "hélice",
+        "duração": "longo",
+        "cor": "marfim",
+        "extra": "clarão polar"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'cadência' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "cadencia"
+    },
+    {
+      "id": "08",
+      "nome": "Nós com partículas",
+      "descricao": "Nós de choque curtos com partículas correndo junto. O jato dispara a cada 4 absorções.",
+      "eixos": {
+        "gatilho": "massa acumulada",
+        "forma": "nós de choque",
+        "duração": "curto",
+        "cor": "marfim",
+        "extra": "partículas no jato"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 2800,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'massa acumulada' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "massa"
+    },
+    {
+      "id": "09",
+      "nome": "Plumas quentes",
+      "descricao": "Plumas em gradiente, de duração média, sem extras. O jato dispara quando um corpo grande é absorvido.",
+      "eixos": {
+        "gatilho": "corpo grande",
+        "forma": "plumas",
+        "duração": "médio",
+        "cor": "gradiente",
+        "extra": "nenhum"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'corpo grande' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "grande"
+    },
+    {
+      "id": "10",
+      "nome": "Bainha âmbar",
+      "descricao": "Espinha e bainha âmbar, longas, com contra-jato. O jato dispara em intervalos regulares (5–9 s na galeria).",
+      "eixos": {
+        "gatilho": "cadência",
+        "forma": "núcleo e bainha",
+        "duração": "longo",
+        "cor": "âmbar",
+        "extra": "contra-jato lenteado"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'cadência' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "cadencia"
+    },
+    {
+      "id": "11",
+      "nome": "Feixe de partículas",
+      "descricao": "Feixe colimado em gradiente cheio de partículas. O jato dispara a cada 4 absorções.",
+      "eixos": {
+        "gatilho": "massa acumulada",
+        "forma": "feixe colimado",
+        "duração": "longo",
+        "cor": "gradiente",
+        "extra": "partículas no jato"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 2800,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'massa acumulada' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "massa"
+    },
+    {
+      "id": "12",
+      "nome": "Hélice breve",
+      "descricao": "Hélice marfim curta após um clarão polar. O jato dispara quando um corpo grande é absorvido.",
+      "eixos": {
+        "gatilho": "corpo grande",
+        "forma": "hélice",
+        "duração": "curto",
+        "cor": "marfim",
+        "extra": "clarão polar"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'corpo grande' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "grande"
+    },
+    {
+      "id": "13",
+      "nome": "Nós âmbar",
+      "descricao": "Nós de choque âmbar de duração média. O jato dispara em intervalos regulares (5–9 s na galeria).",
+      "eixos": {
+        "gatilho": "cadência",
+        "forma": "nós de choque",
+        "duração": "médio",
+        "cor": "âmbar",
+        "extra": "nenhum"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'cadência' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "cadencia"
+    },
+    {
+      "id": "14",
+      "nome": "Plumas com eco",
+      "descricao": "Plumas marfim e o contra-jato contornando a sombra. O jato dispara a cada 4 absorções.",
+      "eixos": {
+        "gatilho": "massa acumulada",
+        "forma": "plumas",
+        "duração": "curto",
+        "cor": "marfim",
+        "extra": "contra-jato lenteado"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'massa acumulada' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "massa"
+    },
+    {
+      "id": "15",
+      "nome": "Bainha com partículas",
+      "descricao": "Espinha e bainha em gradiente com partículas. O jato dispara quando um corpo grande é absorvido.",
+      "eixos": {
+        "gatilho": "corpo grande",
+        "forma": "núcleo e bainha",
+        "duração": "médio",
+        "cor": "gradiente",
+        "extra": "partículas no jato"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 2800,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'corpo grande' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "grande"
+    },
+    {
+      "id": "16",
+      "nome": "Feixe polar",
+      "descricao": "Feixe colimado âmbar médio após clarão polar. O jato dispara em intervalos regulares (5–9 s na galeria).",
+      "eixos": {
+        "gatilho": "cadência",
+        "forma": "feixe colimado",
+        "duração": "médio",
+        "cor": "âmbar",
+        "extra": "clarão polar"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'cadência' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "cadencia"
+    },
+    {
+      "id": "17",
+      "nome": "Hélice em gradiente",
+      "descricao": "Hélice quente que esfria para âmbar, longa, com contra-jato. O jato dispara a cada 4 absorções.",
+      "eixos": {
+        "gatilho": "massa acumulada",
+        "forma": "hélice",
+        "duração": "longo",
+        "cor": "gradiente",
+        "extra": "contra-jato lenteado"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'massa acumulada' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "massa"
+    },
+    {
+      "id": "18",
+      "nome": "Nós marfim longos",
+      "descricao": "Nós de choque marfim longos, sem extras. O jato dispara quando um corpo grande é absorvido.",
+      "eixos": {
+        "gatilho": "corpo grande",
+        "forma": "nós de choque",
+        "duração": "longo",
+        "cor": "marfim",
+        "extra": "nenhum"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'corpo grande' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "grande"
+    },
+    {
+      "id": "19",
+      "nome": "Plumas de partículas",
+      "descricao": "Plumas âmbar curtas com partículas subindo. O jato dispara em intervalos regulares (5–9 s na galeria).",
+      "eixos": {
+        "gatilho": "cadência",
+        "forma": "plumas",
+        "duração": "curto",
+        "cor": "âmbar",
+        "extra": "partículas no jato"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 2800,
+        "perfilMinimo": "alta"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'cadência' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "cadencia"
+    },
+    {
+      "id": "20",
+      "nome": "Bainha marfim",
+      "descricao": "Espinha e bainha marfim médias com clarão polar. O jato dispara a cada 4 absorções.",
+      "eixos": {
+        "gatilho": "massa acumulada",
+        "forma": "núcleo e bainha",
+        "duração": "médio",
+        "cor": "marfim",
+        "extra": "clarão polar"
+      },
+      "custo": {
+        "passes": 2,
+        "particulas": 1200,
+        "perfilMinimo": "equilibrio"
+      },
+      "reduzido": "O jato ainda aparece e some com o mesmo envelope; hélice, nós, turbulência e disco ficam parados.",
+      "porte": "Passe aditivo do jato no ScenePass com envelope uJato; gatilho 'massa acumulada' no agendador do renderer a partir de AbsorptionEvent (só visual, não altera massa nem simulação).",
+      "gatilhoJato": "massa"
+    }
+  ]
+}
